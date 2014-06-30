@@ -1,0 +1,20 @@
+	<formset>
+		<form name="peigiriEzamgarForm">
+			<field property="zamanPeigiri" depends="required,date">
+				<arg0 key="&#1586;&#1605;&#1575;&#1606; &#1662;&#1740; &#1711;&#1740;&#1585;&#1740;" resource="false"/>
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>yyyy/MM/dd</var-value>
+				</var>
+			</field>
+
+			<field property="natije" depends="required">
+				<arg0 key="&#1606;&#1578;&#1740;&#1580;&#1607; &#1662;&#1740; &#1711;&#1740;&#1585;&#1740;" resource="false"/>
+			</field>
+
+			<field property="emdadEmdadId" depends="required">
+				<arg0 key="&#1575;&#1605;&#1583;&#1575;&#1583;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

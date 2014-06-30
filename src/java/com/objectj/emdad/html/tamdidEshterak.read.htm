@@ -1,0 +1,52 @@
+<form method="post" action="/r/tamdidEshterak">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شماره اشتراک:</td>
+						<td width="5%"></td>
+						<td class="readData">tamdidEshterak_eshterakId</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تاريخ آخرين تمديد:</td>
+						<td width="5%"></td>
+						<td class="readData">tamdidEshterak_tarikhAkharinTamdid</td>
+					</tr>
+					
+					<!---------------------------------------->
+	
+					<tr> 
+						<td height="70" colspan="3" align="center"> <input name="submit" type="submit" value="      بازگشت      " /> 
+						</td>
+					</tr>
+
+					<!---------------------------------------->
+
+				</table>					
+			</td>
+		</tr>
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.tamdidEshterakForm);
+	setEntity("TamdidEshterak");
+</script>
+		

@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"شناسه", "عنوان"});
+		request.setAttribute("fields", new String[] {"iradId", "onvan"});
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

@@ -1,0 +1,355 @@
+
+
+<!-- Constraints for roles resources -->
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>superuser-resources</web-resource-name>
+		<url-pattern>/usr/superuser/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>admin-resources</web-resource-name>
+		<url-pattern>/usr/admin/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>admin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>eshterak-resources</web-resource-name>
+		<url-pattern>/usr/eshterak/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>foroush-resources</web-resource-name>
+		<url-pattern>/usr/foroush/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>foroush</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>doAdmin-resources</web-resource-name>
+		<url-pattern>/usr/doAdmin/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>emdadgar-resources</web-resource-name>
+		<url-pattern>/usr/emdadgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>ezamgarAdi-resources</web-resource-name>
+		<url-pattern>/usr/ezamgarAdi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>omoorNamayandegi-resources</web-resource-name>
+		<url-pattern>/usr/omoorNamayandegi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>operator-resources</web-resource-name>
+		<url-pattern>/usr/operator/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>operator</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>namayandegi-resources</web-resource-name>
+		<url-pattern>/usr/namayandegi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>namayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>maliOp-resources</web-resource-name>
+		<url-pattern>/usr/maliOp/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>anbar-resources</web-resource-name>
+		<url-pattern>/usr/anbar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>mohandesi-resources</web-resource-name>
+		<url-pattern>/usr/mohandesi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>amaliyatOp-resources</web-resource-name>
+		<url-pattern>/usr/amaliyatOp/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>amaliyatMgr-resources</web-resource-name>
+		<url-pattern>/usr/amaliyatMgr/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>khadamatVije-resources</web-resource-name>
+		<url-pattern>/usr/khadamatVije/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>daftarOstani-resources</web-resource-name>
+		<url-pattern>/usr/daftarOstani/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>tarhoBarname-resources</web-resource-name>
+		<url-pattern>/usr/tarhoBarname/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>emdadgarPeymani-resources</web-resource-name>
+		<url-pattern>/usr/emdadgarPeymani/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>sarparastEmdadgar-resources</web-resource-name>
+		<url-pattern>/usr/sarparastEmdadgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>guarantee-resources</web-resource-name>
+		<url-pattern>/usr/guarantee/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>guarantee</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>barnamerizOP-resources</web-resource-name>
+		<url-pattern>/usr/barnamerizOP/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>barnamerizSefareshat-resources</web-resource-name>
+		<url-pattern>/usr/barnamerizSefareshat/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>gozareshgar-resources</web-resource-name>
+		<url-pattern>/usr/gozareshgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>gozareshgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>ezamgarVije-resources</web-resource-name>
+		<url-pattern>/usr/ezamgarVije/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>sysadmin</web-resource-name>
+		<url-pattern>/sysadmin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<!-- Login config -->
+
+<login-config>
+	<auth-method>FORM</auth-method>
+	<realm-name>emdad</realm-name>
+	<form-login-config>
+		<form-login-page>/com/objectj/resources/jsp/tiles/emdad/login.jsp</form-login-page>
+		<form-error-page>/com/objectj/resources/jsp/tiles/emdad/error.jsp</form-error-page>
+	</form-login-config>
+</login-config>
+
+
+<!-- Security Roles -->
+
+<security-role>
+	<role-name>superuser</role-name>
+</security-role>
+<security-role>
+	<role-name>admin</role-name>
+</security-role>
+<security-role>
+	<role-name>eshterak</role-name>
+</security-role>
+<security-role>
+	<role-name>foroush</role-name>
+</security-role>
+<security-role>
+	<role-name>doAdmin</role-name>
+</security-role>
+<security-role>
+	<role-name>emdadgar</role-name>
+</security-role>
+<security-role>
+	<role-name>ezamgarAdi</role-name>
+</security-role>
+<security-role>
+	<role-name>omoorNamayandegi</role-name>
+</security-role>
+<security-role>
+	<role-name>operator</role-name>
+</security-role>
+<security-role>
+	<role-name>namayandegi</role-name>
+</security-role>
+<security-role>
+	<role-name>maliOp</role-name>
+</security-role>
+<security-role>
+	<role-name>anbar</role-name>
+</security-role>
+<security-role>
+	<role-name>mohandesi</role-name>
+</security-role>
+<security-role>
+	<role-name>amaliyatOp</role-name>
+</security-role>
+<security-role>
+	<role-name>amaliyatMgr</role-name>
+</security-role>
+<security-role>
+	<role-name>khadamatVije</role-name>
+</security-role>
+<security-role>
+	<role-name>daftarOstani</role-name>
+</security-role>
+<security-role>
+	<role-name>tarhoBarname</role-name>
+</security-role>
+<security-role>
+	<role-name>emdadgarPeymani</role-name>
+</security-role>
+<security-role>
+	<role-name>sarparastEmdadgar</role-name>
+</security-role>
+<security-role>
+	<role-name>guarantee</role-name>
+</security-role>
+<security-role>
+	<role-name>barnamerizOP</role-name>
+</security-role>
+<security-role>
+	<role-name>barnamerizSefareshat</role-name>
+</security-role>
+<security-role>
+	<role-name>gozareshgar</role-name>
+</security-role>
+<security-role>
+	<role-name>ezamgarVije</role-name>
+</security-role>

@@ -1,0 +1,15 @@
+<formset>
+	<form name="ostanForm">
+			<field property="ostanId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607; &#1575;&#1587;&#1578;&#1575;&#1606;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+	
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1575;&#1587;&#1578;&#1575;&#1606;" resource="false"/>
+			</field>
+		</form>
+	</formset>

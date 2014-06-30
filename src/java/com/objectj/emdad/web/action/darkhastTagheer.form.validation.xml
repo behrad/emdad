@@ -1,0 +1,9 @@
+	<formset>
+		<form name="darkhastTagheerForm">
+			<field property="eshterakId" depends="required">
+				<arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1575;&#1588;&#1578;&#1585;&#1575;&#1705;" resource="false"/>
+			</field>
+
+ 
+		</form>
+	</formset>

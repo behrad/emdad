@@ -1,0 +1,142 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatedarkhastQate" onsubmit="return validateDarkhastQateForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="darkhastQateId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">آمدادگر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="emdadgarId" size="1">
+								<html:options collection="emdadgarList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاریخ درخواست:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tarikhDarkhast" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">قطعه:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="qateId" size="1">
+								<html:options collection="qateList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تعداد درخواستی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tedadDarkhasti" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تعداد تایید شده توسط سرپرست امدادگران:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tedadSarparast" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تایید شده توسط سرپرست امدادگران:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="taeedShodehSarparast" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تعداد تایید شده توسط انبار:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tedadAnbar" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تایید شده توسط انبار:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="taeedShodeAnbar" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">منبع تهیه قطعه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="manba" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">ثبت کننده:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="sabtkonandeh" size="19" maxlength="19" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.darkhastQateForm);
+	setEntity("DarkhastQate");
+    if (document.darkhastQateForm.action_type.value=="create") 
+	{
+        document.darkhastQateForm.action="/emdad/c/validatedarkhastQate.run";
+    } 
+	
+	else 
+	{
+        document.darkhastQateForm.action="/emdad/u/validatedarkhastQate.run";
+    }
+</script>
+<html:javascript formName="darkhastQateForm" />

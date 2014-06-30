@@ -1,0 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<!----------------------------------------->
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/filter-top.jsp" flush="true" />
+<!----------------------------------------->
+
+				<td class="filterCol"> 
+					<select  class="generalText" id="field">
+						<option  value="kasriEmdad.kasriId" id="Integer">کد کسری</option >
+						<option  value="kasriEmdad.tarikh" id="Date">تاريخ</option >
+						<option  value="kasriEmdad.tahvilshod" id="Integer">تحويل شد؟</option >
+						<option  value="kasriEmdad.tahvilshod" id="Integer">تائيدانباردار؟</option >
+						<option  value="kasriEmdad.tahvilshod" id="Integer">تائیدامدادگر؟</option >
+					</select >
+				</td>
+
+<!----------------------------------------->
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/filter-but.jsp" flush="true" />
+<!----------------------------------------->

@@ -1,0 +1,21 @@
+<form-bean name="anbarEmdadgarForm" dynamic="true" type="com.objectj.emdad.web.action.AnbarEmdadgarForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+    <form-property name="daftarOstaniId" type="java.lang.String" />
+    <form-property name="emdadgar.daftarOstaniId" type="java.lang.String" />
+	<form-property name="emdadgarId" type="java.lang.String"/>
+	<form-property name="emdadgarName" type="java.lang.String"/>
+	<form-property name="qateId" type="java.lang.String"/>
+	<form-property name="qateName" type="java.lang.String"/>
+	<form-property name="shomareFanni" type="java.lang.String"/>
+	<form-property name="mojoodi" type="java.lang.Integer"/>
+    <form-property name="qate.qateId" type="java.lang.Integer" />
+    <form-property name="valueQate" type="java.lang.Integer"/>
+    <form-property name="valueAnbar" type="java.lang.Integer"/>
+    <form-property name="qate.name" type="java.lang.String"/>
+</form-bean>

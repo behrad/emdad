@@ -1,0 +1,18 @@
+    <!-- struts -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.run</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReportHelper</servlet-name>
+        <url-pattern>/helper/rep.do</url-pattern>
+    </servlet-mapping>
+
+
+<!--
+    <servlet-mapping>
+        <servlet-name>SysAdmin</servlet-name>
+        <url-pattern>admin/acl-action</url-pattern>
+    </servlet-mapping>
+-->

@@ -1,0 +1,68 @@
+<form method="post" action="/r/role">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه نقش:</td>
+						<td width="5%"></td>
+						<td class="readData">role_roleId</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نقش:</td>
+						<td width="5%"></td>
+						<td class="readData">role_role</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نام موجوديت:</td>
+						<td width="5%"></td>
+						<td class="readData">role_entity</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">دسترسي:</td>
+						<td width="5%"></td>
+						<td class="readData">role_access</td>
+					</tr>
+					
+					<!---------------------------------------->
+	
+					<tr> 
+						<td height="70" colspan="3" align="center"> <input name="submit" type="submit" value="      بازگشت      " /> 
+						</td>
+					</tr>
+
+					<!---------------------------------------->
+
+				</table>					
+			</td>
+		</tr>
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.roleForm);
+	setEntity("Role");
+</script>
+		

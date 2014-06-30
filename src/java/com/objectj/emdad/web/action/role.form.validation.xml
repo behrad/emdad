@@ -1,0 +1,16 @@
+	<formset>
+		<form name="roleForm">
+			<field property="role" depends="required">
+				<arg0 key="&#1606;&#1602;&#1588;" resource="false"/>
+			</field>
+
+			<field property="entity" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1605;&#1608;&#1580;&#1608;&#1583;&#1610;&#1578;" resource="false"/>
+			</field>
+
+			<field property="access" depends="required">
+				<arg0 key="&#1583;&#1587;&#1578;&#1585;&#1587;&#1610;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

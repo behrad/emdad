@@ -1,0 +1,20 @@
+<form-bean name="shakhsForm" dynamic="true" type="com.objectj.emdad.web.action.ShakhsForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="shakhsId" type="java.lang.Integer"/>
+	<form-property name="name" type="java.lang.String"/>
+	<form-property name="naghshId" type="java.lang.Integer"/>
+	<form-property name="daftarOstaniId" type="java.lang.String"/>
+    <form-property name="naghshName" type="java.lang.String"/>
+	<form-property name="entityId" type="java.lang.String"/>
+	<form-property name="namayandegiId" type="java.lang.String"/>
+	<form-property name="emdadgarId" type="java.lang.String"/>
+    <form-property name="username" type="java.lang.String"/>
+    <form-property name="password" type="java.lang.String"/>
+    <form-property name="repassword" type="java.lang.String"/>
+</form-bean>

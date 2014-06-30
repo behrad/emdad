@@ -1,0 +1,19 @@
+<form-bean name="khodrojagozinMasrafForm" dynamic="true" type="com.objectj.emdad.web.action.KhodrojagozinMasrafForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+
+    <form-property name="emdadId" type="java.lang.String"/>
+    <form-property name="emdadEmdadId" type="java.lang.String"/>
+    <form-property name="emdad.emdadId" type="java.lang.Integer"/>
+	<form-property name="khodrojagozinId" type="java.lang.String"/>
+	<form-property name="khodrojagozinIdOld" type="java.lang.String"/>
+	<form-property name="tarikhTahvilBeMoshtari" type="java.lang.String"/>
+    <form-property name="tarikhTahvilBeMoshtari2" type="java.lang.String"/>
+	<form-property name="tarikhTahvilAzMoshtari" type="java.lang.String"/>
+    <form-property name="tarikhTahvilAzMoshtari2" type="java.lang.String"/>
+</form-bean>

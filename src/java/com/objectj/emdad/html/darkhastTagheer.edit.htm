@@ -1,0 +1,150 @@
+﻿<form method="post" action="/c/validatedarkhastTagheer" onsubmit="return validateDarkhastTagheerForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شماره اشتراک:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="eshterakId" size="10" maxlength="10" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نوع سرويس:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="noeService" size="2" maxlength="2"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام خانوادگي:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="nameKhanevadegi" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="name" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاريخ تولد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhTavalod" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">آدرس:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="address" size="80" maxlength="80" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">کد پستي:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="postCode" size="10" maxlength="10" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام شهر:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="shahrId" size="1">
+								<html:options collection="shahrList" property="id" labelProperty="shahrName" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">پست الکترونيکي:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="email" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تلفن:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tel" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تلفن همراه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mobile" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">رنگ خودرو:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="rangeKhodroId" size="1">
+								<html:options collection="rangeKhodroList" property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شماره پلاک:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="shomarePelak" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.darkhastTagheerForm);
+	setEntity("DarkhastTagheer");
+    if (document.darkhastTagheerForm.action_type.value=="create") 
+	{
+        document.darkhastTagheerForm.action="/emdad/c/validatedarkhastTagheer.run";
+    } 
+	
+	else 
+	{
+        document.darkhastTagheerForm.action="/emdad/u/validatedarkhastTagheer.run";
+    }
+</script>
+<html:javascript formName="darkhastTagheerForm" />

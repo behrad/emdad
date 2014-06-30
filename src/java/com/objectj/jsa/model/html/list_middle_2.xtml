@@ -1,0 +1,18 @@
+﻿		</tr>
+
+		<!------------------------------------------------>
+
+		<% int i = 0; %>
+		<logic:iterate id="value_object" name="value_object_list" >
+			<tr class="listRow<%=i%2%>">
+				<check_Delete_access>
+					<td class = "listRow1Col"> 
+						<input type="checkbox" name="id" value="checkbox">
+					</td>
+				<end_Each_access>
+
+				<check_Update_access>
+					<td class = "listRow1Col" align="center">
+						<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+					</td>
+				<end_Each_access>

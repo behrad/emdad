@@ -1,0 +1,137 @@
+	<formset>
+		<form name="emdadForm">
+
+			<field property="zamanEzam" depends="required,date">
+				<arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582; &#1575;&#1593;&#1586;&#1575;&#1605;" resource="false"/>
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>yyyy/MM/dd</var-value>
+				</var>
+			</field>
+
+            <field property="rokhdadId" depends="required">
+                <arg0 key="&#1585;&#1582;&#1583;&#1575;&#1583;" resource="false"/>
+            </field>
+
+            <field property="vazeatKhedmatId" depends="required">
+                <arg0 key="&#1608;&#1590;&#1593;&#1610;&#1578; &#1582;&#1583;&#1605;&#1578;" resource="false"/>
+            </field>
+
+			<field property="ezamgarId" depends="required">
+				<arg0 key="&#1575;&#1593;&#1586;&#1575;&#1605; &#1711;&#1585;" resource="false"/>
+			</field>
+
+			<field property="kilometerKarkard" depends="required,mask">
+				<arg0 key="&#1705;&#1610;&#1604;&#1608;&#1605;&#1578;&#1585; &#1705;&#1575;&#1585;&#1705;&#1585;&#1583;" resource="false"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                </var>
+			</field>
+
+			<field property="faseleAzNamayandegi" depends="required,mask">
+				<arg0 key="&#1601;&#1575;&#1589;&#1604;&#1607; &#1575;&#1586; &#1606;&#1605;&#1575;&#1610;&#1606;&#1583;&#1711;&#1610;" resource="false"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                </var>
+			</field>
+
+            <field property="zamanShoro" depends="date,required">
+                <arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582; &#1588;&#1585;&#1608;&#1593; &#1576;&#1607; &#1705;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+                <var>
+                  <var-name>datePatternStrict</var-name>
+                  <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+
+            <field property="zamanPayan" depends="date,required">
+                <arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582; &#1662;&#1575;&#1610;&#1575;&#1606; &#1705;&#1575;&#1585;" resource="false"/>
+                <var>
+                  <var-name>datePatternStrict</var-name>
+                  <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+
+            <field property="zamanVagheiPayan" depends="date">
+                <arg0 key="&#1586;&#1605;&#1604;&#1606; &#1608;&#1575;&#1602;&#1593;&#1610; &#1662;&#1575;&#1610;&#1575;&#1606; &#1705;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+                <var>
+                  <var-name>datePatternStrict</var-name>
+                  <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+
+            <field property="zamanVagheiShoro" depends="date">
+                <arg0 key="&#1586;&#1605;&#1575;&#1606; &#1608;&#1575;&#1602;&#1593;&#1610; &#1588;&#1585;&#1608;&#1593; &#1576;&#1607; &#1705;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+                <var>
+                  <var-name>datePatternStrict</var-name>
+                  <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+
+            <field property="zamanVagheiEzam" depends="date">
+                <arg0 key="&#1586;&#1605;&#1575;&#1606; &#1608;&#1575;&#1602;&#1593;&#1610; &#1575;&#1593;&#1586;&#1575;&#1605; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+                <var>
+                  <var-name>datePatternStrict</var-name>
+                  <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+
+            <field property="zamanPayan2" depends="required">
+                <arg0 key="&#1586;&#1605;&#1575;&#1606; &#1662;&#1575;&#1610;&#1575;&#1606; &#1705;&#1575;&#1585;" resource="false"/>
+            </field>
+
+            <field property="zamanShoro2" depends="required">
+                <arg0 key="&#1586;&#1605;&#1575;&#1606; &#1588;&#1585;&#1608;&#1593; &#1576;&#1607; &#1705;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false" />
+            </field>
+
+            <field property="zamanEzam2" depends="required">
+                <arg0 key="&#1586;&#1605;&#1575;&#1606; &#1575;&#1593;&#1586;&#1575;&#1605;" resource="false"/>
+            </field>
+
+
+            <field property="noeEmdad" depends="required,intrange">
+                <arg0 key="&#1606;&#1608;&#1593; &#1575;&#1605;&#1583;&#1575;&#1583;" resource="false"/>
+                <arg1 name="intrange" key="${var:min}" resource="false"/>
+                <arg2 name="intrange" key="${var:max}" resource="false"/>
+                   <var>
+                     <var-name>min</var-name>
+                     <var-value>1</var-value>
+                   </var>
+                    <var>
+                      <var-name>max</var-name>
+                      <var-value>10</var-value>
+                    </var>
+                <msg name="intrange" key="pleae.enter.values"/>
+            </field>
+
+            <field property="hazinehJarsaghil" depends="mask">
+                <arg0 key="&#1607;&#1586;&#1610;&#1606;&#1607; &#1580;&#1585;&#1579;&#1602;&#1610;&#1604;" resource="false"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+
+            <field property="hazinehBoxel" depends="mask">
+                <arg0 key="&#1607;&#1586;&#1610;&#1606;&#1607; &#1576;&#1705;&#1587;&#1604;" resource="false"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+
+            <field property="modatTamir" depends="mask">
+                <arg0 key="&#1662;&#1610;&#1588; &#1576;&#1610;&#1606;&#1610; &#1605;&#1583;&#1578; &#1586;&#1605;&#1575;&#1606; &#1578;&#1593;&#1605;&#1610;&#1585;" resource="false"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+
+            <field property="rahAndazi" depends="required">
+                <arg0 key="&#1585;&#1575;&#1607; &#1575;&#1606;&#1583;&#1575;&#1586;&#1610;" resource="false"/>
+            </field>
+
+		</form>
+	</formset>

@@ -1,0 +1,36 @@
+	<formset>
+		<form name="naghsheForm">
+			<field property="mapLevel" depends="required,mask">
+				<arg0 key="&#1587;&#1591;&#1581; &#1580;&#1594;&#1585;&#1575;&#1601;&#1610;&#1575;&#1574;&#1740;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="azTool" depends="required">
+				<arg0 key="&#1575;&#1586; &#1591;&#1608;&#1604; &#1580;&#1594;&#1585;&#1575;&#1601;&#1610;&#1575;&#1574;&#1740;" resource="false"/>
+			</field>
+
+			<field property="taTool" depends="required">
+				<arg0 key="&#1578;&#1575; &#1591;&#1608;&#1604; &#1580;&#1594;&#1585;&#1575;&#1601;&#1610;&#1575;&#1574;&#1740;" resource="false"/>
+			</field>
+
+			<field property="azArz" depends="required">
+				<arg0 key="&#1575;&#1586; &#1593;&#1585;&#1590; &#1580;&#1594;&#1585;&#1575;&#1601;&#1610;&#1575;&#1574;&#1740;" resource="false"/>
+			</field>
+
+			<field property="taArz" depends="required">
+				<arg0 key="&#1578;&#1575; &#1593;&#1585;&#1590; &#1580;&#1594;&#1585;&#1575;&#1601;&#1610;&#1575;&#1574;&#1740;" resource="false"/>
+			</field>
+
+			<field property="mantagheId" depends="required">
+				<arg0 key="&#1705;&#1583; &#1605;&#1606;&#1591;&#1602;&#1607;" resource="false"/>
+			</field>
+
+            <field property="fileName" depends="required">
+                <arg0 key="&#1606;&#1575;&#1605; &#1601;&#1575;&#1740;&#1604;" resource="false"/>
+            </field>
+
+		</form>
+	</formset>

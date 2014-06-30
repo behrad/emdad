@@ -1,0 +1,109 @@
+
+package @top.package@.ejb;
+
+import java.rmi.RemoteException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.util.Collection;
+
+import javax.ejb.CreateException;
+import javax.ejb.EJBException;
+import javax.ejb.EntityBean;
+import javax.ejb.EntityContext;
+import javax.ejb.FinderException;
+import javax.ejb.RemoveException;
+
+import org.ejbutils.uid.UIDDispenser;
+import org.ejbutils.uid.UIDDispenserException;
+
+import com.objectj.emdad.ejb.util.BaseEJB;
+import com.objectj.emdad.proxy.QueryObject;
+import com.objectj.jsa.proxy.ProxyReferenceException;
+
+/**
+ *
+ * @author  @author@
+ *
+ * @ejb.bean
+ *      name="Xxx"
+ *      type="CMP"
+ *      primkey-field="@primaryKey@"
+ *      view-type="both"
+ *      jndi-name="ejb/@application@/Xxx"
+ *      local-jndi-name="ejb/@application@/XxxLocal"
+ *      schema="Xxx"
+ *      cmp-version="2.x"
+ *
+ * @ejb.util
+ *  generate="physical"
+ *
+ * @ejb.value-object
+ *      name="Xxx"
+ *      extends="com.objectj.jsa.model.BaseValueObject"
+ *      match="*"
+ *
+ * @ejb.value-object
+ *      name="XxxLight"
+ *      extends="com.objectj.jsa.model.BaseValueObject"
+ *      match="light"
+ *
+ * @ejb.pk
+ *      class="@primaryKeyType@"
+ *
+ * @ejb:finder signature="java.util.Collection findAll()"
+ *
+ *
+ *  @jboss.load-group
+ *    load-group-name="list"
+ * 	    field-name="xxxId"
+ *      field-name="name"
+ *
+ *
+ *  @jboss.read-ahead
+ * 		strategy = "on-find"
+ * 		page-size = "20"
+ *
+ * @jboss.method-attributes
+ * 		pattern = "get*"
+ * 		read-only = "true"
+ *
+ * @ejb.finder
+ *     signature = "java.util.Collection findGeneric(java.lang.String s, java.lang.Object[] arguments)"
+ *     query = ""
+ * @jboss.query
+ *     signature = "java.util.Collection findGeneric(java.lang.String s, java.lang.Object[] arguments)"
+ *     dynamic = "true"
+ * 	   eager-load-group = "list"
+ *
+ *
+ * @ejb.finder
+ * signature="java.util.Collection findByEntityId(java.lang.Integer xxxId)"
+ * query= "SELECT DISTINCT OBJECT(o) FROM Xxx AS o WHERE o.xxxId = ?1"
+ *
+ *
+ */
+
+public abstract class XxxEJB extends BaseEJB implements EntityBean {
+    
+	protected EntityContext ctx;
+    
+    /**
+     * @ejb.create-method
+     */
+    public @primaryKeyType@ ejbCreate() throws CreateException {
+        return super.ejbCreate();
+    }
+    
+    /**
+     * @ejb.create-method
+     */
+    public @primaryKeyType@ ejbCreate(XxxModel xxxModel) throws CreateException {
+           try {
+           if ((xxxModel.getId() == null) || (xxxModel.getId().length() == 0)) {
+                xxxModel.setId( UIDDispenser.getDispenser().getNextId() );
+            }
+            setId(xxxModel.getId());
+
+
+        // copy from model

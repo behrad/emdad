@@ -1,0 +1,9 @@
+﻿	
+					<!---------------------------------------->
+	
+					<tr class="@readRowClass@"> 
+						<td class="readLabel">@label@:</td>
+						<td width="5%"></td>
+						<td class="readData">@placeHolder@ @description@</td>						
+					</tr>
+					

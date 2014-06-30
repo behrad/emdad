@@ -1,0 +1,54 @@
+<form method="post" action="/c/validatetamdidEshterak" onsubmit="return validateTamdidEshterakForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شماره اشتراک:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="eshterakId" size="40" maxlength="40" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاريخ آخرين تمديد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhAkharinTamdid" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.tamdidEshterakForm);
+	setEntity("TamdidEshterak");
+    if (document.tamdidEshterakForm.action_type.value=="create") 
+	{
+        document.tamdidEshterakForm.action="/emdad/c/validatetamdidEshterak.run";
+    } 
+	
+	else 
+	{
+        document.tamdidEshterakForm.action="/emdad/u/validatetamdidEshterak.run";
+    }
+</script>
+<html:javascript formName="tamdidEshterakForm" />

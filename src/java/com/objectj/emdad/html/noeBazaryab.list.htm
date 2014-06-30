@@ -1,0 +1,89 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/noeBazaryab">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="noeBazaryabId" size="3" maxlength="5"/></td>
+						<td><html:text property="onvan" size="20" maxlength="30" onkeypress="return submitenter(this,event)"/></td>
+						<td></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeBazaryabId"
+							sortable_Column_Title "شناسه نوع بازاریاب"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "onvan"
+							sortable_Column_Title "عنوان"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "entity"
+							sortable_Column_Title "جدول مرجع"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>noeBazaryab_noeBazaryabId</a ></td>
+							<td class = "listRow1Col">noeBazaryab_onvan</td>
+							<td class = "listRow1Col">noeBazaryab_entity</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.noeBazaryabForm);
+	setEntity("NoeBazaryab");
+</script>

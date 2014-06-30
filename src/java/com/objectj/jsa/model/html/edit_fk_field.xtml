@@ -1,0 +1,12 @@
+﻿
+					<!----------------------------------------->
+
+					<tr class="@editRowClass@">
+						<td class="editLabel">@label@:</td>
+						<td class="editStar">@star@</td>
+						<td>
+							<html:select property="@attributeName@" size="1">
+								<html:options collection="@refEntityName@List" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>

@@ -1,0 +1,28 @@
+	<formset>
+		<form name="darkhastQateForm">
+			<field property="emdadgarId" depends="required">
+				<arg0 key="&#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+			</field>
+
+			<field property="tarikhDarkhast" depends="required,date">
+				<arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582; &#1583;&#1585;&#1582;&#1608;&#1575;&#1587;&#1578;" resource="false"/>
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>yyyy/MM/dd</var-value>
+				</var>
+			</field>
+
+			<field property="qateIdCode" depends="required">
+				<arg0 key="&#1602;&#1591;&#1593;&#1607;" resource="false"/>
+			</field>
+
+			<field property="tedadDarkhasti" depends="required">
+				<arg0 key="&#1578;&#1593;&#1583;&#1575;&#1583; &#1583;&#1585;&#1582;&#1608;&#1575;&#1587;&#1578;&#1610;" resource="false"/>
+			</field>
+
+			<field property="manba" depends="required">
+				<arg0 key="&#1605;&#1606;&#1576;&#1593; &#1578;&#1607;&#1610;&#1607; &#1602;&#1591;&#1593;&#1607;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

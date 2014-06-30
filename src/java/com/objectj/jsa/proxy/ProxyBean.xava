@@ -1,0 +1,335 @@
+/*
+ * DummyProxy.java
+ *
+ * Created on @today@
+ */
+
+package @top.package@.proxy;
+
+import @top.package@.ejb.*;
+import com.objectj.jsa.model.ValueObject;
+import com.objectj.jsa.proxy.BaseProxy;
+import com.objectj.jsa.proxy.ProxyException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import org.apache.log4j.Logger;
+
+
+/**
+ *
+ * @author  @author@
+ */
+public class ProxyBean extends BaseProxy {
+    
+    protected static Logger log = Logger.getLogger(ProxyBean.class.getName());
+    
+        private Class[] classes = new Class[] {
+            @ModelClasses@
+        };
+
+    
+    public ValueObject create(Class modelClass) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (modelClass.equals(aClass)) {
+                    log.info("Creating new " + aClass + " in database and generate and id for it");
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("create", new Class[] {}).invoke(o, new Object[] {});
+                    o = o.getClass().getMethod("get" + prefix.substring(prefix.lastIndexOf('.') + 1) + "Model", new Class[] {}).invoke(o, new Object[] {});
+                    return (ValueObject) o;
+
+
+                }
+            }
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    
+/*
+        try {
+            if(XxxModel.class.equals(modelClass)) {
+                log.info("Creating new XxxModel in database and generate and id for it");
+                return XxxUtil.getHome().create().getXxxModel();
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+        return null;
+    }
+    
+    public ValueObject create(ValueObject valueObject) throws ProxyException {
+        try {
+
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.isInstance(valueObject)) {
+                    log.info("Creating new " + aClass + " in database from ...");
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("create", new Class[] {}).invoke(o, new Object[] {});
+                    o = o.getClass().getMethod("get" + prefix.substring(prefix.lastIndexOf('.') + 1) + "Model", new Class[] {}).invoke(o, new Object[] {});
+                    return (ValueObject) o;
+
+
+                }
+            }
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    
+/*
+        try {
+            if(valueObject instanceof XxxModel) {
+                XxxModel xxxModel = (XxxModel)valueObject;
+                log.info("Creating new XxxEJB in database from XxxModelt" + xxxModel.getId());
+                return XxxUtil.getHome().create(xxxModel).getXxxModel();
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+        return null;
+    }
+    
+    public void update(ValueObject valueObject) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.isInstance(valueObject)) {
+                    Object pkO = aClass.getMethod("getId", new Class[] {}).invoke(valueObject, new Object[] {});
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("findByPrimaryKey", new Class[] {String.class}).invoke(o, new Object[] {pkO});
+                    o = o.getClass().getMethod("set" + prefix.substring(prefix.lastIndexOf('.') + 1) + "Model", new Class[] {aClass}).invoke(o, new Object[] {valueObject});
+                    return;
+
+                }
+            }
+
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    
+/*
+        try {
+            Date d = new Date();
+            if(valueObject instanceof XxxModel) {
+                XxxModel xxxModel = (XxxModel)valueObject;
+                //XxxLocalHome home = XxxUtil.getLocalHome();
+                //XxxLocal xxx = XxxUtil.getLocalHome().findByPrimaryKey(xxxModel.getId());
+                XxxRemote xxx = XxxUtil.getHome().findByPrimaryKey(xxxModel.getId());
+                xxx.setXxxModel(xxxModel);
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+    }
+    
+    public void remove(ValueObject valueObject) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.isInstance(valueObject)) {
+                    Object pkO = aClass.getMethod("getId", new Class[] {}).invoke(valueObject, new Object[] {});
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("findByPrimaryKey", new Class[] {String.class}).invoke(o, new Object[] {pkO});
+                    o = o.getClass().getMethod("remove", new Class[] {}).invoke(o, new Object[] {});
+                    return;
+
+
+                }
+            }
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+/*
+        try {
+            if(valueObject instanceof XxxModel) {
+                XxxModel xxxModel = (XxxModel)valueObject;
+                XxxRemote xxx = XxxUtil.getHome().findByPrimaryKey(xxxModel.getId());
+                xxx.remove();
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+    }
+    
+    public void remove(Class modelClass, String id) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.equals(modelClass)) {
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("findByPrimaryKey", new Class[] {String.class}).invoke(o, new Object[] {id});
+                    o = o.getClass().getMethod("remove", new Class[] {}).invoke(o, new Object[] {});
+                    return;
+
+
+                }
+            }
+
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+
+
+    
+/*
+        try {
+            if(XxxModel.class.equals(modelClass)) {
+                XxxUtil.getHome().findByPrimaryKey(id).remove();
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+    }
+    
+    public void remove(Class modelClass, String[] ids) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.equals(modelClass)) {
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object oHome = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    for (int j = 0; j < ids.length; j++) {
+                        String id = ids[j];
+                        Object o = oHome.getClass().getMethod("findByPrimaryKey", new Class[] {String.class}).invoke(oHome, new Object[] {id});
+                        o = o.getClass().getMethod("remove", new Class[] {}).invoke(o, new Object[] {});
+                    }
+                    return;
+
+
+                }
+            }
+
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+
+
+
+    
+/*
+        try {
+            if(XxxModel.class.equals(modelClass)) {
+                for(int index = 0; index != ids.length; index++) {
+                    XxxUtil.getHome().findByPrimaryKey(ids[index]).remove();
+                }
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+    }
+    
+    public ValueObject read(Class modelClass, String id) throws ProxyException {
+        try {
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.equals(modelClass)) {
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("findByPrimaryKey", new Class[] {String.class}).invoke(o, new Object[] {id});
+                    o = o.getClass().getMethod("get" + prefix.substring(prefix.lastIndexOf('.') + 1) + "Model", new Class[] {}).invoke(o, new Object[] {});
+                    return (ValueObject) o;
+                }
+            }
+
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    
+/*
+        log.info("in in in");
+        try {
+            if(XxxModel.class.equals(modelClass)) {
+                log.info(id);
+                XxxRemote xxx = XxxUtil.getHome().findByPrimaryKey(id);
+                log.info(xxx);
+                return xxx.getXxxModel();
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+        return null;
+    }
+    public Collection readAll(Class modelClass) throws ProxyException {
+        try {
+
+            for (int i = 0; i < classes.length; i++) {
+                Class aClass = classes[i];
+                if (aClass.equals(modelClass)) {
+
+                    String prefix = aClass.getName().substring(0, aClass.getName().lastIndexOf("Model"));
+                    Object o = Class.forName( prefix + "Util").getMethod("getHome", new Class[] {}).invoke(null, new Object[] {});
+                    o = o.getClass().getMethod("findAll", new Class[] {}).invoke(o, new Object[] {});
+                    Collection collection = (Collection) o;
+                    ArrayList list = new ArrayList();
+                    for (Iterator iterator = collection.iterator(); iterator.hasNext();) {
+                        Object oo = iterator.next();
+                        oo = oo.getClass().getMethod("get" + prefix.substring(prefix.lastIndexOf('.') + 1) + "Model", new Class[] {}).invoke(oo, new Object[] {});
+                        list.add(oo);
+                    }
+                    return list;
+                }
+            }
+        } catch (Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    
+/*
+        try {
+            if(XxxModel.class.equals(modelClass)) {
+                Collection xxxs = XxxUtil.getHome().findAll();
+                ArrayList xxxList = new ArrayList();
+                for(Iterator iter = xxxs.iterator(); iter.hasNext(); ) {
+                    XxxModel xxx = ((XxxRemote)iter.next()).getXxxModel();
+                    xxxList.add(xxx);
+                }
+                return xxxList;
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+*/
+        return null;
+    }
+    
+}

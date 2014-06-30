@@ -1,0 +1,18 @@
+<form-bean name="jozeatKasriForm" dynamic="true" type="com.objectj.emdad.web.action.JozeatKasriForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="kasriId" type="java.lang.Integer"/>
+    <form-property name="kasriEmdadTarikh" type="java.lang.String"/>
+    <form-property name="emdadgarName" type="java.lang.String"/>
+	<form-property name="qateId" type="java.lang.Integer"/>
+    <form-property name="qateName" type="java.lang.String"/>
+    <form-property name="shomareFanni" type="java.lang.String"/>
+	<form-property name="tedadKasri" type="java.lang.Integer"/>
+	<form-property name="tedadAnbar" type="java.lang.Integer"/>
+	<form-property name="tedadEmdadgar" type="java.lang.Integer"/>
+</form-bean>

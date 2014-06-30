@@ -1,0 +1,8 @@
+Last changes to TasvieHesab:
+----------------------------
+
+1) There's no need to fill "code namayandegi" column in all rows. ( just first row )
+
+2) The column "tarikhe cart tamirat" has been removed.
+
+see sample namayandegi xls file.

@@ -1,0 +1,7 @@
+        } catch(UIDDispenserException exception) {
+            log.error(exception);
+            throw new EJBException(exception.toString());
+        }    
+        // EJB 2.0 spec says return null for CMP ejbCreate methods
+        return null;
+    }

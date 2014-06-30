@@ -1,0 +1,12 @@
+<form-bean name="noeBazaryabForm" dynamic="true" type="com.objectj.emdad.web.action.NoeBazaryabForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="onvan" type="java.lang.String"/>
+    <form-property name="entity" type="java.lang.Integer"/>
+	<form-property name="noeBazaryabId" type="java.lang.Integer"/>
+</form-bean>

@@ -1,0 +1,16 @@
+
+  <definition name="@application@.xxx.list" extends="emdad.main">
+      <put name="title"  		value="List of Xxx" />
+      <put name="body"   		value="/@top.path@/jsp/xxx.list.jsp" />
+  </definition>
+
+  <definition name="@application@.xxx.edit" extends="emdad.main">
+      <put name="title"  		value="Add or Update Xxx" />
+      <put name="body"   		value="/@top.path@/jsp/xxx.edit.jsp" />
+  </definition>
+
+  <definition name="@application@.xxx.read" extends="emdad.main">
+      <put name="title"  		value="View Xxx Information" />
+      <put name="body"   		value="/@top.path@/jsp/xxx.read.jsp" />
+  </definition>
+

@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"شماره اشتراک", "نوع اشتراک", "نوع سرويس", "وضعيت اشتراک", "نام خانوادگي", "نام", "نوع خودرو", "شماره پلاک", "تاريخ شروع اشتراک", "تاريخ انقضاي اشتراک", "ضمانت", });
+		request.setAttribute("fields", new String[] {"eshterakId", "noeEshterak", "noeService", "vazeat", "nameKhanevadegi", "name", "onvan", "shomarePelak", "tarikhShoro", "tarikhEngheza", "guarantee", });
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

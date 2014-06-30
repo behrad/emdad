@@ -1,0 +1,12 @@
+    
+    /** Holds value of property userId. */
+    private @type@ @field@;
+           
+    /**
+     * @ejb.persistent-field
+     * @jboss:sql-type VARCHAR(@stringLength@)
+     */
+    public abstract @type@ get@Field@();
+    public abstract void set@Field@(@type@ @field@);
+    
+     

@@ -1,0 +1,110 @@
+<form method="post" action="/c/validategheirMoshtarak" onsubmit="return validateGheirMoshtarakForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شماره اشتراک:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="moshtarakId" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام خانوادگي:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="nameKhanevadegi" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="name" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تل(f)ن:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tel" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نوع خودرو:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="noeKhodroId" size="1">
+								<html:options collection="noeKhodroList" property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">رنگ خودرو:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="rangeKhodroId" size="1">
+								<html:options collection="rangeKhodroList" property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">سال ساخت خودرو:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="saleSakht" size="4" maxlength="4"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شماره پلاک:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="shomarePelak" size="20" maxlength="20" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.gheirMoshtarakForm);
+	setEntity("GheirMoshtarak");
+    if (document.gheirMoshtarakForm.action_type.value=="create") 
+	{
+        document.gheirMoshtarakForm.action="/emdad/c/validategheirMoshtarak.run";
+    } 
+	
+	else 
+	{
+        document.gheirMoshtarakForm.action="/emdad/u/validategheirMoshtarak.run";
+    }
+</script>
+<html:javascript formName="gheirMoshtarakForm" />

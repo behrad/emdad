@@ -1,0 +1,11 @@
+﻿		</tr>
+
+	    <!------------------------------------------------>				
+
+		<tr><td colspan="2" height="3"></td></tr>
+
+		<!------------------------------------------------>
+
+		<tr class="listTableHeader">
+			<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+			<check_Update_access><td class = "listRow0Col" width="4%" align="center"><span class="textW">اصلاح</span></td><end_Each_access>

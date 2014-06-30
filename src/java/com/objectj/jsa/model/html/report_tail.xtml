@@ -1,0 +1,2 @@
+﻿    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

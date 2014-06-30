@@ -1,0 +1,118 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/daftarOstani">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="daftarOstaniId" size="3" maxlength="5"/></td>
+						<td><html:text property="name" size="20" maxlength="50" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="masool" size="20" maxlength="40" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="tel" size="20" maxlength="50" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="mobile" size="20" maxlength="50" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="address" size="20" maxlength="50" onkeypress="return submitenter(this,event)"/></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "daftarOstaniId"
+							sortable_Column_Title "شناسه دفتر استاني"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "name"
+							sortable_Column_Title "نام دفتر استاني"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "masool"
+							sortable_Column_Title "مسئول"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "tel"
+							sortable_Column_Title "تلفن"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "mobile"
+							sortable_Column_Title "تلفن همراه"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "address"
+							sortable_Column_Title "آدرس"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>daftarOstani_daftarOstaniId</a ></td>
+
+							<td class = "listRow1Col">daftarOstani_name</td>
+
+							<td class = "listRow1Col">daftarOstani_masool</td>
+
+							<td class = "listRow1Col">daftarOstani_tel</td>
+
+							<td class = "listRow1Col">daftarOstani_mobile</td>
+
+							<td class = "listRow1Col">daftarOstani_address</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.daftarOstaniForm);
+	setEntity("DaftarOstani");
+</script>

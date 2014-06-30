@@ -1,0 +1,35 @@
+	<formset>
+		<form name="khodrojagozinForm">
+			<field property="khodrojagozinId" depends="required">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607; &#1582;&#1608;&#1583;&#1585;&#1608;&#1740; &#1580;&#1575;&#1740;&#1711;&#1586;&#1740;&#1606;" resource="false"/>
+			</field>
+
+			<field property="rangeKhodroId" depends="required">
+				<arg0 key="&#1585;&#1606;&#1711; &#1582;&#1608;&#1583;&#1585;&#1608;" resource="false"/>
+			</field>
+
+			<field property="noeKhodroId" depends="required">
+				<arg0 key="&#1606;&#1608;&#1593; &#1582;&#1608;&#1583;&#1585;&#1608;" resource="false"/>
+			</field>
+
+			<field property="salesakht" depends="required">
+				<arg0 key="&#1587;&#1575;&#1604; &#1587;&#1575;&#1582;&#1578; " resource="false"/>
+			</field>
+
+			<field property="shomarehPelak" depends="required">
+				<arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1662;&#1604;&#1575;&#1705; " resource="false"/>
+			</field>
+
+			<field property="shomarehMotor" depends="required">
+				<arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1605;&#1608;&#1578;&#1608;&#1585; " resource="false"/>
+			</field>
+
+			<field property="shomarehShasi" depends="required">
+				<arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1588;&#1575;&#1587;&#1740; " resource="false"/>
+			</field>
+
+			<field property="faal" depends="required">
+				<arg0 key="&#1601;&#1593;&#1575;&#1604; " resource="false"/>
+			</field>
+		</form>
+	</formset>

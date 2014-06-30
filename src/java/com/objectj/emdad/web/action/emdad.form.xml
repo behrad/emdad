@@ -1,0 +1,86 @@
+<form-bean name="emdadForm" dynamic="true" type="com.objectj.emdad.web.action.EmdadForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+    <form-property name="emdadId" type="java.lang.Integer"/>
+	<form-property name="rokhdadId" type="java.lang.String"/>
+	<form-property name="vazeatKhedmatId" type="java.lang.String"/>
+    <form-property name="zamanEzam" type="java.lang.String"/>
+    <form-property name="zamanEzam2" type="java.lang.String"/>
+    <form-property name="zamanShoro" type="java.lang.String"/>
+    <form-property name="zamanShoro2" type="java.lang.String"/>
+    <form-property name="zamanPayan" type="java.lang.String"/>
+    <form-property name="zamanPayan2" type="java.lang.String"/>
+	<form-property name="ezamgarId" type="java.lang.String"/>
+
+	<form-property name="emdadgarId" type="java.lang.String"/>
+	<form-property name="emdadgarIdGhabli" type="java.lang.String"/>
+    <form-property name="namayandegiId" type="java.lang.String" />
+    <form-property name="namayandegiIdGhabli" type="java.lang.String" />
+
+	<form-property name="dalileToolKeshidaneEmdadId" type="java.lang.String"/>
+	<form-property name="zamanVagheiEzam" type="java.lang.String"/>
+	<form-property name="zamanVagheiShoro" type="java.lang.String"/>
+	<form-property name="zamanVagheiPayan" type="java.lang.String"/>
+    <form-property name="address" type="java.lang.String"/>
+
+    <form-property name="zamanVagheiEzam2" type="java.lang.String"/>
+    <form-property name="zamanVagheiShoro2" type="java.lang.String"/>
+    <form-property name="zamanVagheiPayan2" type="java.lang.String"/>
+    <form-property name="rahAndazi" type="java.lang.String" />
+    <form-property name="elateService" type="java.lang.String" />
+    <form-property name="shomarehFactor" type="java.lang.String" />
+    <form-property name="noeKhedmateVije" type="java.lang.Integer" />
+    <form-property name="koliyehMadarek" type="java.lang.Integer" />
+
+	<form-property name="akharinTagheerDahandeh" type="java.lang.String"/>
+	<form-property name="kilometerKarkard" type="java.lang.Integer"/>
+	<form-property name="faseleAzNamayandegi" type="java.lang.Integer"/>
+	<form-property name="mablaghPardakhtShodeh" type="java.lang.Integer"/>
+    <form-property name="hododeHazinehKol" type="java.lang.Integer"/>
+    <form-property name="vazeatKonuni" type="java.lang.Integer"/>
+    <form-property name="rokhdadRokhdadId" type="java.lang.Integer"/>
+    <form-property name="eshterakId" type="java.lang.String"/>
+    <form-property name="rokhdadMoshtarakId" type="java.lang.String" />
+    <form-property name="hazinehAyyabZahab" type="java.lang.Integer" />
+    <form-property name="noeEmdad" type="java.lang.Integer" />
+    <form-property name="hazinehJarsaghil" type="java.lang.Integer" />
+    <form-property name="hazinehBoxel" type="java.lang.Integer"/>
+    <form-property name="modatTamir" type="java.lang.Integer" />
+    <form-property name="tozihat" type="java.lang.String" />
+    <form-property name="ameliyatMojaz" type="java.lang.String" />
+    <form-property name="noeService" type="java.lang.String" />
+    <form-property name="forceNoeService" type="java.lang.String" />
+    <form-property name="vazeatDakheli" type="java.lang.Integer"/>
+    <form-property name="dastoorKarGhabli" type="java.lang.Integer"/>
+    <form-property name="maliDone" type="java.lang.Integer"/>
+    <form-property name="taeedHesabdar" type="java.lang.Integer"/>
+    <form-property name="taeedGuarantee" type="java.lang.Integer"/>
+    <form-property name="taeedNamayandegi" type="java.lang.Integer"/>
+    <form-property name="guarantee" type="java.lang.Integer"/>
+
+    <form-property name="rokhdad.rokhdadId" type="java.lang.Integer" />
+    <form-property name="shakhs.Id" type="java.lang.String"/>
+	<form-property name="daftarOstaniId" type="java.lang.String"/>
+    <form-property name="subAction" type="java.lang.String"/>
+    <form-property name="shomarePelak" type="java.lang.String"/>
+    <form-property name="emdadList.address" type="java.lang.String"/>
+    <form-property name="emdadList.shomarePelak" type="java.lang.String"/>
+    <form-property name="emdadList.ezamgarId" type="java.lang.String"/>
+    <form-property name="emdadList.zamanEzam" type="java.lang.String"/>
+    <form-property name="zamanEzamHejri" type="java.lang.String"/>
+	<form-property name="noeEmdadgarId" type="java.lang.String"/>
+    <form-property name="nameEmdadgar" type="java.lang.String"/>
+    <form-property name="nameNamayandegi" type="java.lang.String"/>
+    <form-property name="emdadList.nameEmdadgar" type="java.lang.String"/>
+    <form-property name="emdadList.namayandegiId" type="java.lang.String"/>
+    <form-property name="emdadList.irad" type="java.lang.String"/>
+    <form-property name="irad" type="java.lang.String"/>
+    <form-property name="kilometerKarkardGhabli" type="java.lang.Integer" />
+    <form-property name="hdnPage" type="java.lang.String"/>
+    <form-property name="taeedCreate" type="java.lang.String"/>
+</form-bean>

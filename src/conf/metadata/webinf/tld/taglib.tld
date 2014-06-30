@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<!-- a tab library descriptor -->
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>util</shortname>	<uri>http://www.orionserver.com/taglibs/utiltags.jar</uri>
+	<info>		Util helper tags...
+	</info>	<tag>	
+		<name>displayCurrency</name>
+		<tagclass>com.evermind.taglib.util.DisplayCurrencyTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Formats a given amount as currency for a given Locale</info>
+		<attribute>
+			<name>amount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>	
+		<name>displayDate</name>
+		<tagclass>com.evermind.taglib.util.DisplayDateTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Formats a given Date for a given Locale</info>
+		<attribute>
+			<name>date</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>iterate</name>
+		<tagclass>com.evermind.taglib.util.IterateTag</tagclass>
+		<teiclass>com.evermind.taglib.util.IterateTEI</teiclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			Iterates over a Collection...
+		</info>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>collection</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>displayNumber</name>
+		<tagclass>com.evermind.taglib.util.DisplayNumberTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>			Displays a number in a formatted way...
+		</info>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>number</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>ifInRole</name>
+		<tagclass>com.evermind.taglib.util.IfInRoleTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>			Includes the body if the user is in the specified role.
+		</info>
+		<attribute>
+			<name>role</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>include</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>	
+		<name>sendMail</name>
+		<tagclass>com.evermind.taglib.util.SendMailTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>Tag for sending mail</info>
+		<attribute>
+			<name>from</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>to</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>bcc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>subject</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>mimeType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+		<attribute>
+			<name>session</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>		
+	</tag>	<tag>	
+		<name>lastModified</name>
+		<tagclass>com.evermind.taglib.util.LastModifiedTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			Displays when a JSP page was last modified.
+			If no Locale is given, the users Locale is used for formating.
+			If no user Locale is found, the system default Locale is used.
+		</info>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

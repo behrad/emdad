@@ -1,0 +1,112 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/khodrojagozin">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه خودروی جایگزین :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_khodrojagozinId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">رنگ خودرو:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_rangeKhodroOnvan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نوع خودرو:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_noeKhodroOnvan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">سال ساخت :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_salesakht  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شماره پلاک :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_shomarehPelak  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">شماره موتور :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_shomarehMotor  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شماره شاسی :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_shomarehShasi  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">VINشماره :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_shomarehVIN  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">توضیحات :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_tozihat  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">عال(f) :</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozin_faal  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.khodrojagozinForm);
+	setEntity("Khodrojagozin");
+</script>
+		

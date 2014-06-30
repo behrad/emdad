@@ -1,0 +1,2 @@
+<form-bean name="sysAdminForm" dynamic="true" type="org.apache.struts.validator.DynaValidatorForm">
+</form-bean>

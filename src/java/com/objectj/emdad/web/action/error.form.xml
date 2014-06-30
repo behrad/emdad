@@ -1,0 +1,5 @@
+<form-bean name="errorForm" dynamic="true" type="org.apache.struts.validator.DynaValidatorForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+</form-bean>

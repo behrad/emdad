@@ -1,0 +1,16 @@
+﻿
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.xxxForm);
+	setEntity("Xxx");
+</script>
+		

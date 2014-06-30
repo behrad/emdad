@@ -1,0 +1,140 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/serviceDorei">
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+    <!------------------------------------------------>
+
+	<table width="100%" dir="rtl" align="center" class="generalText" border="0" cellpadding="3" cellspacing="0">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<logic:equal name="entity_access" property="deleteAccess" value="true" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%" colspan="2"></td>
+				</logic:equal>							
+
+				<logic:equal name="entity_access" property="updateAccess" value="false" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<logic:equal name="entity_access" property="deleteAccess" value="false" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<td class="filterFieldCell">
+				<html:select property="namayandegiId" size="1">
+					<html:options collection="namayandegiList" property="eid" labelProperty="name"/>
+				</html:select>
+			</td>
+			<td class="filterFieldCell"><html:text property="tarikh" size="7" maxlength="10" styleClass="field"/></td>
+			<td class="filterFieldCell">
+				<html:select property="moshtarakId" size="1">
+					<html:options collection="moshtarakList" property="eid" labelProperty="name"/>
+				</html:select>
+			</td>
+			<td class="filterFieldCell"><html:text property="kilometerKarkard" size="5" maxlength="8" styleClass="field"/></td>
+			<td class="filterFieldCell"><html:text property="noeServiceDorei" size="1" maxlength="2" styleClass="field"/></td>
+			<td class="filterFieldCell"><html:text property="hazineh" size="6" maxlength="9" styleClass="field"/></td>
+		</tr>
+
+	    <!------------------------------------------------>				
+
+		<tr><td colspan="2" height="3"></td></tr>
+
+		<!------------------------------------------------>
+
+		<tr class="listTableHeader">
+			<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+			<check_Update_access><td class = "listRow0Col" width="4%" align="center"><span class="textW">اصلاح</span></td><end_Each_access>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "namayandegiId"
+				sortable_Column_Title "نمايندگي"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "tarikh"
+				sortable_Column_Title "تار�?خ"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "moshtarakId"
+				sortable_Column_Title "مشتري"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "kilometerKarkard"
+				sortable_Column_Title "کيلومتر کارکرد"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "noeServiceDorei"
+				sortable_Column_Title "نوع سرويس دوره اي"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col"> هزينه </td>
+		</tr>
+
+		<!------------------------------------------------>
+
+		<% int i = 0; %>
+		<logic:iterate id="value_object" name="value_object_list" >
+			<tr class="listRow<%=i%2%>">
+				<check_Delete_access>
+					<td class = "listRow1Col"> 
+						<input type="checkbox" name="id" value="checkbox">
+					</td>
+				<end_Each_access>
+
+				<check_Update_access>
+					<td class = "listRow1Col" align="center">
+						<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+					</td>
+				<end_Each_access>
+
+				<td class = "listRow1Col">serviceDorei_namayandegiName</td>
+
+				<td class = "listRow1Col">serviceDorei_tarikh</td>
+
+				<td class = "listRow1Col">serviceDorei_moshtarakName</td>
+
+				<td class = "listRow1Col">serviceDorei_kilometerKarkard</td>
+
+				<td class = "listRow1Col">serviceDorei_noeServiceDorei</td>
+
+				<td class = "listRow1Col">serviceDorei_hazineh</td>
+            </tr>
+            <%i++;%>
+        </logic:iterate>
+    </table>
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+    <!------------------------------------------------>
+
+</html:form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.serviceDoreiForm);
+	setEntity("ServiceDorei");
+</script>

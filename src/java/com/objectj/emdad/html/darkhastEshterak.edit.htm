@@ -1,0 +1,234 @@
+<form method="post" action="/c/validatedarkhastEshterak" onsubmit="return validateDarkhastEshterakForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نوع سرويس:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="noeService" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام خانوادگی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="nameKhanevadegi" size="20" maxlength="20"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام :</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="nameMoshtarak" size="20" maxlength="20"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاریخ تولد:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tarikhTavalod" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">آدرس:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="addressMoshtarak" size="80" maxlength="80"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">کد پستی:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="codePost" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام شهر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="shahrId" size="1">
+								<html:options collection="shahrList" property="id" labelProperty="shahrName" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">پست الکترونیکي:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="emailMoshtarak" size="50" maxlength="50"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تل�?ن:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="telMoshtarak" size="50" maxlength="50"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تل�?ن همراه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mobileMoshtarak" size="50" maxlength="50"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نوع خودرو:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="noeKhodroId" size="1">
+								<html:options collection="noekhodroList" property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">رنگ خودرو:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="rangeKhodroId" size="1">
+								<html:options collection="rangekhodroList" property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">سال ساخت:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="saleSakht" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شماره پلاک:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="shomarePelak" size="20" maxlength="20"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شماره موتور:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="shomareMotor" size="20" maxlength="20"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شماره شاسی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="shomareShasi" size="20" maxlength="20"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">گارانتی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="garantee" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاریخ انقضای گارانتی:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhEnghezaGarantee" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نحوه پرداخت:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="nahvePardakht" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">بانکی شماره �?یش:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="shomareFish" size="15" maxlength="15"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاریخ �?یش:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhFish" size="10" maxlength="10"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام شعبه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="nameShobe" size="40" maxlength="40"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">هزینه پرداخت شده:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="hazineh" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.darkhastEshterakForm);
+	setEntity("DarkhastEshterak");
+    if (document.darkhastEshterakForm.action_type.value=="create") 
+	{
+        document.darkhastEshterakForm.action="/emdad/c/validatedarkhastEshterak.run";
+    } 
+	
+	else 
+	{
+        document.darkhastEshterakForm.action="/emdad/u/validatedarkhastEshterak.run";
+    }
+</script>
+<html:javascript formName="darkhastEshterakForm" />

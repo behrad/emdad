@@ -1,0 +1,16 @@
+	<formset>
+		<form name="mojoodiMojazForm">
+			<field property="noeEmdadgarId" depends="required">
+				<arg0 key="&#1606;&#1608;&#1593; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+			</field>
+
+			<field property="shomarehFanni" depends="required">
+				<arg0 key="&#1602;&#1591;&#1593;&#1607;" resource="false"/>
+			</field>
+
+			<field property="tedad" depends="required">
+				<arg0 key="&#1578;&#1593;&#1583;&#1575;&#1583;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

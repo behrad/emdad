@@ -1,0 +1,8 @@
+﻿
+					<!----------------------------------------->
+
+					<tr class="@editRowClass@">
+						<td class="editLabel">@label@:</td>
+						<td class="editStar">@star@</td>
+						<td> <input type="text" name="@attributeName@" size="@size@" maxlength="@size@"@farsi@styleClass="field"/>@description@</td>
+					</tr>

@@ -1,0 +1,113 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/gheirMoshtarak">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="moshtarakId" size="7" maxlength="10"/></td>
+						<td><html:text property="nameKhanevadegi" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="name" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+						<td>
+							<html:select property="noeKhodroId" size="1">
+								<html:options collection="noeKhodroList"property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+						<td><html:text property="shomarePelak" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "moshtarakId"
+							sortable_Column_Title "شماره اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "nameKhanevadegi"
+							sortable_Column_Title "نام خانوادگي"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "name"
+							sortable_Column_Title "نام"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeKhodroOnvan"
+							sortable_Column_Title "نوع خودرو"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shomarePelak"
+							sortable_Column_Title "شماره پلاک"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col">gheirMoshtarak_moshtarakId</td>
+
+							<td class = "listRow1Col">gheirMoshtarak_nameKhanevadegi</td>
+
+							<td class = "listRow1Col">gheirMoshtarak_name</td>
+
+							<td class = "listRow1Col">gheirMoshtarak_noeKhodro_onvan</td>
+
+							<td class = "listRow1Col">gheirMoshtarak_shomarePelak</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.gheirMoshtarakForm);
+	setEntity("GheirMoshtarak");
+</script>

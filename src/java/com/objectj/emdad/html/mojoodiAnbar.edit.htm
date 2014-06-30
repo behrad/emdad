@@ -1,0 +1,74 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatemojoodiAnbar" onsubmit="return validateMojoodiAnbarForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه انبار:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="anbarId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">قطعه:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="qateId" size="1">
+								<html:options collection="qateList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">موجودی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="mojoodi" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.mojoodiAnbarForm);
+	setEntity("MojoodiAnbar");
+    if (document.mojoodiAnbarForm.action_type.value=="create") 
+	{
+        document.mojoodiAnbarForm.action="/emdad/c/validatemojoodiAnbar.run";
+    } 
+	
+	else 
+	{
+        document.mojoodiAnbarForm.action="/emdad/u/validatemojoodiAnbar.run";
+    }
+</script>
+<html:javascript formName="mojoodiAnbarForm" />

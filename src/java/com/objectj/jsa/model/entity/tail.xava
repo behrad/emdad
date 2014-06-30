@@ -1,0 +1,75 @@
+
+    protected String getTable(){
+        return "Xxx";
+    }
+
+    protected EntityContext getEntityContext() {
+        return ctx;
+    }
+    
+    /**
+     * @ejb.interface-method
+     */
+    public abstract XxxModel getXxxModel();
+    /**
+     * @ejb.interface-method
+     */
+    public abstract void setXxxModel(XxxModel model);
+    
+    public void ejbActivate() throws EJBException, RemoteException {
+    }
+    
+    public void ejbLoad() throws EJBException, RemoteException {
+    }
+    
+    public void ejbPassivate() throws EJBException, RemoteException {
+    }
+    
+    public void ejbRemove() throws RemoveException, EJBException, RemoteException {
+    }
+    
+    public void ejbStore() throws EJBException, RemoteException {
+    }
+    
+    public void setEntityContext(EntityContext entityContext) throws EJBException, RemoteException {
+	this.ctx = entityContext;
+    }
+    
+    public void unsetEntityContext() throws EJBException, RemoteException {
+	this.ctx = null;
+    }
+
+
+    /**
+     * @ejb.interface-method
+     */
+    public void myRemove() throws SQLException, ProxyReferenceException{
+        String Id = getId();
+        super.myRemove(Id);
+    }
+
+
+	/**
+	 * @ejb.home-method
+	 */
+	public ResultSet ejbHomeAdvanceRead(Connection connection, QueryObject queryObject) throws FinderException {
+		return super.ejbHomeAdvanceRead(connection, queryObject);
+	}
+
+
+	protected java.util.Collection dynaQuery(String query) {
+		Object[] args = {};
+		Collection mycollection;
+
+		try {
+			XxxLocalHome myHome = (XxxLocalHome)ctx.getEJBLocalHome();
+			mycollection = myHome.findGeneric(query, args);
+			return mycollection;
+		} catch (Exception exception) {
+			log.error(exception);
+		}
+		return null;
+
+	}
+
+}

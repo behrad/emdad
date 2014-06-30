@@ -1,0 +1,25 @@
+<form-bean name="khodrosazForm" dynamic="true" type="com.objectj.emdad.web.action.KhodrosazForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="khodrosazId" type="java.lang.Integer"/>
+	<form-property name="name" type="java.lang.String"/>
+</form-bean>
+
+<form-bean name="filterKhodrosazForm" dynamic="true" type="org.apache.struts.validator.DynaValidatorForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="fr_khodrosazId" type="java.lang.Integer"/>
+	<form-property name="to_khodrosazId" type="java.lang.Integer"/>
+	<form-property name="fr_name" type="java.lang.String"/>
+	<form-property name="to_name" type="java.lang.String"/>
+</form-bean>

@@ -1,0 +1,86 @@
+<html dir="rtl">
+
+<head>
+<meta http-equiv="Content-Language" content="fa">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>کار با فیلتر ها</title>
+<base target="main">
+</head>
+
+<body>
+
+<center>
+<table width=60% id="table1"><tr><td>
+
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+<hr width="60%" color="#6699FF">
+
+<p align="center"><font face="B Homa" size="6" color="#000080">کار با فیلتر ها</font></p>
+<p align="justify"><font face="B Homa" style="font-size: 16pt">برای هر
+<html:link page="list.help.html">لیست</html:link> دو 
+نوع فیلتر وجود دارد:</font></p>
+
+<hr color="#6699FF" size="4" style="border: 3px outset #3399FF" width="60%">
+<p align="justify"><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;<font color="#0000FF">
+<b>فیلتر عادی:</b></font></font></p>
+<p align="justify"><b><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;
+</font></b><font face="B Homa" style="font-size: 16pt">در قسمت بالای هر 
+<html:link page="list.help.html">لیست</html:link> 
+قسمتی برای فیلتر کردن وجود دارد مشابه شکل زیر. هر ستون که قابل فیلتر کردن 
+باشد در بالای آن ستون قسمتی برای وارد کردن مقدار فیلتر وجود دارد که به دو شکل 
+است:</font></p>
+<p align="center"><font face="B Homa" style="font-size: 16pt"> 
+<img border="0" src="pics/filtertop.gif" style="width: 100%"></font></p>
+<table width="100%">
+	<tr>
+		<td width="45%" valign="top"><p align="center">
+		<font face="B Homa" style="font-size: 16pt"><font color="#FF0000">&gt;</font>جعبه 
+		ویرایش: میتوانید مقدار مورد نظر را درون آن بنویسید.</font>
+		&nbsp;<p align="center">
+		<img border="0" src="pics/textFieldfilter.gif"></td>
+		<td width=10% valign="top">
+		<p align="center"></td>
+		<td width="45%" valign="top"><p align="center">
+<font face="B Homa" style="font-size: 16pt">
+<font color="#FF0000">&nbsp;<span lang="en-us">&gt;</span></font>جعبه انتخاب:باید مقدار 
+مورد نظر را از یکی از گزینه های<span lang="en-us"> </span>موجود در آن انتخاب 
+کنید. </font></p>
+		<p align="center">
+<font face="B Homa" style="font-size: 16pt">
+<img border="0" src="pics/comboBoxfilter.gif" width="204" height="240"></font></p>
+		</td>
+	</tr>
+</table>
+
+<hr color="#6699FF" size="4" style="border: 3px outset #3399FF" width="60%">
+<p align="justify">
+<img border="0" src="pics/filterpishraftehIcon.gif" align="left"><font face="B Homa" style="font-size: 16pt; font-weight: 700"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<font color="#0000FF">فیلتر پیشرفته:</font></font></p>
+<p align="justify">
+<font face="B Homa" style="font-size: 16pt"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>با کلیک روی آیکون نشان داده شده در شکل روبرو میتوانید وارد قسمت فیلتر 
+پیشرفته شوید. پس از وارد شدن به فیلتر پیشرفته میتوانید هر مشخصه موجود را با هر 
+مقدار ی توسط عملگرهای متفاوت مقایسه و میتوانید با زدن دکمه <font color="#6699FF">
+سطر جدید
+</font>شرط جدیدی را با شرطهای موجود <font color="#6699FF">و </font>و
+<font color="#6699FF">یا</font> کنید. سپس با کلیک روی دکمه
+<font color="#6699FF">نمایش</font> میتوانید حاصل فیلتر شدن لیست را ببینید.</font></p>
+<p align="center">
+<img border="0" src="pics/filterPishrafteh.gif" style="width: 100%"></p>
+<hr width="60%" color="#6699FF">
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+
+	</td></tr>
+
+
+ </table>
+</center>
+
+</body>
+
+</html>

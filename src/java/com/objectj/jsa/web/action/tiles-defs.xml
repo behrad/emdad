@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="emdad.main" path="/com/objectj/resources/jsp/tiles/emdad/main.jsp">
+	    <put name="validate" 		value="/com/objectj/resources/jsp/tiles/emdad/validate.jsp" />
+        <put name="header" 		value="/com/objectj/resources/jsp/tiles/emdad/header.jsp" />
+        <put name="menu" 			value="/com/objectj/resources/jsp/tiles/emdad/menu.jsp" />
+        <put name="footer" 		value="/com/objectj/resources/jsp/tiles/emdad/footer.jsp" />
+	</definition>
+
+
+<!-- MAIN SCREENS -->
+
+<!-- place_holder -->
+   
+</tiles-definitions>

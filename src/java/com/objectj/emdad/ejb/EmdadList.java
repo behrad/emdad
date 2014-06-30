@@ -1,0 +1,635 @@
+/**
+ * Created by IntelliJ IDEA.
+ * User: raheleh
+ * Date: Jun 28, 2003
+ * Time: 12:31:24 PM
+ * To change this template use Options | File Templates.
+ */
+package com.objectj.emdad.ejb;
+
+public class EmdadList extends com.objectj.emdad.ejb.EmdadModel {
+
+    private java.lang.String id;
+    private java.lang.Integer emdadId;
+    private java.sql.Timestamp zamanEzam;
+    private java.sql.Timestamp zamanShoro;
+    private java.sql.Timestamp zamanPayan;
+    private java.sql.Timestamp zamanVagheiEzam;
+    private java.sql.Timestamp zamanVagheiShoro;
+    private java.sql.Timestamp zamanVagheiPayan;
+    private java.lang.String zamanVagheiEzamHejri;
+    private java.lang.String zamanVagheiShoroHejri;
+    private java.lang.String zamanVagheiPayanHejri;
+    private java.lang.String akharinTagheerDahandeh;
+    private java.lang.Integer kilometerKarkard;
+    private java.lang.Integer faseleAzNamayandegi;
+    private java.lang.Integer mablaghPardakhtShodeh;
+    private java.lang.Integer hododeHazinehKol;
+    private java.lang.String rokhdadId;
+    private java.lang.Integer rokhdadIrad;
+    private java.lang.String vazeatKhedmatId;
+    private java.lang.String vazeatKhedmatOnvan;
+    private java.lang.String ezamgarId;
+    private java.lang.String ezamgar;
+    private java.lang.String emdadgarId;
+    private java.lang.String emdadgar;
+    private java.lang.String dalileToolKeshidaneEmdadId;
+    private java.lang.String dalileToolKeshidanOnvan;
+    private java.lang.String zamanEzamHejri;
+    private java.lang.String zamanShoroHejri;
+    private java.lang.String zamanPayanHejri;
+    private java.lang.String moshtarakId;
+    private java.lang.String eshterakId;
+    private java.lang.String name;
+    private java.lang.Integer vazeatKonuni;
+    private java.lang.Integer rokhdadRokhdadId;
+    private java.lang.String zamanPayan2;
+    private java.lang.String daftarOstaniId;
+    private java.lang.String DaftarOstaniName;
+    private java.lang.String zamanEzam2;
+    private java.lang.String zamanShoro2;
+    private java.lang.String namayandegiId;
+    private java.lang.String namayandegiName;
+    private java.lang.Integer modatTamir;
+    private java.lang.Integer hazinehBoxel;
+    private java.lang.Integer hazinehJarsaghil;
+    private java.lang.Integer noeEmdad;
+    private java.lang.String noeEmdadName;
+    private java.lang.String tozihat;
+//    private java.lang.String ameliyatMojaz;
+    private java.lang.Integer hazinehAyyabZahab;
+    private java.lang.Integer vazeatDakheli;
+    private java.lang.Integer dastoorKarGhabli;
+    private java.lang.Integer maliDone;
+    private java.lang.String rahAndazi;
+    private java.lang.String elateService;
+    private java.lang.String shomarehFactor;
+    private java.lang.Integer noeKhedmateVije;
+    private java.lang.String noeKhedmateVijeName;
+    private java.lang.Integer koliyehMadarek;
+    private java.lang.String koliyehMadarekName;
+    private java.lang.Integer taeedHesabdar;
+    private java.lang.Integer taeedGuarantee;
+    private java.lang.Integer taeedNamayandegi;
+    private String address;
+    private java.lang.String shomarePelak;
+    private java.lang.String irad;
+    private java.lang.String noeEmdadgarId;
+    private java.lang.Integer kilometerKarkardGhabli;
+
+
+
+    public String getIrad() {
+        return irad;
+    }
+
+    public void setIrad(String irad) {
+        this.irad = irad;
+    }
+
+    public String getShomarePelak() {
+        return shomarePelak;
+    }
+
+    public void setShomarePelak(String shomarePelak) {
+        this.shomarePelak = shomarePelak;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getTaeedHesabdar() {
+        return taeedHesabdar;
+    }
+
+    public void setTaeedHesabdar(Integer taeedHesabdar) {
+        this.taeedHesabdar = taeedHesabdar;
+    }
+
+    public Integer getTaeedGuarantee() {
+        return taeedGuarantee;
+    }
+
+    public void setTaeedGuarantee(Integer taeedGuarantee) {
+        this.taeedGuarantee = taeedGuarantee;
+    }
+
+    public Integer getTaeedNamayandegiName() {
+        return taeedNamayandegi;
+    }
+
+    public void setTaeedNamayandegi(Integer taeedNamayandegi) {
+        this.taeedNamayandegi = taeedNamayandegi;
+    }
+
+
+    public Integer getDastoorKarGhabli() {
+        return dastoorKarGhabli;
+    }
+
+    public void setDastoorKarGhabli(Integer dastoorKarGhabli) {
+        this.dastoorKarGhabli = dastoorKarGhabli;
+    }
+
+    public Integer getVazeatDakheli() {
+        return vazeatDakheli;
+    }
+
+    public void setVazeatDakheli(Integer vazeatDakheli) {
+        this.vazeatDakheli = vazeatDakheli;
+    }
+
+
+    public String getZamanVagheiEzamHejri() {
+        return zamanVagheiEzamHejri;
+    }
+
+    public void setZamanVagheiEzamHejri(String zamanVagheiEzamHejri) {
+        this.zamanVagheiEzamHejri = zamanVagheiEzamHejri;
+    }
+
+    public String getZamanVagheiShoroHejri() {
+        return zamanVagheiShoroHejri;
+    }
+
+    public void setZamanVagheiShoroHejri(String zamanVagheiShoroHejri) {
+        this.zamanVagheiShoroHejri = zamanVagheiShoroHejri;
+    }
+
+    public String getZamanVagheiPayanHejri() {
+        return zamanVagheiPayanHejri;
+    }
+
+    public void setZamanVagheiPayanHejri(String zamanVagheiPayanHejri) {
+        this.zamanVagheiPayanHejri = zamanVagheiPayanHejri;
+    }
+
+
+    public Integer getHazinehAyyabZahab() {
+        return hazinehAyyabZahab;
+    }
+
+    public void setHazinehAyyabZahab(Integer hazinehAyyabZahab) {
+        this.hazinehAyyabZahab = hazinehAyyabZahab;
+    }
+
+    public String getZamanShoro2() {
+        return zamanShoro2;
+    }
+
+    public void setZamanShoro2(String zamanShoro2) {
+        this.zamanShoro2 = zamanShoro2;
+    }
+
+    public String getZamanShoroHejri() {
+        return zamanShoroHejri;
+    }
+
+    public void setZamanShoroHejri(String zamanShoroHejri) {
+        this.zamanShoroHejri = zamanShoroHejri;
+    }
+
+    public String getZamanPayanHejri() {
+        return zamanPayanHejri;
+    }
+
+    public void setZamanPayanHejri(String zamanPayanHejri) {
+        this.zamanPayanHejri = zamanPayanHejri;
+    }
+
+//    public String getAmeliyatMojaz() {
+//        return ameliyatMojaz;
+//    }
+//
+//    public void setAmeliyatMojaz(String ameliyatMojaz) {
+//        this.ameliyatMojaz = ameliyatMojaz;
+//    }
+
+    public String getTozihat() {
+        return tozihat;
+    }
+
+    public void setTozihat(String tozihat) {
+        this.tozihat = tozihat;
+    }
+
+    public String getShomarehFactor() {
+        return shomarehFactor;
+    }
+
+    public void setShomarehFactor(String shomarehFactor) {
+        this.shomarehFactor = shomarehFactor;
+    }
+
+    public Integer getNoeKhedmateVije() {
+        return noeKhedmateVije;
+    }
+
+    public void setNoeKhedmateVije(Integer noeKhedmateVije) {
+        this.noeKhedmateVije = noeKhedmateVije;
+    }
+
+    public String getNoeKhedmateVijeName() {
+        return noeKhedmateVijeName;
+    }
+
+    public void setNoeKhedmateVijeName(String noeKhedmateVijeName) {
+        this.noeKhedmateVijeName = noeKhedmateVijeName;
+    }
+
+    public Integer getKoliyehMadarek() {
+        return koliyehMadarek;
+    }
+
+    public void setKoliyehMadarek(Integer koliyehMadarek) {
+        this.koliyehMadarek = koliyehMadarek;
+    }
+
+    public String getKoliyehMadarekName() {
+        return koliyehMadarekName;
+    }
+
+    public void setKoliyehMadarekName(String koliyehMadarekName) {
+        this.koliyehMadarekName = koliyehMadarekName;
+    }
+
+    public String getNoeEmdadName() {
+        return noeEmdadName;
+    }
+
+    public void setNoeEmdadName(String noeEmdadName) {
+        this.noeEmdadName = noeEmdadName;
+    }
+
+    public String getNamayandegiId() {
+        return namayandegiId;
+    }
+
+    public void setNamayandegiId(String namayandegiId) {
+        this.namayandegiId = namayandegiId;
+    }
+
+    public String getNamayandegiName() {
+        return namayandegiName;
+    }
+
+    public void setNamayandegiName(String namayandegiName) {
+        this.namayandegiName = namayandegiName;
+    }
+
+    public Integer getModatTamir() {
+        return modatTamir;
+    }
+
+    public void setModatTamir(Integer modatTamir) {
+        this.modatTamir = modatTamir;
+    }
+
+    public Integer getHazinehBoxel() {
+        return hazinehBoxel;
+    }
+
+    public void setHazinehBoxel(Integer hazinehBoxel) {
+        this.hazinehBoxel = hazinehBoxel;
+    }
+
+    public Integer getHazinehJarsaghil() {
+        return hazinehJarsaghil;
+    }
+
+    public void setHazinehJarsaghil(Integer hazinehJarsaghil) {
+        this.hazinehJarsaghil = hazinehJarsaghil;
+    }
+
+    public Integer getNoeEmdad() {
+        return noeEmdad;
+    }
+
+    public void setNoeEmdad(Integer noeEmdad) {
+        this.noeEmdad = noeEmdad;
+    }
+
+    public String getZamanEzam2() {
+        return zamanEzam2;
+    }
+
+    public void setZamanEzam2(String zamanEzam2) {
+        this.zamanEzam2 = zamanEzam2;
+    }
+
+    public String getDaftarOstaniId() {
+        return daftarOstaniId;
+    }
+
+    public void setDaftarOstaniId(String daftarOstaniId) {
+        this.daftarOstaniId = daftarOstaniId;
+    }
+
+    public String getDaftarOstaniName() {
+        return DaftarOstaniName;
+    }
+
+    public void setDaftarOstaniName(String daftarOstaniName) {
+        DaftarOstaniName = daftarOstaniName;
+    }
+
+
+    public String getZamanPayan2() {
+        return zamanPayan2;
+    }
+
+    public void setZamanPayan2(String zamanPayan2) {
+        this.zamanPayan2 = zamanPayan2;
+    }
+
+    public Integer getRokhdadRokhdadId() {
+        return rokhdadRokhdadId;
+    }
+
+    public void setRokhdadRokhdadId(Integer rokhdadRokhdadId) {
+        this.rokhdadRokhdadId = rokhdadRokhdadId;
+    }
+
+    public String getEshterakId() {
+        return eshterakId;
+    }
+
+    public void setEshterakId(String eshterakId) {
+        this.eshterakId = eshterakId;
+    }
+
+    public Integer getVazeatKonuni() {
+        return vazeatKonuni;
+    }
+
+    public void setVazeatKonuni(Integer vazeatKonuni) {
+        this.vazeatKonuni = vazeatKonuni;
+    }
+
+    public String getMoshtarakId() {
+        return moshtarakId;
+    }
+
+    public void setMoshtarakId(String moshtarakId) {
+        this.moshtarakId = moshtarakId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameKhanevadegi() {
+        return nameKhanevadegi;
+    }
+
+    public void setNameKhanevadegi(String nameKhanevadegi) {
+        this.nameKhanevadegi = nameKhanevadegi;
+    }
+
+    java.lang.String nameKhanevadegi;
+
+
+    public String getZamanEzamHejri() {
+        return zamanEzamHejri;
+    }
+
+    public void setZamanEzamHejri(String zamanEzamHejri) {
+        this.zamanEzamHejri = zamanEzamHejri;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEzamgar() {
+        return ezamgar;
+    }
+
+    public void setEzamgar(String ezamgar) {
+        this.ezamgar = ezamgar;
+    }
+
+    public String getEmdadgar() {
+        return emdadgar;
+    }
+
+    public void setEmdadgar(String emdadgar) {
+        this.emdadgar = emdadgar;
+    }
+
+    public Integer getEmdadId() {
+        return emdadId;
+    }
+
+    public void setEmdadId(Integer emdadId) {
+        this.emdadId = emdadId;
+    }
+
+    public java.sql.Timestamp getZamanEzam() {
+        return zamanEzam;
+    }
+
+    public void setZamanEzam(java.sql.Timestamp zamanEzam) {
+        this.zamanEzam = zamanEzam;
+    }
+
+    public java.sql.Timestamp getZamanShoro() {
+        return zamanShoro;
+    }
+
+    public void setZamanShoro(java.sql.Timestamp zamanShoro) {
+        this.zamanShoro = zamanShoro;
+    }
+
+    public java.sql.Timestamp getZamanPayan() {
+        return zamanPayan;
+    }
+
+    public void setZamanPayan(java.sql.Timestamp zamanPayan) {
+        this.zamanPayan = zamanPayan;
+    }
+
+    public java.sql.Timestamp getZamanVagheiEzam() {
+        return zamanVagheiEzam;
+    }
+
+    public void setZamanVagheiEzam(java.sql.Timestamp zamanVagheiEzam) {
+        this.zamanVagheiEzam = zamanVagheiEzam;
+    }
+
+    public java.sql.Timestamp getZamanVagheiShoro() {
+        return zamanVagheiShoro;
+    }
+
+    public void setZamanVagheiShoro(java.sql.Timestamp zamanVagheiShoro) {
+        this.zamanVagheiShoro = zamanVagheiShoro;
+    }
+
+    public java.sql.Timestamp getZamanVagheiPayan() {
+        return zamanVagheiPayan;
+    }
+
+    public void setZamanVagheiPayan(java.sql.Timestamp zamanVagheiPayan) {
+        this.zamanVagheiPayan = zamanVagheiPayan;
+    }
+
+    public String getAkharinTagheerDahandeh() {
+        return akharinTagheerDahandeh;
+    }
+
+    public void setAkharinTagheerDahandeh(String akharinTagheerDahandeh) {
+        this.akharinTagheerDahandeh = akharinTagheerDahandeh;
+    }
+
+    public Integer getKilometerKarkard() {
+        return kilometerKarkard;
+    }
+
+    public void setKilometerKarkard(Integer kilometerKarkard) {
+        this.kilometerKarkard = kilometerKarkard;
+    }
+
+    public Integer getFaseleAzNamayandegi() {
+        return faseleAzNamayandegi;
+    }
+
+    public void setFaseleAzNamayandegi(Integer faseleAzNamayandegi) {
+        this.faseleAzNamayandegi = faseleAzNamayandegi;
+    }
+
+    public Integer getMablaghPardakhtShodeh() {
+        return mablaghPardakhtShodeh;
+    }
+
+    public void setMablaghPardakhtShodeh(Integer mablaghPardakhtShodeh) {
+        this.mablaghPardakhtShodeh = mablaghPardakhtShodeh;
+    }
+
+    public Integer getHododeHazinehKol() {
+        return hododeHazinehKol;
+    }
+
+    public void setHododeHazinehKol(Integer hododeHazinehKol) {
+        this.hododeHazinehKol = hododeHazinehKol;
+    }
+
+    public String getRokhdadId() {
+        return rokhdadId;
+    }
+
+    public void setRokhdadId(String rokhdadId) {
+        this.rokhdadId = rokhdadId;
+    }
+
+    public Integer getRokhdadIrad() {
+        return rokhdadIrad;
+    }
+
+    public void setRokhdadIrad(Integer rokhdadIrad) {
+        this.rokhdadIrad = rokhdadIrad;
+    }
+
+    public String getVazeatKhedmatId() {
+        return vazeatKhedmatId;
+    }
+
+    public void setVazeatKhedmatId(String vazeatKhedmatId) {
+        this.vazeatKhedmatId = vazeatKhedmatId;
+    }
+
+    public String getVazeatKhedmatOnvan() {
+        return vazeatKhedmatOnvan;
+    }
+
+    public void setVazeatKhedmatOnvan(String vazeatKhedmatOnvan) {
+        this.vazeatKhedmatOnvan = vazeatKhedmatOnvan;
+    }
+
+    public String getEzamgarId() {
+        return ezamgarId;
+    }
+
+    public void setEzamgarId(String ezamgarId) {
+        this.ezamgarId = ezamgarId;
+    }
+
+
+    public String getEmdadgarId() {
+        return emdadgarId;
+    }
+
+    public void setEmdadgarId(String emdadgarId) {
+        this.emdadgarId = emdadgarId;
+    }
+
+
+    public String getDalileToolKeshidaneEmdadId() {
+        return dalileToolKeshidaneEmdadId;
+    }
+
+    public void setDalileToolKeshidaneEmdadId(String dalileToolKeshidaneEmdadId) {
+        this.dalileToolKeshidaneEmdadId = dalileToolKeshidaneEmdadId;
+    }
+
+    public String getDalileToolKeshidanOnvan() {
+        return dalileToolKeshidanOnvan;
+    }
+
+    public void setDalileToolKeshidanOnvan(String dalileToolKeshidanOnvan) {
+        this.dalileToolKeshidanOnvan = dalileToolKeshidanOnvan;
+    }
+
+    public Integer getMaliDone() {
+        return maliDone;
+    }
+
+    public void setMaliDone(Integer maliDone) {
+        this.maliDone = maliDone;
+    }
+
+    public String getRahAndazi() {
+        return rahAndazi;
+    }
+
+    public void setRahAndazi(String rahAndazi) {
+        this.rahAndazi = rahAndazi;
+    }
+
+    public String getElateService() {
+        return elateService;
+    }
+
+    public void setElateService(String elateService) {
+        this.elateService = elateService;
+    }
+
+
+     public Integer getKilometerKarkardGhabli() {
+        return kilometerKarkardGhabli;
+    }
+
+    public void setKilometerKarkardGhabli(Integer kilometerKarkardGhabli) {
+        this.kilometerKarkardGhabli = kilometerKarkardGhabli;
+    }
+
+    public String getNoeEmdadgarId() {
+        return noeEmdadgarId;
+    }
+
+    public void setNoeEmdadgarId(String noeEmdadgarId) {
+        this.noeEmdadgarId = noeEmdadgarId;
+    }
+}

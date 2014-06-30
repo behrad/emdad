@@ -1,0 +1,118 @@
+package @top.package@.web.action;
+
+import @top.package@.ejb.XxxModel;
+import @top.package@.proxy.EntityProxy;
+import @top.package@.proxy.XxxSessionUtil;
+import com.objectj.jsa.proxy.ProxyException;
+import com.objectj.jsa.web.action.BaseAction;
+
+
+/**
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/c/xxx"
+ *      pathPrime="/xxx"
+ *      scope="request"
+ *      input="/@top.path@/jsp/xxx.edit.jsp"
+ *      inputPrime="@application@.xxx.edit"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/r/xxx"
+ *      pathPrime="/xxx"
+ *      scope="request"
+ *      input="/@top.path@/jsp/xxx.read.jsp"
+ *      inputPrime="@application@.xxx.read"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/u/xxx"
+ *      pathPrime="/xxx"
+ *      scope="request"
+ *      input="/@top.path@/jsp/xxx.edit.jsp"
+ *      inputPrime="@application@.xxx.edit"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/d/xxx"
+ *      pathPrime="/xxx"
+ *      scope="request"
+ *      input="/@top.path@/jsp/xxx.read.jsp"
+ *      inputPrime="@application@.xxx.read"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/l/xxx"
+ *      pathPrime="/xxxList"
+ *      scope="request"
+ *      input="/@top.path@/jsp/xxx.list.jsp"
+ *      inputPrime="@application@.xxx.list"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/c/validatexxx"
+ *      pathPrime="/validatexxx"
+ *      scope="request"
+ *      input="/c/xxx.run"
+ *      inputPrime="@application@.xxx.edit"
+ *      input4tiles="@application@.xxx.edit"
+ *      validate="true"
+ * 
+ * @struts.action
+ *      name="filterXxxForm"
+ *      path="/l/filterxxx"
+ *      pathPrime="/filterxxx"
+ *      scope="request"
+ *      input="/l/xxx.run"
+ *      inputPrime="@application@.xxx.edit"
+ *      input4tiles="@application@.xxx.edit"
+ *      validate="false"
+ *
+ * @struts.action
+ *      name="xxxForm"
+ *      path="/u/validatexxx"
+ *      pathPrime="/validatexxx"
+ *      scope="request"
+ *      input="/u/xxx.run"
+ *      inputPrime="@application@.xxx.edit"
+ *      input4tiles="@application@.xxx.edit"
+ *      validate="true"
+ *
+ * @struts.action-forward
+ *      name="list"
+ *      path="@application@.xxx.list"
+ *      pathPrime="@application@.xxx.list"
+ *
+ * @struts.action-forward
+ *      name="edit"
+ *      path="@application@.xxx.edit"
+ *      pathPrime="@application@.xxx.edit"
+ *
+ * @struts.action-forward
+ *      name="read"
+ *      path="@application@.xxx.read"
+ *      pathPrime="@application@.xxx.read"
+ *
+ * @struts.action-forward
+ *      name="thanks"
+ *      path="/@top.path@/jsp/thanks.jsp"
+ *      pathPrime="@application@.thanks"
+ *
+ * @struts.action-forward
+ *      name="default"
+ *      path="/util/genericPage.jsp"
+ *      pathPrime="/util/genericPage.jsp"
+ *
+ * @struts.action-forward
+ *      name="error"
+ *      path="/util/errors.jsp"
+ *      pathPrime="/util/errors.jsp"
+ */
+
+public class XxxAction extends BaseAction {

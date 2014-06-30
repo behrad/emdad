@@ -1,0 +1,21 @@
+<form-bean name="serviceDoreiForm" dynamic="true" type="com.objectj.emdad.web.action.ServiceDoreiForm">
+
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="namayandegiId" type="java.lang.String"/>
+	<form-property name="tarikh" type="java.lang.String"/>
+	<form-property name="moshtarakId" type="java.lang.String"/>
+	<form-property name="eshterakId" type="java.lang.String"/>
+	<form-property name="kilometerKarkard" type="java.lang.Integer"/>
+	<form-property name="noeServiceDorei" type="java.lang.String"/>
+	<form-property name="hazineh" type="java.lang.Integer"/>
+	<form-property name="taeedHesabdar" type="java.lang.Integer"/>
+	<form-property name="view_serviceDorei.shomareShasi" type="java.lang.String"/>
+	
+
+</form-bean>

@@ -1,0 +1,16 @@
+
+  <definition name="emdad.anbarEmdadgar.list" extends="emdad.main">
+      <put name="title"  		value="&#1605;&#1608;&#1580;&#1608;&#1583;&#1610; &#1575;&#1606;&#1576;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;&#1575;&#1606;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/anbarEmdadgar.list.jsp" />
+  </definition>
+
+  <definition name="emdad.anbarEmdadgar.edit" extends="emdad.main">
+      <put name="title"  		value="&#1575;&#1740;&#1580;&#1575;&#1583;/&#1578;&#1594;&#1740;&#1740;&#1585; &#1575;&#1606;&#1576;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/anbarEmdadgar.edit.jsp" />
+  </definition>
+
+  <definition name="emdad.anbarEmdadgar.read" extends="emdad.main">
+      <put name="title"  		value="&#1580;&#1586;&#1574;&#1740;&#1575;&#1578; &#1575;&#1606;&#1576;&#1575;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;&#1575;&#1606;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/anbarEmdadgar.read.jsp" />
+  </definition>
+

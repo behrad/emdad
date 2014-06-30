@@ -1,0 +1,120 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/darkhastQate">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_darkhastQateId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">آمدادگر:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_emdadgarName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تاریخ درخواست:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_tarikhDarkhast  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">قطعه:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_qateName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تعداد درخواستی:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_tedadDarkhasti  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تعداد تایید شده توسط سرپرست امدادگران:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_tedadSarparast  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تایید شده توسط سرپرست امدادگران:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_taeedShodehSarparast  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تعداد تایید شده توسط انبار:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_tedadAnbar  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تایید شده توسط انبار:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_taeedShodeAnbar  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">منبع تهیه قطعه:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_manba  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">ثبت کننده:</td>
+						<td width="5%"></td>
+						<td class="readData">darkhastQate_sabtkonandeh  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.darkhastQateForm);
+	setEntity("DarkhastQate");
+</script>
+		

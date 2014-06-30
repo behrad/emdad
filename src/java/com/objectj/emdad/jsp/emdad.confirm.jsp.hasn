@@ -1,0 +1,12 @@
+﻿<script>
+	<%if(request.getAttribute("hdnPage")!=null && !request.getAttribute("hdnPage").toString().trim().equals("")) {
+			%>top.creator.creator.value="<%=request.getAttribute("hdnPage").toString()%>";<%
+		}
+			%>
+	top.creator.click();
+	if (top.creator.creator) {
+		top.creator.creator.click();
+	}
+
+	top.close();
+</script>

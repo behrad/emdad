@@ -1,0 +1,84 @@
+<form method="post" action="/r/daftarOstani">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه دفتر استاني:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_daftarOstaniId</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نام دفتر استاني:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_name</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">مسئول:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_masool</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تلفن:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_tel</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تلفن همراه:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_mobile</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">آدرس:</td>
+						<td width="5%"></td>
+						<td class="readData">daftarOstani_address</td>
+					</tr>
+					
+					<!---------------------------------------->
+	
+					<tr> 
+						<td height="70" colspan="3" align="center"> <input name="submit" type="submit" value="      بازگشت      " /> 
+						</td>
+					</tr>
+
+					<!---------------------------------------->
+
+				</table>					
+			</td>
+		</tr>
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.daftarOstaniForm);
+	setEntity("DaftarOstani");
+</script>
+		

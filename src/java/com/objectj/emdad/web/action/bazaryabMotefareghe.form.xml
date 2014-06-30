@@ -1,0 +1,15 @@
+<form-bean name="bazaryabMotefaregheForm" dynamic="true" type="com.objectj.emdad.web.action.BazaryabMotefaregheForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="name" type="java.lang.String"/>
+	<form-property name="tel" type="java.lang.String"/>
+	<form-property name="mobile" type="java.lang.String"/>
+	<form-property name="namePedar" type="java.lang.String"/>
+	<form-property name="shShenasname" type="java.lang.String"/>
+	<form-property name="address" type="java.lang.String"/>
+</form-bean>

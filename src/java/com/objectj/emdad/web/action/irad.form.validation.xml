@@ -1,0 +1,17 @@
+	<formset>
+		<form name="iradForm">
+			<field property="iradId" depends="required,minlength">
+				<arg0 key="&#1705;&#1583;" resource="false"/>
+				<arg1 key="8" resource="false"/>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>8</var-value>
+				</var>
+			</field>
+
+			<field property="onvan" depends="required">
+				<arg0 key="&#1593;&#1606;&#1608;&#1575;&#1606;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

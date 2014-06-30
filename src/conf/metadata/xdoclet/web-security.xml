@@ -1,0 +1,4426 @@
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-daftarOstani</web-resource-name>
+		<url-pattern>/c/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-daftarOstani-validation</web-resource-name>
+		<url-pattern>/c/validatedaftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-daftarOstani</web-resource-name>
+		<url-pattern>/r/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-daftarOstani</web-resource-name>
+		<url-pattern>/u/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-daftarOstani-validation</web-resource-name>
+		<url-pattern>/u/validatedaftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-daftarOstani</web-resource-name>
+		<url-pattern>/d/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-daftarOstani</web-resource-name>
+		<url-pattern>/l/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>foroush</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-daftarOstani</web-resource-name>
+		<url-pattern>/p/daftarOstani.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-darkhastEshterak</web-resource-name>
+		<url-pattern>/r/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastEshterak</web-resource-name>
+		<url-pattern>/u/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastEshterak-validation</web-resource-name>
+		<url-pattern>/u/validatedarkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-darkhastEshterak</web-resource-name>
+		<url-pattern>/d/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-darkhastEshterak</web-resource-name>
+		<url-pattern>/l/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-darkhastEshterak</web-resource-name>
+		<url-pattern>/p/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-darkhastTagheer</web-resource-name>
+		<url-pattern>/r/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastTagheer</web-resource-name>
+		<url-pattern>/u/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastTagheer-validation</web-resource-name>
+		<url-pattern>/u/validatedarkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-darkhastTagheer</web-resource-name>
+		<url-pattern>/d/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-darkhastTagheer</web-resource-name>
+		<url-pattern>/l/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-darkhastTagheer</web-resource-name>
+		<url-pattern>/p/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-khodrosaz</web-resource-name>
+		<url-pattern>/c/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-khodrosaz-validation</web-resource-name>
+		<url-pattern>/c/validatekhodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-khodrosaz</web-resource-name>
+		<url-pattern>/r/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-khodrosaz</web-resource-name>
+		<url-pattern>/u/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-khodrosaz-validation</web-resource-name>
+		<url-pattern>/u/validatekhodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-khodrosaz</web-resource-name>
+		<url-pattern>/d/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-khodrosaz</web-resource-name>
+		<url-pattern>/l/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-khodrosaz</web-resource-name>
+		<url-pattern>/p/khodrosaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-moshtarak</web-resource-name>
+		<url-pattern>/c/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-moshtarak-validation</web-resource-name>
+		<url-pattern>/c/validatemoshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>operator</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-moshtarak</web-resource-name>
+		<url-pattern>/r/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>gozareshgar</role-name>
+		<role-name>operator</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-moshtarak</web-resource-name>
+		<url-pattern>/u/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-moshtarak-validation</web-resource-name>
+		<url-pattern>/u/validatemoshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>operator</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-moshtarak</web-resource-name>
+		<url-pattern>/d/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-moshtarak</web-resource-name>
+		<url-pattern>/l/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-moshtarak</web-resource-name>
+		<url-pattern>/p/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-namayandegi</web-resource-name>
+		<url-pattern>/c/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-namayandegi-validation</web-resource-name>
+		<url-pattern>/c/validatenamayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-namayandegi</web-resource-name>
+		<url-pattern>/r/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>foroush</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-namayandegi</web-resource-name>
+		<url-pattern>/u/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-namayandegi-validation</web-resource-name>
+		<url-pattern>/u/validatenamayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-namayandegi</web-resource-name>
+		<url-pattern>/d/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-namayandegi</web-resource-name>
+		<url-pattern>/l/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-namayandegi</web-resource-name>
+		<url-pattern>/p/namayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-noeBazaryab</web-resource-name>
+		<url-pattern>/c/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-noeBazaryab-validation</web-resource-name>
+		<url-pattern>/c/validatenoeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-noeBazaryab</web-resource-name>
+		<url-pattern>/r/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-noeBazaryab</web-resource-name>
+		<url-pattern>/u/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-noeBazaryab-validation</web-resource-name>
+		<url-pattern>/u/validatenoeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-noeBazaryab</web-resource-name>
+		<url-pattern>/d/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-noeBazaryab</web-resource-name>
+		<url-pattern>/l/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-noeBazaryab</web-resource-name>
+		<url-pattern>/p/noeBazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-noeKhodro</web-resource-name>
+		<url-pattern>/c/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-noeKhodro-validation</web-resource-name>
+		<url-pattern>/c/validatenoeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-noeKhodro</web-resource-name>
+		<url-pattern>/r/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-noeKhodro</web-resource-name>
+		<url-pattern>/u/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-noeKhodro-validation</web-resource-name>
+		<url-pattern>/u/validatenoeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-noeKhodro</web-resource-name>
+		<url-pattern>/d/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-noeKhodro</web-resource-name>
+		<url-pattern>/l/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>foroush</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-noeKhodro</web-resource-name>
+		<url-pattern>/p/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>gozareshgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-ostan</web-resource-name>
+		<url-pattern>/c/ostan.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-ostan-validation</web-resource-name>
+		<url-pattern>/c/validateostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-ostan</web-resource-name>
+		<url-pattern>/r/ostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-ostan</web-resource-name>
+		<url-pattern>/u/ostan.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-ostan-validation</web-resource-name>
+		<url-pattern>/u/validateostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-ostan</web-resource-name>
+		<url-pattern>/d/ostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-ostan</web-resource-name>
+		<url-pattern>/l/ostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-ostan</web-resource-name>
+		<url-pattern>/p/ostan.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-rangeKhodro</web-resource-name>
+		<url-pattern>/c/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-rangeKhodro-validation</web-resource-name>
+		<url-pattern>/c/validaterangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-rangeKhodro</web-resource-name>
+		<url-pattern>/r/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>foroush</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-rangeKhodro</web-resource-name>
+		<url-pattern>/u/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-rangeKhodro-validation</web-resource-name>
+		<url-pattern>/u/validaterangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-rangeKhodro</web-resource-name>
+		<url-pattern>/d/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-rangeKhodro</web-resource-name>
+		<url-pattern>/l/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>foroush</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-rangeKhodro</web-resource-name>
+		<url-pattern>/p/rangeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-shahr</web-resource-name>
+		<url-pattern>/c/shahr.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-shahr-validation</web-resource-name>
+		<url-pattern>/c/validateshahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-shahr</web-resource-name>
+		<url-pattern>/r/shahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-shahr</web-resource-name>
+		<url-pattern>/u/shahr.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-shahr-validation</web-resource-name>
+		<url-pattern>/u/validateshahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-shahr</web-resource-name>
+		<url-pattern>/d/shahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-shahr</web-resource-name>
+		<url-pattern>/l/shahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-shahr</web-resource-name>
+		<url-pattern>/p/shahr.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-tamdidEshterak</web-resource-name>
+		<url-pattern>/c/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-tamdidEshterak-validation</web-resource-name>
+		<url-pattern>/c/validatetamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-tamdidEshterak</web-resource-name>
+		<url-pattern>/r/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-tamdidEshterak</web-resource-name>
+		<url-pattern>/u/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-tamdidEshterak-validation</web-resource-name>
+		<url-pattern>/u/validatetamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-tamdidEshterak</web-resource-name>
+		<url-pattern>/d/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-tamdidEshterak</web-resource-name>
+		<url-pattern>/l/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-tamdidEshterak</web-resource-name>
+		<url-pattern>/p/tamdidEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-bazaryab</web-resource-name>
+		<url-pattern>/c/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-bazaryab-validation</web-resource-name>
+		<url-pattern>/c/validatebazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-bazaryab</web-resource-name>
+		<url-pattern>/r/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-bazaryab</web-resource-name>
+		<url-pattern>/u/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-bazaryab-validation</web-resource-name>
+		<url-pattern>/u/validatebazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-bazaryab</web-resource-name>
+		<url-pattern>/d/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-bazaryab</web-resource-name>
+		<url-pattern>/l/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-bazaryab</web-resource-name>
+		<url-pattern>/p/bazaryab.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/c/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-dalileToolKeshidaneEmdad-validation</web-resource-name>
+		<url-pattern>/c/validatedalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/r/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/u/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-dalileToolKeshidaneEmdad-validation</web-resource-name>
+		<url-pattern>/u/validatedalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/d/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/l/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-dalileToolKeshidaneEmdad</web-resource-name>
+		<url-pattern>/p/dalileToolKeshidaneEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-emdadgar</web-resource-name>
+		<url-pattern>/c/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-emdadgar-validation</web-resource-name>
+		<url-pattern>/c/validateemdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-emdadgar</web-resource-name>
+		<url-pattern>/r/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-emdadgar</web-resource-name>
+		<url-pattern>/u/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-emdadgar-validation</web-resource-name>
+		<url-pattern>/u/validateemdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-emdadgar</web-resource-name>
+		<url-pattern>/d/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-emdadgar</web-resource-name>
+		<url-pattern>/l/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-emdadgar</web-resource-name>
+		<url-pattern>/p/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-irad</web-resource-name>
+		<url-pattern>/c/irad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-irad-validation</web-resource-name>
+		<url-pattern>/c/validateirad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-irad</web-resource-name>
+		<url-pattern>/r/irad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>guarantee</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-irad</web-resource-name>
+		<url-pattern>/u/irad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-irad-validation</web-resource-name>
+		<url-pattern>/u/validateirad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-irad</web-resource-name>
+		<url-pattern>/d/irad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-irad</web-resource-name>
+		<url-pattern>/l/irad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>gozareshgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-irad</web-resource-name>
+		<url-pattern>/p/irad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-ojrat</web-resource-name>
+		<url-pattern>/c/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-ojrat-validation</web-resource-name>
+		<url-pattern>/c/validateojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-ojrat</web-resource-name>
+		<url-pattern>/r/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-ojrat</web-resource-name>
+		<url-pattern>/u/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-ojrat-validation</web-resource-name>
+		<url-pattern>/u/validateojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-ojrat</web-resource-name>
+		<url-pattern>/d/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-ojrat</web-resource-name>
+		<url-pattern>/l/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-ojrat</web-resource-name>
+		<url-pattern>/p/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-noeEmdadgar</web-resource-name>
+		<url-pattern>/c/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-noeEmdadgar-validation</web-resource-name>
+		<url-pattern>/c/validatenoeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-noeEmdadgar</web-resource-name>
+		<url-pattern>/r/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>operator</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-noeEmdadgar</web-resource-name>
+		<url-pattern>/u/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-noeEmdadgar-validation</web-resource-name>
+		<url-pattern>/u/validatenoeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-noeEmdadgar</web-resource-name>
+		<url-pattern>/d/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-noeEmdadgar</web-resource-name>
+		<url-pattern>/l/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-noeEmdadgar</web-resource-name>
+		<url-pattern>/p/noeEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-qate</web-resource-name>
+		<url-pattern>/c/qate.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-qate-validation</web-resource-name>
+		<url-pattern>/c/validateqate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-qate</web-resource-name>
+		<url-pattern>/r/qate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>anbar</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-qate</web-resource-name>
+		<url-pattern>/u/qate.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-qate-validation</web-resource-name>
+		<url-pattern>/u/validateqate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-qate</web-resource-name>
+		<url-pattern>/d/qate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-qate</web-resource-name>
+		<url-pattern>/l/qate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>anbar</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-qate</web-resource-name>
+		<url-pattern>/p/qate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-rokhdad</web-resource-name>
+		<url-pattern>/c/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-rokhdad-validation</web-resource-name>
+		<url-pattern>/c/validaterokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>operator</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-rokhdad</web-resource-name>
+		<url-pattern>/r/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>operator</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-rokhdad</web-resource-name>
+		<url-pattern>/u/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-rokhdad-validation</web-resource-name>
+		<url-pattern>/u/validaterokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>operator</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-rokhdad</web-resource-name>
+		<url-pattern>/d/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-rokhdad</web-resource-name>
+		<url-pattern>/l/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>operator</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-rokhdad</web-resource-name>
+		<url-pattern>/p/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>operator</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-shakhs</web-resource-name>
+		<url-pattern>/c/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-shakhs-validation</web-resource-name>
+		<url-pattern>/c/validateshakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-shakhs</web-resource-name>
+		<url-pattern>/r/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-shakhs</web-resource-name>
+		<url-pattern>/u/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-shakhs-validation</web-resource-name>
+		<url-pattern>/u/validateshakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-shakhs</web-resource-name>
+		<url-pattern>/d/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-shakhs</web-resource-name>
+		<url-pattern>/l/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-shakhs</web-resource-name>
+		<url-pattern>/p/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-vazeatKhedmat</web-resource-name>
+		<url-pattern>/c/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-vazeatKhedmat-validation</web-resource-name>
+		<url-pattern>/c/validatevazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-vazeatKhedmat</web-resource-name>
+		<url-pattern>/r/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-vazeatKhedmat</web-resource-name>
+		<url-pattern>/u/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-vazeatKhedmat-validation</web-resource-name>
+		<url-pattern>/u/validatevazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-vazeatKhedmat</web-resource-name>
+		<url-pattern>/d/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-vazeatKhedmat</web-resource-name>
+		<url-pattern>/l/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-vazeatKhedmat</web-resource-name>
+		<url-pattern>/p/vazeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-jozeatKhedmat</web-resource-name>
+		<url-pattern>/c/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-jozeatKhedmat-validation</web-resource-name>
+		<url-pattern>/c/validatejozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-jozeatKhedmat</web-resource-name>
+		<url-pattern>/r/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-jozeatKhedmat</web-resource-name>
+		<url-pattern>/u/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-jozeatKhedmat-validation</web-resource-name>
+		<url-pattern>/u/validatejozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-jozeatKhedmat</web-resource-name>
+		<url-pattern>/d/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-jozeatKhedmat</web-resource-name>
+		<url-pattern>/l/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>guarantee</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-jozeatKhedmat</web-resource-name>
+		<url-pattern>/p/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/c/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-mostanadatRokhdad-validation</web-resource-name>
+		<url-pattern>/c/validatemostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/r/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgar</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/u/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-mostanadatRokhdad-validation</web-resource-name>
+		<url-pattern>/u/validatemostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/d/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/l/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>guarantee</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-mostanadatRokhdad</web-resource-name>
+		<url-pattern>/p/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-khodrojagozin</web-resource-name>
+		<url-pattern>/l/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-khodrojagozin</web-resource-name>
+		<url-pattern>/c/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-khodrojagozin-validation</web-resource-name>
+		<url-pattern>/c/validatekhodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-khodrojagozin</web-resource-name>
+		<url-pattern>/r/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-khodrojagozin</web-resource-name>
+		<url-pattern>/u/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-khodrojagozin-validation</web-resource-name>
+		<url-pattern>/u/validatekhodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-khodrojagozin</web-resource-name>
+		<url-pattern>/d/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-khodrojagozin</web-resource-name>
+		<url-pattern>/p/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-emdad</web-resource-name>
+		<url-pattern>/c/emdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-emdad-validation</web-resource-name>
+		<url-pattern>/c/validateemdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-emdad</web-resource-name>
+		<url-pattern>/r/emdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-emdad</web-resource-name>
+		<url-pattern>/u/emdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-emdad-validation</web-resource-name>
+		<url-pattern>/u/validateemdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>admin</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-emdad</web-resource-name>
+		<url-pattern>/d/emdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-emdad</web-resource-name>
+		<url-pattern>/l/emdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-emdad</web-resource-name>
+		<url-pattern>/p/emdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-peigiriEzamgar</web-resource-name>
+		<url-pattern>/c/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-peigiriEzamgar-validation</web-resource-name>
+		<url-pattern>/c/validatepeigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-peigiriEzamgar</web-resource-name>
+		<url-pattern>/r/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-peigiriEzamgar</web-resource-name>
+		<url-pattern>/u/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-peigiriEzamgar-validation</web-resource-name>
+		<url-pattern>/u/validatepeigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-peigiriEzamgar</web-resource-name>
+		<url-pattern>/d/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-peigiriEzamgar</web-resource-name>
+		<url-pattern>/l/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-peigiriEzamgar</web-resource-name>
+		<url-pattern>/p/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-role</web-resource-name>
+		<url-pattern>/c/role.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-role-validation</web-resource-name>
+		<url-pattern>/c/validaterole.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-role</web-resource-name>
+		<url-pattern>/r/role.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-role</web-resource-name>
+		<url-pattern>/u/role.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-role-validation</web-resource-name>
+		<url-pattern>/u/validaterole.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-role</web-resource-name>
+		<url-pattern>/d/role.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-role</web-resource-name>
+		<url-pattern>/l/role.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-role</web-resource-name>
+		<url-pattern>/p/role.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/c/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-khodrojagozinMasraf-validation</web-resource-name>
+		<url-pattern>/c/validatekhodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/r/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/u/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-khodrojagozinMasraf-validation</web-resource-name>
+		<url-pattern>/u/validatekhodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/d/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/l/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-khodrojagozinMasraf</web-resource-name>
+		<url-pattern>/p/khodrojagozinMasraf.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-anbarEmdadgar</web-resource-name>
+		<url-pattern>/l/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-anbarEmdadgar</web-resource-name>
+		<url-pattern>/r/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>anbar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-anbarEmdadgar</web-resource-name>
+		<url-pattern>/u/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-anbarEmdadgar-validation</web-resource-name>
+		<url-pattern>/u/validateanbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-anbarEmdadgar</web-resource-name>
+		<url-pattern>/d/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-anbarEmdadgar</web-resource-name>
+		<url-pattern>/c/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-anbarEmdadgar-validation</web-resource-name>
+		<url-pattern>/c/validateanbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-anbarEmdadgar</web-resource-name>
+		<url-pattern>/p/anbarEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>anbar</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-darkhastQate</web-resource-name>
+		<url-pattern>/l/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-darkhastQate</web-resource-name>
+		<url-pattern>/r/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastQate</web-resource-name>
+		<url-pattern>/u/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-darkhastQate-validation</web-resource-name>
+		<url-pattern>/u/validatedarkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-darkhastQate</web-resource-name>
+		<url-pattern>/d/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-darkhastQate</web-resource-name>
+		<url-pattern>/c/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-darkhastQate-validation</web-resource-name>
+		<url-pattern>/c/validatedarkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-darkhastQate</web-resource-name>
+		<url-pattern>/p/darkhastQate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-mojoodiAnbar</web-resource-name>
+		<url-pattern>/l/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-mojoodiAnbar</web-resource-name>
+		<url-pattern>/r/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>anbar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-mojoodiAnbar</web-resource-name>
+		<url-pattern>/u/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-mojoodiAnbar-validation</web-resource-name>
+		<url-pattern>/u/validatemojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-mojoodiAnbar</web-resource-name>
+		<url-pattern>/d/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-mojoodiAnbar</web-resource-name>
+		<url-pattern>/c/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-mojoodiAnbar-validation</web-resource-name>
+		<url-pattern>/c/validatemojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-mojoodiAnbar</web-resource-name>
+		<url-pattern>/p/mojoodiAnbar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/u/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-bazaryabMotefareghe-validation</web-resource-name>
+		<url-pattern>/u/validatebazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/c/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-bazaryabMotefareghe-validation</web-resource-name>
+		<url-pattern>/c/validatebazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/l/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/p/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/d/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-bazaryabMotefareghe</web-resource-name>
+		<url-pattern>/r/bazaryabMotefareghe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-mojoodiMojaz</web-resource-name>
+		<url-pattern>/l/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-mojoodiMojaz</web-resource-name>
+		<url-pattern>/c/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-mojoodiMojaz-validation</web-resource-name>
+		<url-pattern>/c/validatemojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-mojoodiMojaz</web-resource-name>
+		<url-pattern>/u/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-mojoodiMojaz-validation</web-resource-name>
+		<url-pattern>/u/validatemojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-mojoodiMojaz</web-resource-name>
+		<url-pattern>/r/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-mojoodiMojaz</web-resource-name>
+		<url-pattern>/d/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-mojoodiMojaz</web-resource-name>
+		<url-pattern>/p/mojoodiMojaz.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-serviceDorei</web-resource-name>
+		<url-pattern>/l/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-serviceDorei</web-resource-name>
+		<url-pattern>/c/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-serviceDorei-validation</web-resource-name>
+		<url-pattern>/c/validateserviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-serviceDorei</web-resource-name>
+		<url-pattern>/u/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-serviceDorei-validation</web-resource-name>
+		<url-pattern>/u/validateserviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-serviceDorei</web-resource-name>
+		<url-pattern>/r/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-serviceDorei</web-resource-name>
+		<url-pattern>/d/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-serviceDorei</web-resource-name>
+		<url-pattern>/p/serviceDorei.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>amaliyatOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-kasriEmdad</web-resource-name>
+		<url-pattern>/l/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-kasriEmdad</web-resource-name>
+		<url-pattern>/c/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-kasriEmdad-validation</web-resource-name>
+		<url-pattern>/c/validatekasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-kasriEmdad</web-resource-name>
+		<url-pattern>/r/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-kasriEmdad</web-resource-name>
+		<url-pattern>/d/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-kasriEmdad</web-resource-name>
+		<url-pattern>/u/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-kasriEmdad-validation</web-resource-name>
+		<url-pattern>/u/validatekasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>anbar</role-name>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-kasriEmdad</web-resource-name>
+		<url-pattern>/p/kasriEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-jozeatKasri</web-resource-name>
+		<url-pattern>/l/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-jozeatKasri</web-resource-name>
+		<url-pattern>/c/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-jozeatKasri-validation</web-resource-name>
+		<url-pattern>/c/validatejozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-jozeatKasri</web-resource-name>
+		<url-pattern>/r/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-jozeatKasri</web-resource-name>
+		<url-pattern>/d/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-jozeatKasri</web-resource-name>
+		<url-pattern>/u/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-jozeatKasri-validation</web-resource-name>
+		<url-pattern>/u/validatejozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-jozeatKasri</web-resource-name>
+		<url-pattern>/p/jozeatKasri.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>c-naghshe</web-resource-name>
+		<url-pattern>/c/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>c-naghshe-validation</web-resource-name>
+		<url-pattern>/c/validatenaghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>r-naghshe</web-resource-name>
+		<url-pattern>/r/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>u-naghshe</web-resource-name>
+		<url-pattern>/u/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<web-resource-collection>
+		<web-resource-name>u-naghshe-validation</web-resource-name>
+		<url-pattern>/u/validatenaghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>d-naghshe</web-resource-name>
+		<url-pattern>/d/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>l-naghshe</web-resource-name>
+		<url-pattern>/l/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>operator</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>p-naghshe</web-resource-name>
+		<url-pattern>/p/naghshe.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-darkhastEshterak-run</web-resource-name>
+		<url-pattern>/s/darkhastEshterak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-darkhastTagheer-run</web-resource-name>
+		<url-pattern>/s/darkhastTagheer.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-emdad-run</web-resource-name>
+		<url-pattern>/s/emdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>admin</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-emdadgar-run</web-resource-name>
+		<url-pattern>/s/emdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-irad-run</web-resource-name>
+		<url-pattern>/s/irad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-jozeatKhedmat-run</web-resource-name>
+		<url-pattern>/s/jozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-khodrojagozin-run</web-resource-name>
+		<url-pattern>/s/khodrojagozin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-moshtarak-run</web-resource-name>
+		<url-pattern>/s/moshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>foroush</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-mostanadatRokhdad-run</web-resource-name>
+		<url-pattern>/s/mostanadatRokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>foroush</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-noeKhodro-run</web-resource-name>
+		<url-pattern>/s/noeKhodro.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>foroush</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-ojrat-run</web-resource-name>
+		<url-pattern>/s/ojrat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-peigiriEzamgar-run</web-resource-name>
+		<url-pattern>/s/peigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-qate-run</web-resource-name>
+		<url-pattern>/s/qate.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>anbar</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-rokhdad-run</web-resource-name>
+		<url-pattern>/s/rokhdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-shakhs-run</web-resource-name>
+		<url-pattern>/s/shakhs.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>admin</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>anbar</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>foroush</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>superuser</role-name>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validateEmdad-run</web-resource-name>
+		<url-pattern>/s/validateEmdad.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validatejozeatKhedmat-run</web-resource-name>
+		<url-pattern>/s/validatejozeatKhedmat.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validatemoshtarak-run</web-resource-name>
+		<url-pattern>/s/validatemoshtarak.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>operator</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validatepeigiriEzamgar-run</web-resource-name>
+		<url-pattern>/s/validatepeigiriEzamgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>ezamgarVije</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validateTasvieHesabEmdadgar-run</web-resource-name>
+		<url-pattern>/s/validateTasvieHesabEmdadgar.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validateTasvieHesabJarsaghil-run</web-resource-name>
+		<url-pattern>/s/validateTasvieHesabJarsaghil.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgar</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-s-validateTasvieHesabNamayandegi-run</web-resource-name>
+		<url-pattern>/s/validateTasvieHesabNamayandegi.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>-sysadmin-run</web-resource-name>
+		<url-pattern>/sysadmin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+
+<!-- Constraints for roles resources -->
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>superuser-resources</web-resource-name>
+		<url-pattern>/usr/superuser/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>admin-resources</web-resource-name>
+		<url-pattern>/usr/admin/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>admin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>eshterak-resources</web-resource-name>
+		<url-pattern>/usr/eshterak/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>eshterak</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>foroush-resources</web-resource-name>
+		<url-pattern>/usr/foroush/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>foroush</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>doAdmin-resources</web-resource-name>
+		<url-pattern>/usr/doAdmin/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>doAdmin</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>emdadgar-resources</web-resource-name>
+		<url-pattern>/usr/emdadgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>ezamgarAdi-resources</web-resource-name>
+		<url-pattern>/usr/ezamgarAdi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarAdi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>omoorNamayandegi-resources</web-resource-name>
+		<url-pattern>/usr/omoorNamayandegi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>omoorNamayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>operator-resources</web-resource-name>
+		<url-pattern>/usr/operator/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>operator</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>namayandegi-resources</web-resource-name>
+		<url-pattern>/usr/namayandegi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>namayandegi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>maliOp-resources</web-resource-name>
+		<url-pattern>/usr/maliOp/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>maliOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>anbar-resources</web-resource-name>
+		<url-pattern>/usr/anbar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>anbar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>mohandesi-resources</web-resource-name>
+		<url-pattern>/usr/mohandesi/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>mohandesi</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>amaliyatOp-resources</web-resource-name>
+		<url-pattern>/usr/amaliyatOp/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatOp</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>amaliyatMgr-resources</web-resource-name>
+		<url-pattern>/usr/amaliyatMgr/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>amaliyatMgr</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>khadamatVije-resources</web-resource-name>
+		<url-pattern>/usr/khadamatVije/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>khadamatVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>daftarOstani-resources</web-resource-name>
+		<url-pattern>/usr/daftarOstani/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>daftarOstani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>tarhoBarname-resources</web-resource-name>
+		<url-pattern>/usr/tarhoBarname/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>tarhoBarname</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>emdadgarPeymani-resources</web-resource-name>
+		<url-pattern>/usr/emdadgarPeymani/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>emdadgarPeymani</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>sarparastEmdadgar-resources</web-resource-name>
+		<url-pattern>/usr/sarparastEmdadgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>sarparastEmdadgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>guarantee-resources</web-resource-name>
+		<url-pattern>/usr/guarantee/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>guarantee</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>barnamerizOP-resources</web-resource-name>
+		<url-pattern>/usr/barnamerizOP/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizOP</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>barnamerizSefareshat-resources</web-resource-name>
+		<url-pattern>/usr/barnamerizSefareshat/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>barnamerizSefareshat</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>gozareshgar-resources</web-resource-name>
+		<url-pattern>/usr/gozareshgar/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>gozareshgar</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>ezamgarVije-resources</web-resource-name>
+		<url-pattern>/usr/ezamgarVije/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<!-- Home Action constraints -->
+
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>home-action</web-resource-name>
+		<url-pattern>/usr/home.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+		<role-name>admin</role-name>
+		<role-name>eshterak</role-name>
+		<role-name>foroush</role-name>
+		<role-name>doAdmin</role-name>
+		<role-name>emdadgar</role-name>
+		<role-name>ezamgarAdi</role-name>
+		<role-name>omoorNamayandegi</role-name>
+		<role-name>operator</role-name>
+		<role-name>namayandegi</role-name>
+		<role-name>maliOp</role-name>
+		<role-name>anbar</role-name>
+		<role-name>mohandesi</role-name>
+		<role-name>amaliyatOp</role-name>
+		<role-name>amaliyatMgr</role-name>
+		<role-name>khadamatVije</role-name>
+		<role-name>daftarOstani</role-name>
+		<role-name>tarhoBarname</role-name>
+		<role-name>emdadgarPeymani</role-name>
+		<role-name>sarparastEmdadgar</role-name>
+		<role-name>guarantee</role-name>
+		<role-name>barnamerizOP</role-name>
+		<role-name>barnamerizSefareshat</role-name>
+		<role-name>gozareshgar</role-name>
+		<role-name>ezamgarVije</role-name>
+	</auth-constraint>
+</security-constraint>
+
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>sysadmin</web-resource-name>
+		<url-pattern>/sysadmin.run</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>superuser</role-name>
+	</auth-constraint>
+</security-constraint>
+
+
+<!-- Login config -->
+
+<login-config>
+	<auth-method>FORM</auth-method>
+	<realm-name>emdad</realm-name>
+	<form-login-config>
+		<form-login-page>/com/objectj/resources/jsp/tiles/emdad/login.jsp</form-login-page>
+		<form-error-page>/com/objectj/resources/jsp/tiles/emdad/error.jsp</form-error-page>
+	</form-login-config>
+</login-config>
+
+
+<!-- Security Roles -->
+
+<security-role>
+	<role-name>superuser</role-name>
+</security-role>
+<security-role>
+	<role-name>admin</role-name>
+</security-role>
+<security-role>
+	<role-name>eshterak</role-name>
+</security-role>
+<security-role>
+	<role-name>foroush</role-name>
+</security-role>
+<security-role>
+	<role-name>doAdmin</role-name>
+</security-role>
+<security-role>
+	<role-name>emdadgar</role-name>
+</security-role>
+<security-role>
+	<role-name>ezamgarAdi</role-name>
+</security-role>
+<security-role>
+	<role-name>omoorNamayandegi</role-name>
+</security-role>
+<security-role>
+	<role-name>operator</role-name>
+</security-role>
+<security-role>
+	<role-name>namayandegi</role-name>
+</security-role>
+<security-role>
+	<role-name>maliOp</role-name>
+</security-role>
+<security-role>
+	<role-name>anbar</role-name>
+</security-role>
+<security-role>
+	<role-name>mohandesi</role-name>
+</security-role>
+<security-role>
+	<role-name>amaliyatOp</role-name>
+</security-role>
+<security-role>
+	<role-name>amaliyatMgr</role-name>
+</security-role>
+<security-role>
+	<role-name>khadamatVije</role-name>
+</security-role>
+<security-role>
+	<role-name>daftarOstani</role-name>
+</security-role>
+<security-role>
+	<role-name>tarhoBarname</role-name>
+</security-role>
+<security-role>
+	<role-name>emdadgarPeymani</role-name>
+</security-role>
+<security-role>
+	<role-name>sarparastEmdadgar</role-name>
+</security-role>
+<security-role>
+	<role-name>guarantee</role-name>
+</security-role>
+<security-role>
+	<role-name>barnamerizOP</role-name>
+</security-role>
+<security-role>
+	<role-name>barnamerizSefareshat</role-name>
+</security-role>
+<security-role>
+	<role-name>gozareshgar</role-name>
+</security-role>
+<security-role>
+	<role-name>ezamgarVije</role-name>
+</security-role>

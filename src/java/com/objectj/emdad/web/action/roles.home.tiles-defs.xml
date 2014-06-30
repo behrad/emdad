@@ -1,0 +1,124 @@
+	<definition name="emdad.superuser.home" extends="emdad.main">
+		<put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/usr/superuser/home.jsp" />
+	</definition>
+
+	<definition name="emdad.eshterak.home" extends="emdad.main">
+		<put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/usr/eshterak/home.jsp" />
+	</definition>
+
+	<definition name="emdad.admin.home" extends="emdad.main">
+		<put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/usr/admin/home.jsp" />
+	</definition>
+
+    <definition name="emdad.doAdmin.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/doAdmin/home.jsp" />
+    </definition>
+
+    <definition name="emdad.emdadgar.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/emdadgar/home.jsp" />
+    </definition>
+
+    <definition name="emdad.ezamgarAdi.home" extends="emdad.main">
+        <put name="title"  		value="&#1575;&#1593;&#1586;&#1575;&#1605;&#1711;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583; &#1576;&#1575;&#1604;&#1740;&#1606;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/ezamgarAdi/home.jsp" />
+    </definition>
+
+	<definition name="emdad.ezamgarVije.home" extends="emdad.main">
+	        <put name="title"  		value="&#1575;&#1593;&#1586;&#1575;&#1605;&#1711;&#1585; &#1575;&#1605;&#1583;&#1575;&#1583; &#1578;&#1593;&#1605;&#1740;&#1585;&#1740;" />
+	        <put name="body"   		value="/com/objectj/emdad/jsp/usr/ezamgarVije/home.jsp" />
+    </definition>
+
+    <definition name="emdad.omoorNamayandegi.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/omoorNamayandegi/home.jsp" />
+    </definition>
+
+    <definition name="emdad.operator.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/operator/home.jsp" />
+    </definition>
+
+    <definition name="emdad.namayandegi.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/namayandegi/home.jsp" />
+    </definition>
+
+    <definition name="emdad.maliOp.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/maliOp/home.jsp" />
+    </definition>
+
+    <definition name="emdad.anbar.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/anbar/home.jsp" />
+    </definition>
+
+    <definition name="emdad.mohandesi.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/mohandesi/home.jsp" />
+    </definition>
+
+    <definition name="emdad.amaliyatOp.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/amaliyatOp/home.jsp" />
+    </definition>
+
+    <definition name="emdad.amaliyatMgr.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/amaliyatMgr/home.jsp" />
+    </definition>
+
+    <definition name="emdad.khadamatVije.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/khadamatVije/home.jsp" />
+    </definition>
+
+    <definition name="emdad.daftarOstani.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/daftarOstani/home.jsp" />
+    </definition>
+
+    <definition name="emdad.foroush.home" extends="emdad.main">
+        <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+        <put name="body"   		value="/com/objectj/emdad/jsp/usr/foroush/home.jsp" />
+    </definition>
+
+<definition name="emdad.default.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/default.home.jsp" />
+</definition>
+
+<definition name="emdad.tarhoBarname.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/tarhoBarname/home.jsp" />
+</definition>
+
+<definition name="emdad.barnamerizOP.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/barnamerizOP/home.jsp" />
+</definition>
+
+<definition name="emdad.barnamerizSefareshat.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/barnamerizSefareshat/home.jsp" />
+</definition>
+
+<definition name="emdad.sarparastEmdadgar.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/sarparastEmdadgar/home.jsp" />
+</definition>
+
+<definition name="emdad.guarantee.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/guarantee/home.jsp" />
+</definition>
+
+<definition name="emdad.gozareshgar.home" extends="emdad.main">
+    <put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1575;&#1589;&#1604;&#1740;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/usr/gozareshgar/home.jsp" />
+</definition>

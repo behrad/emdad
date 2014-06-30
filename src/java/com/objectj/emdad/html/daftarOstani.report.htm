@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"شناسه دفتر استاني", "نام د(f)تر استاني", "مسئول", "تل(f)ن", "تل(f)ن همراه", "آدرس"});
+		request.setAttribute("fields", new String[] {"daftarOstaniId", "name", "masool", "tel", "mobile", "address"});
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

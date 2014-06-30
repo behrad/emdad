@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"نوع خدمت", "شناسه خدمت", "هزینه طبق ادعای سرویس دهنده", "تعداد مصر(f) قطعه", "مشمول گارانتی؟"});
+		request.setAttribute("fields", new String[] {"noeKhedmat", "khedmatId", "hazineh", "tedadQate", "guarantee"});
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

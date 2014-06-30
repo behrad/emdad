@@ -1,0 +1,86 @@
+<form method="post" action="/c/validatedaftarOstani" onsubmit="return validateDaftarOstaniForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه دفتر استاني:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="daftarOstaniId" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام دفتر استاني:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="name" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">مسئول:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="masool" size="40" maxlength="40" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تلفن:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tel" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تلفن همراه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="mobile" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">آدرس:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="address" size="50" maxlength="50" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.daftarOstaniForm);
+	setEntity("DaftarOstani");
+    if (document.daftarOstaniForm.action_type.value=="create") 
+	{
+        document.daftarOstaniForm.action="/emdad/c/validatedaftarOstani.run";
+    } 
+	
+	else 
+	{
+        document.daftarOstaniForm.action="/emdad/u/validatedaftarOstani.run";
+    }
+</script>
+<html:javascript formName="daftarOstaniForm" />

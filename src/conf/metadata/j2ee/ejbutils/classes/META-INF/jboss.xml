@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<jboss>
+  <secure>false</secure>
+  <container-configurations></container-configurations>
+  <resource-managers>
+    <resource-manager res-class="org.jboss.ejb.deployment.JDBCResource">
+      <res-name>UIDHighKeyGeneratorDS</res-name>
+      <res-jndi-name>java:/emdadDS</res-jndi-name></resource-manager></resource-managers>
+  <enterprise-beans>
+    <session>
+      <ejb-name>UIDHighKeyGenerator</ejb-name>
+      <jndi-name>ejb/UIDHighKeyGenerator</jndi-name>
+      <configuration-name>Standard Stateless SessionBean</configuration-name>
+      <resource-ref>
+        <res-ref-name>jdbc/UIDHighKeyGeneratorDS</res-ref-name>
+        <resource-name>UIDHighKeyGeneratorDS</resource-name>
+      </resource-ref>
+    </session>
+  </enterprise-beans>
+</jboss>

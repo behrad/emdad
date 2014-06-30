@@ -1,0 +1,56 @@
+﻿	<formset>
+		<form name="emdadgarForm">
+			<field property="emdadgarId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605;" resource="false"/>
+			</field>
+
+			<field property="tel" depends="required">
+				<arg0 key="&#1578;&#1604;&#1601;&#1606;" resource="false"/>
+			</field>
+
+			<field property="address" depends="required">
+				<arg0 key="&#1570;&#1583;&#1585;&#1587;" resource="false"/>
+			</field>
+
+			<field property="satheMaharat" depends="required,mask">
+				<arg0 key="&#1587;&#1591;&#1581; &#1605;&#1607;&#1575;&#1585;&#1578; &#1601;&#1606;&#1610;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="saghfeMojoodi" depends="required,mask">
+				<arg0 key="&#1587;&#1602;&#1601; &#1605;&#1608;&#1580;&#1608;&#1583;&#1610;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<!--field property="hadaksarKar" depends="required,mask">
+				<arg0 key="&#1581;&#1583;&#1575;&#1705;&#1579;&#1585; &#1578;&#1593;&#1583;&#1575;&#1583; &#1575;&#1605;&#1583;&#1575;&#1583; &#1607;&#1605;&#1586;&#1605;&#1575;&#1606;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field-->
+
+			<field property="noeEmdadgarId" depends="required">
+				<arg0 key="&#1606;&#1608;&#1593; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+			</field>
+
+			<field property="namayandegiId" depends="required">
+				<arg0 key="&#1606;&#1605;&#1575;&#1610;&#1606;&#1583;&#1711;&#1610;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

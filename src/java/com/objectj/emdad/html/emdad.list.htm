@@ -1,0 +1,91 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/emdad">
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+    <!------------------------------------------------>
+
+	<table width="100%" dir="rtl" align="center" class="generalText" border="0" cellpadding="3" cellspacing="0">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<logic:equal name="entity_access" property="deleteAccess" value="true" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%" colspan="2"></td>
+				</logic:equal>							
+
+				<logic:equal name="entity_access" property="updateAccess" value="false" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<logic:equal name="entity_access" property="deleteAccess" value="false" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<td class="filterFieldCell"><html:text property="emdadId" size="7" maxlength="10" onkeypress="return submitenter(this,event)" styleClass="field"/></td>
+		</tr>
+
+	    <!------------------------------------------------>				
+
+		<tr><td colspan="2" height="3"></td></tr>
+
+		<!------------------------------------------------>
+
+		<tr class="listTableHeader">
+			<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+			<check_Update_access><td class = "listRow0Col" width="4%" align="center"><span class="textW">اصلاح</span></td><end_Each_access>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "emdadId"
+				sortable_Column_Title "شتاسه امداد"
+				sortable_Column_String
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+		<% int i = 0; %>
+		<logic:iterate id="value_object" name="value_object_list" >
+			<tr class="listRow<%=i%2%>">
+				<check_Delete_access>
+					<td class = "listRow1Col"> 
+						<input type="checkbox" name="id" value="checkbox">
+					</td>
+				<end_Each_access>
+
+				<check_Update_access>
+					<td class = "listRow1Col" align="center">
+						<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+					</td>
+				<end_Each_access>
+
+				<td class = "listRow1Col">emdad_emdadId</td>
+            </tr>
+            <%i++;%>
+        </logic:iterate>
+    </table>
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+    <!------------------------------------------------>
+
+</html:form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.emdadForm);
+	setEntity("Emdad");
+</script>

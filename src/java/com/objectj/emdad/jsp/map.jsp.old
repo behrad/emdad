@@ -1,0 +1,62 @@
+<html dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>map</title>
+</head>
+
+<script>
+var prevImg=null;
+function clicked(img){
+	if(prevImg!=null){
+		prevImg.width=prevImg.width+4;
+		prevImg.height=prevImg.height+4;
+		prevImg.border=0;
+	}
+	img.width=img.width-4;
+	img.height=img.height-4;
+	img.border=2;
+	prevImg=img;
+}
+
+function submit(img,e){
+//	s=img.id;
+//	i=parseInt(s.subString(3,s.indexOf("_")));
+//	j=parseInt(s.subString(s.indexOf("_")+1,s.length));
+//	ex=e.offsetX*(100/zoom)-j*document.cellTool;
+//	ey=e.offsetY*(100/zoom)-i*document.cellAez;
+
+}
+</script>
+<body>
+
+<form name="mapForm">
+	<input type=hidden name="zoom" value="100" >
+	<input type=hidden name="tool" >
+	<input type=hidden name="arz" >
+	<input type=hidden name="mapLevel" value="<bean:write name='mapLevel' />" >
+	<input type=hidden name="tooleShoro" value="<bean:write name='tooleShoro' />" >
+	<input type=hidden name="arzeShoro" value="<bean:write name='arzeShoro' />" >
+	<input type=hidden name="cellTool" value="<bean:write name='cellTool' />" >
+	<input type=hidden name="cellArz" value="<bean:write name='cellArz' />">
+
+
+	<p align="center"></p>
+	<p align="left" dir="ltr">&nbsp;</p>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<%
+            String[][] images = (String[][])request.getAttribute("imageList");
+            for(int i=0;i<images.length;i++){%>
+			<tr>
+			<%for(int j=0;j<images[i].length;j++){
+                    if(images[i][j]==null){%>
+					<td><img id="img<%=i%>_<%=j%>"  border="0" src="/blank_img.gif" ></td>
+			<%}else{%>
+					<td><img id="img<%=i%>_<%=j%>" onclick="javascript:clicked(this);" ondblclick="javascript:submit(this,event)" border="0" src="/map/<%=images[i][j]%>" ></td>
+			<%}}%>
+		</tr>
+		<%}%>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatemostanadatRokhdad" onsubmit="return validateMostanadatRokhdadForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه مدرک:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="mostanadatRokhdadId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">رخداد:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="rokhdadId" size="1">
+								<html:options collection="rokhdadList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شماره سند:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="shomarehSanad" size="20" maxlength="20" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاریخ سند:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhSanad" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاریخ ثبت سند:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tarikhSabt" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شرح سند:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="sharh" size="128" maxlength="128" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام پرونده:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="nameParvande" size="64" maxlength="64" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.mostanadatRokhdadForm);
+	setEntity("MostanadatRokhdad");
+    if (document.mostanadatRokhdadForm.action_type.value=="create") 
+	{
+        document.mostanadatRokhdadForm.action="/emdad/c/validatemostanadatRokhdad.run";
+    } 
+	
+	else 
+	{
+        document.mostanadatRokhdadForm.action="/emdad/u/validatemostanadatRokhdad.run";
+    }
+</script>
+<html:javascript formName="mostanadatRokhdadForm" />

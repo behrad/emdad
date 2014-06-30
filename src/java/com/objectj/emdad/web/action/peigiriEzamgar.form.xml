@@ -1,0 +1,16 @@
+<form-bean name="peigiriEzamgarForm" dynamic="true" type="com.objectj.emdad.web.action.PeigiriEzamgarForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="zamanPeigiri" type="java.lang.String"/>
+	<form-property name="natije" type="java.lang.String"/>
+	<form-property name="emdadId" type="java.lang.String"/>
+    <form-property name="zamanPeigiri2" type="java.lang.String"/>
+    <form-property name="emdadEmdadId" type="java.lang.Integer" />
+    <form-property name="emdad.emdadId" type="java.lang.Integer"/>
+
+</form-bean>

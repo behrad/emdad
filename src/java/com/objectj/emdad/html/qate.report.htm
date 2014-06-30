@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"شناسه", "شماره(f)نی", "نام قطعه", "واحد شمارش", "قیمت-ریال"});
+		request.setAttribute("fields", new String[] {"qateId", "shomareFanni", "name", "vahedShomaresh", "gheimat"});
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

@@ -1,0 +1,287 @@
+package org.ejbutils.uid;
+
+import java.rmi.RemoteException;
+import java.sql.*;
+import java.util.*;
+import javax.ejb.*;
+import javax.naming.*;
+import javax.sql.*;
+import org.ejbutils.context.*;
+
+// The EJBUtils library provides a set of utilities that solves general
+// problems commonly found while developing in a EJB(tm)/J2EE(tm) environment.
+// Copyright (C) 2000 Emmanuel Sciara
+// email: ehsforward@yahoo.com
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+/**
+ * @ejbTransactionAttribute RequiresNew
+ * @ejbBeanIdentifier UIDHighKeyGenerator
+ * @configurationName Standard Stateless SessionBean
+ * @ejbJNDIname ejb/UIDHighKeyGenerator
+ * @ejbTransactionType Bean
+ */
+public class UIDHighKeyGeneratorBean implements SessionBean {
+    private SessionContext mySessionCtx = null;
+    final static long serialVersionUID = 3206093459760846163L;
+
+    /**
+     * @RESOURCE-REF
+     * @ResourceRefAuth Container
+     * @ResourceRefType javax.sql.DataSource
+     * @JBoss_ResourceName UIDHighKeyGeneratorDS
+     */
+    static private String dataSource_ref = "jdbc/UIDHighKeyGeneratorDS";
+    static private String jndi_dataSource_ref = ContextUtil.java_comp_env + dataSource_ref;
+
+    /**
+     * @ENV-REF
+     * @EnvironmentEntryType java.lang.String
+     * @EnvironmentEntryValue VALUE
+     */
+    static private String dbHighKeyColumn_ref = "DBHighKeyColumn";
+    static private String jndi_dbHighKeyColumn_ref = ContextUtil.java_comp_env + dbHighKeyColumn_ref;
+
+    /**
+     * @ENV-REF
+     * @EnvironmentEntryType java.lang.String
+     * @EnvironmentEntryValue NAME
+     */
+    static private String dbNameColumn_ref = "DBNameColumn";
+    static private String jndi_dbNameColumn_ref = ContextUtil.java_comp_env + dbNameColumn_ref;
+
+    /**
+     * @ENV-REF
+     * @EnvironmentEntryType java.lang.String
+     * @EnvironmentEntryValue HIGH_KEY
+     */
+    static private String dbTable_ref = "DBTable";
+    static private String jndi_dbTable_ref = ContextUtil.java_comp_env + dbTable_ref;
+
+    /**
+     */
+    public void ejbActivate() throws RemoteException { }
+
+    /**
+     *
+     */
+    public void ejbCreate() throws CreateException, RemoteException {
+    }
+
+    /**
+     */
+    public void ejbPassivate() throws RemoteException { }
+
+    /**
+     */
+    public void ejbRemove() throws RemoteException { }
+
+
+
+    /**
+     */
+    public SessionContext getSessionContext() {
+        return mySessionCtx;
+    }
+
+    /**
+     * Returns the name of the column used hold the high key value.
+     */
+    private String provideDBHighKeyColumn() throws NamingException{
+        return (String) ContextUtil.getInitContext().lookup(jndi_dbHighKeyColumn_ref);
+    }
+
+
+    /**
+     * Returns the name of the 'name' column used as index to find the high key row.
+     */
+    private String provideDBNameColumn() throws NamingException{
+        return (String) ContextUtil.getInitContext().lookup(jndi_dbNameColumn_ref);
+    }
+
+    /**
+     * Returns the name of the database table used to store high key.
+     */
+    private String provideDBTable() throws NamingException{
+       return (String) ContextUtil.getInitContext().lookup(jndi_dbTable_ref);
+    }
+
+    /**
+     */
+    public void setSessionContext(SessionContext ctx) throws RemoteException {
+        mySessionCtx = ctx;
+    }
+
+    /**
+     * Returns the next high key from the database.
+     * <p>
+     * Comment from Weicong Wang (wweicong@yahoo.com)
+     * <p>
+     * From weblogic:
+     * <p>
+     * There is a problem in the Oracle 8 server that causes this error when
+     * using a FOR UPDATE statement with AUTOCOMMIT turned on (which is the
+     * default state when using JDBC). This is known to happen on Oracle 8.0
+     * and 8.1 on Solaris and on Oracle 8.1 on Windows NT. If you turn
+     * AUTOCOMMIT off, you will not receive this error.
+     */
+
+    public Key getNextHighKey(Key theHighKey, String theName) throws RemoteException,
+    FinderException {
+        ////=-= //=-= //=-= System.out.println("--->>>----theName="+theName);
+        try {
+            if (theHighKey == null) {
+                throw new RemoteException("High key argument is null!");
+            }
+            String theHighKeyColumn = null;
+            String theTable = null;
+            String theNameColumn = null;
+            try {
+                theHighKeyColumn = provideDBHighKeyColumn();
+                theTable = provideDBTable();
+                theNameColumn = provideDBNameColumn();
+            } catch (NamingException e) {
+                throw new RemoteException("Unable to environment resource ", e);
+            }
+
+            boolean isAutoCommit;
+            DataSource ds = null;
+
+            try {
+                ds = DataSourceUtil.findDataSource(jndi_dataSource_ref);
+            } catch (NamingException e) {
+                throw new RemoteException("Unable to find data source " + jndi_dataSource_ref, e);
+            }
+
+            Connection con = null;
+            //PreparedStatement ps = null;
+            Statement ps = null;
+            Statement ps2 = null;
+            ResultSet result = null;
+            theTable = " EMDAD."+theTable+" ";
+
+            String selectForUpdateQueryString =
+        		"SELECT "+ theHighKeyColumn +" FROM "+ theTable+" WHERE "+ theNameColumn +" = ? "; //FOR BROWSE";
+            String updateQueryString =
+                "UPDATE " + theTable + " SET " + theHighKeyColumn + " = ? WHERE " + theNameColumn + " = ?";
+            String insertQueryString =
+                "INSERT INTO " + theTable + " (" + theHighKeyColumn + ", " + theNameColumn + ") VALUES (?,?)";
+
+
+            try { // separated try catch to make sure that if autocommit is changed,
+                // we can put it back to its original state
+                con = ds.getConnection();
+                isAutoCommit = con.getAutoCommit();
+                con.setAutoCommit(false);
+            } catch (SQLException se) {
+                try {
+                    if (con != null) con.close();
+                } catch (SQLException se2) {
+                    se2.printStackTrace();
+                }
+                throw new RemoteException(se.getMessage());
+            }
+
+            try {
+                // select HighKey
+                //ps = con.prepareStatement(selectForUpdateQueryString);
+                ps = con.createStatement();
+                //ps.setString(1, theName);
+                selectForUpdateQueryString = "SELECT "+ theHighKeyColumn +" FROM "+ theTable+" WHERE "+ theNameColumn +" = '"+theName+"' ";
+                System.out.println("~~~~~~~~selectForUpdateQueryString=["+selectForUpdateQueryString+"],theName=["+theName+"]");
+                result = ps.executeQuery(selectForUpdateQueryString);
+                if (result.next()) {
+                    System.out.println("~~~~~~~~result.next()");
+                    String str = result.getString(theHighKeyColumn);
+                    System.out.println("~~~~~~~~str="+str);
+                    theHighKey.reinitialise(str.trim());
+                } else {
+                    // Could not find any HighKey. Create it.
+                    try {
+                        if (ps != null) ps.close();
+                        theHighKey.reinitialise();
+                        insertQueryString =
+                            "INSERT INTO " + theTable + " (" + theHighKeyColumn + ", " + theNameColumn + ") VALUES ('"+theHighKey.toString()+"','"+theName+"')";
+                        System.out.println("~~~~~~~~insertQueryString=["+insertQueryString+"],theHighKey.toString()=["+theHighKey.toString()+"],theName=["+theName+"]");
+                        ps = con.createStatement();
+                        //ps = con.prepareStatement(insertQueryString);
+                        //ps.setString(1, theHighKey.toString());
+                        //ps.setString(2, theName);
+                        if (ps.executeUpdate(insertQueryString) != 1) {
+                            throw new RemoteException("Failed to create High Key.");
+                        }
+                    } catch (SQLException se) {
+                        System.out.println("~~~~~~~~SQLException se");
+                        throw new RemoteException("Failed to create High Key.", se);
+                    }
+                }
+                // Uncomment the two following lines if you would like to test concurency
+                //long timeStamp = System.currentTimeMillis();
+                //while (System.currentTimeMillis() < timeStamp + 2000) { }
+
+                // update HighKey
+                try {
+                    //if (ps != null) ps.close();
+                    String nK = theHighKey.nextKeyAsString();
+                    updateQueryString =
+                        "UPDATE " + theTable + " SET " + theHighKeyColumn + " = '"+nK+"' WHERE " + theNameColumn + " = '"+theName+"'";
+                    ps2 = con.createStatement();
+                    //ps = con.prepareStatement(updateQueryString);
+                    //ps.setString(1, nK);
+                    //ps.setString(2, theName);
+                    System.out.println("updateQueryString=["+updateQueryString+"],nK=["+nK+"],theName=["+theName+"]");
+                    if (ps2.executeUpdate(updateQueryString) != 1) {
+                        throw new RemoteException("Could not update the High Key.");
+                    }
+                } catch (SQLException se) {
+                    throw new RemoteException(se.getMessage());
+                } catch (MaxForKeyReachedException e) {
+                    throw new RemoteException("THE SYSTEM HAS RUN OUT OF HIGH KEYS. " +
+                    "NO NEW UNIVERSAL ID CAN BE GENERATED " +
+                    "(one said that pigs would to fly " +
+                    "when this happens. Now is a good time " +
+                    "to check whether this is true.) " +
+                    "Try using a new Unique Identifier");
+                }
+                return theHighKey;
+
+            } catch (SQLException se) {
+                //=-= //=-= //=-= System.out.println("+++++++++--------------------++++++++++++++++vvvvvvvvvvvvvvvvvvvvvvv");
+                se.printStackTrace(System.out);
+                //=-= //=-= //=-= System.out.println("+++++++++--------------------++++++++++++++++^^^^^^^^^^^^^^^^^^^^^^^");
+                throw new FinderException(se.toString());
+            } finally {
+                try {
+                    if (result != null) result.close();
+                    if (ps != null) ps.close();
+                    if (ps2 != null) ps2.close();
+                    con.setAutoCommit(isAutoCommit);
+                    if (con != null) con.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+        } catch (RemoteException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            //=-= //=-= //=-= System.out.println("+++++++++--------------------++++++++++++++++-------------------+++++++++++++++++");
+            ex.printStackTrace(System.out);
+            //=-= //=-= //=-= System.out.println("+++++++++--------------------++++++++++++++++-------------------+++++++++++++++++");
+            throw new EJBException(ex.toString());
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<form-bean name="vazeatKhedmatForm" dynamic="true" type="com.objectj.emdad.web.action.VazeatKhedmatForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="onvan" type="java.lang.String"/>
+	<form-property name="vazeatKhedmatId" type="java.lang.Integer"/>
+</form-bean>

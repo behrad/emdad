@@ -1,0 +1,16 @@
+	<formset>
+		<form name="bazaryabMotefaregheForm">
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605;" resource="false"/>
+			</field>
+
+			<field property="address" depends="required">
+				<arg0 key="&#1570;&#1583;&#1585;&#1587;" resource="false"/>
+			</field>
+
+            <field property="tel" depends="required">
+                <arg0 key="&#1578;&#1604;&#1601;&#1606;" resource="false"/>
+            </field>
+
+		</form>
+	</formset>

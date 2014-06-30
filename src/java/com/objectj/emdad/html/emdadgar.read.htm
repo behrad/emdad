@@ -1,0 +1,120 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/emdadgar">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_emdadgarId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نام:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_name  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تل(f)ن:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_tel  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تل(f)ن همراه:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_mobile  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">آدرس:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_address  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">سطح مهارت (f)ني:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_satheMaharat  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">سق(f) موجودي:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_saghfeMojoodi <span class="fieldDescription">&nbsp;ريال</span></td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">وضعيت:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_vazeat  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نوع امدادگر:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_noeEmdadgarOnvan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">د(f)تر استاني:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_daftarOstaniName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نمايندگي:</td>
+						<td width="5%"></td>
+						<td class="readData">emdadgar_namayandegiName  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.emdadgarForm);
+	setEntity("Emdadgar");
+</script>
+		

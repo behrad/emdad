@@ -1,0 +1,25 @@
+On commenting the setIds in Rokhdad, Emdad, Emdadgar CMPs.
+
+
+Changes to be applied to EmdadKhodro Database ( EmdadDS ):
+----------------------------------------------------------
+1) changing "ezamgar" role in table Admin_Roles to ezamgarAdi
+
+2) Add new "ezamgarVije" role in table Admin_Roles.
+
+3) Adding role access controls to ezamgarAdi & ezamgarVije via superuser.
+
+4) Defining new ezamgarVije and ezamgarAdi user accounts.
+
+5) Adding new field noeEmdadgarId to table Emdad. ( varchar(19) FK noeEmdadgar )
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+update emdad set emdad.noeemdadgarid=t.noeemdadgarid from (select noeemdadgarid,id from emdadgar)t
+ where emdad.emdadgarid=t.id
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+6) Changing noeEmdadgarId in view emdadList to table emdad
+
+7) add kiloometerKarkardGhabli int4 to rokhdad and emdadList ( initial Value 0 )
+
+8) Add role access of Ojrat list to fanni-mohandesi !

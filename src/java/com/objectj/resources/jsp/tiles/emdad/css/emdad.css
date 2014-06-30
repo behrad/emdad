@@ -1,0 +1,454 @@
+.generalText
+{
+	font-family: Tahoma, Arial;
+	font-size: 12px;
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 0px
+}
+
+.error
+{
+	font-family: Tahoma, Arial;
+	color: Red;
+	font-size: 18px;
+}
+
+.success
+{
+	font-family: Tahoma, Arial;
+	color: Blue;
+	font-size: 18px;
+}
+
+.validation
+{
+	font-family: Tahoma, Arial;
+	color: Red;
+	font-size: 12px;
+}
+
+.info
+{
+	font-family: Tahoma, Arial;
+	color: Blue;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.info2
+{
+	font-family: Tahoma, Arial;
+	color: Blue;
+	font-size: 18px;
+}
+
+input
+{
+	font-family: Tahoma, Arial;
+	font-size: 12px;
+}
+
+
+
+form
+{
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 0px
+}
+
+
+.tilesMenuRow
+{
+	font-family: Tahoma, Arial;
+	font-size: 14px;
+}
+
+.tilesMenuCol
+{
+	text-align: center;
+	height: 70px;
+	vertical-align: middle;
+}
+
+.tilesHeader
+{
+	font-family: Tahoma, Arial;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	color: #000066;
+}
+
+
+
+
+
+
+table.editTable
+{
+	margin: 0px;
+	padding: 0px;	
+}
+
+td.editLabel
+{
+	text-align: left;
+	font-size: 9pt;
+}
+
+.editStar
+{
+	font-family: Tahoma, Arial;
+	color: Red;
+	font-size: 10px;
+}
+
+.editRequired
+{
+	font-family: Tahoma, Arial;
+	color: blue;
+	font-size: 10px;
+}
+
+tr.editRow0
+{
+	background-color: #E9EBEB;
+}
+
+tr.editRow1
+{
+	background-color: #DADEDC;
+}
+
+
+
+
+
+
+
+table.readTable
+{
+	margin: 0px;
+	padding: 0px;	
+}
+
+td.readLabel
+{
+	text-align: left;
+	font-size: 9pt;
+}
+
+td.readData
+{
+	text-align: right;
+	font-size: 9pt;
+}
+
+tr.readRow0
+{
+	background-color: #E9EBEB;
+}
+
+tr.readRow1
+{
+	background-color: #DADEDC;
+}
+
+
+
+
+
+
+table.listTable
+{
+	margin: 0px;
+	padding: 0px;	
+}
+
+tr.listTableHeader
+{
+	background-color: #575F8E;
+	text-align: center;
+	height: 18px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+tr.listTableFooter
+{
+	background-image: url(../images/filter-bk.jpg);
+	bold;
+	text-align: right;
+	height: 40px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+tr.listRow0
+{
+	background-color: #E9EBEB;
+}
+
+tr.listRow1
+{
+	background-color: #DADEDC;
+	border: 1px solid #FFFFFF;
+}
+
+td.listRow0Col
+{
+	font-family: Tahoma, Arial;
+	font-size: 12px;
+	text-align: right;
+	padding-left: 10px;
+}
+
+td.listRow1Col
+{
+	font-family: Tahoma, Arial;
+	font-size: 12px;
+	padding-left: 10px;
+	border: 1px solid #FFFFFF;
+	padding-right: 3px;
+}
+
+td.adminRow1Col
+{
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	padding-left: 10px;
+	padding-right: 3px;
+}
+
+tr.listFilterHeader
+{
+	background-color: #9FC6C5;
+	height: 25px;
+	font-size: 12px;
+}
+
+tr.listFilterRow
+{
+	background-image: url(../images/md-mid-mid.jpg);
+}
+
+
+
+
+
+.filterTitle
+{
+	font-family: Tahoma, Arial;
+	font-size: 14px;
+	bold;
+}
+
+table.filterTable
+{
+	margin: 0px;
+	padding: 0px;	
+}
+
+tr.filterTableHeader
+{
+	font-family: Tahoma, Arial;
+	font-size: 12px;	
+	background-color: #CCCCFF;
+	color: #000066;
+	height: 25px;
+	font-size: 9pt;
+	text-align: center;
+}
+
+tr.filterRow
+{
+	background-color:  #E9EBEB;
+}
+
+td.filterCol
+{
+	text-align: center;
+}
+
+a:link {
+	font-family: Tahoma, Arial;
+	font-style: normal;
+	font-weight: normal;
+	color: #000099;
+	text-decoration: none;
+	font-size: 9pt;
+
+}
+a:hover {
+	font-family: Tahoma, Arial;
+	font-style: normal;
+	font-weight: normal;
+	color: #000099;
+	text-decoration: underline;
+	font-size: 9pt;
+}
+a:active {
+
+	font-family: Tahoma, Arial;
+	font-style: normal;
+	font-weight: normal;
+	color: #000099;
+	text-decoration: none;
+	font-size: 9pt;
+}
+a:visited {
+
+	font-family: Tahoma, Arial;
+	font-style: normal;
+	font-weight: normal;
+	color: #000099;
+	text-decoration: none;
+	font-size: 9pt;
+}
+.paayeLink {
+	font-family: Tahoma, Arial;
+	font-size: 8pt;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: normal;
+	color: #000099;
+	text-decoration: none;
+}
+.textB {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+}
+.text {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+.text8 {
+	font-family: Tahoma, Arial;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+.textW {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.textW8 {
+	font-family: Tahoma, Arial;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.textBw {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.textTitle {
+	font-family: Tahoma, Arial;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFFFFF;
+
+}
+.field {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	border: thin solid #666699;
+}
+.emdadButton {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	border: thin solid #666699;
+	background-color: #CCCCFF;
+	padding: 3px;
+	cursor: hand;
+}
+.menuTitle {
+	font-family: Tahoma, Arial;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFFFFF;
+	line-height: 20px;
+
+}
+.textBb {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000066;
+
+}
+.textBlue {
+	font-family: Tahoma, Arial;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000066;
+
+}
+.paayeLinkW {
+
+	font-family: Tahoma, Arial;
+	font-size: 8pt;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: normal;
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.filterFieldCell {
+	background-image: url(../images/filter-bk.jpg);
+}
+.caption {
+	background-image: url(../images/caption.jpg);
+	font-size: 9pt;
+	font-weight: bold;
+	font-family: tahoma;
+	color: #FFFFFF;
+}
+
+.fieldDescription {
+	color: #666666;
+	font-size: 9pt;
+}
+
+.filterFindCell {
+	background-image: url(../images/filter-bk.jpg);
+	text-align: left;
+}
+
+
+.filterFindEditCell {
+	background-image: url(../images/filter-bk.jpg);
+	border-left: thin solid #666699;
+	text-align: right;
+}
+
+.fieldDescription1 {
+	color: #666666;
+	font-size: 9pt;
+    bgcolor: #DADEDC;
+}

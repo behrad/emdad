@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN" "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+
+<form-validation>
+	<formset>
+		<form name="khodrosazForm">
+			<field property="khodrosazId" depends="required, mask">
+				<arg0 key="&#1705;&#1583;&#1582;&#1608;&#1583;&#1585;&#1608;&#1587;&#1575;&#1586;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+	
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605;" resource="false"/>
+			</field>
+		</form>
+	</formset>
+
+
+	<formset>
+		<form name="noeKhodroForm">
+			<field property="noeKhodroId" depends="required, mask">
+				<arg0 key="&#1705;&#1583; &#1606;&#1608;&#1593; &#1582;&#1608;&#1583;&#1585;&#1608;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+	
+			<field property="onvan" depends="required">
+				<arg0 key="&#1593;&#1606;&#1608;&#1575;&#1606;" resource="false"/>
+			</field>
+
+			<field property="guarantee" depends="required, mask">
+				<arg0 key="&#1590;&#1605;&#1575;&#1606;&#1578;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+
+	<formset>
+		<form name="roleForm">
+			<field property="role" depends="required">
+				<arg0 key="&#1606;&#1602;&#1588;" resource="false"/>
+			</field>
+
+			<field property="entity" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1605;&#1608;&#1580;&#1608;&#1583;&#1610;&#1578;" resource="false"/>
+			</field>
+
+			<field property="access" depends="required">
+				<arg0 key="&#1583;&#1587;&#1578;&#1585;&#1587;&#1610;" resource="false"/>
+			</field>
+		</form>
+	</formset>
+	
+	<formset>
+		<form name="ostanForm">
+			<field property="ostanId" depends="required,mask">
+				<arg0 key="&#1705;&#1583; &#1575;&#1587;&#1578;&#1575;&#1606;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1575;&#1587;&#1578;&#1575;&#1606;" resource="false"/>
+			</field>
+		</form>
+	</formset>
+
+	<formset>
+		<form name="noeBazaryabForm">
+			<field property="noeBazaryabId" depends="required,mask">
+				<arg0 key="&#1705;&#1583; &#1606;&#1608;&#1593; &#1576;&#1575;&#1586;&#1575;&#1585;&#1740;&#1575;&#1576;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="onvan" depends="required">
+				<arg0 key="&#1593;&#1606;&#1608;&#1575;&#1606;" resource="false"/>
+			</field>
+		</form>
+	</formset>
+
+	<formset>
+		<form name="shahrForm">
+			<field property="shahrId" depends="required,mask">
+				<arg0 key="&#1705;&#1583; &#1588;&#1607;&#1585;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1588;&#1607;&#1585;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>
+	
+</form-validation>

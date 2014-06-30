@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"سطح", "ازطول جغرا�?يائی", "تاطول جغرا�?يائی", "ازعرض جغرا�?يائی", "تاعرض جغرا�?يائی", "منطقه"});
+		request.setAttribute("fields", new String[] {"mapLevel", "azTooleGoegraphy", "taTooleGoegraphy", "azArzeGoegraphy", "taArzeGoegraphy", "mantagheId"});
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

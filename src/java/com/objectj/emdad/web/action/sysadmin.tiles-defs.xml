@@ -1,0 +1,4 @@
+	<definition name="emdad.sysadmin" extends="emdad.main">
+		<put name="title"  		value="&#1605;&#1583;&#1740;&#1585;&#1740;&#1578; &#1583;&#1587;&#1578;&#1585;&#1587;&#1740; &#1607;&#1575;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/sysadmin/ACL-frames.jsp" />
+	</definition>

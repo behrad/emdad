@@ -1,0 +1,22 @@
+<form-bean name="mostanadatRokhdadForm" dynamic="true" type="com.objectj.emdad.web.action.MostanadatRokhdadForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+	<form-property name="fromPopUp" type="java.lang.String"/>
+
+	<form-property name="mostanadatRokhdadId" type="java.lang.Integer"/>
+	<form-property name="rokhdadId" type="java.lang.String"/>
+	<form-property name="shomarehSanad" type="java.lang.String"/>
+	<form-property name="tarikhSanad" type="java.lang.String"/>
+	<form-property name="tarikhSabt" type="java.lang.String"/>
+	<form-property name="sharh" type="java.lang.String"/>
+	<form-property name="nameParvande" type="java.lang.String"/>
+    <form-property name="rokhdadRokhdadId" type="java.lang.String"/>
+    <form-property name="daftarOstaniId" type="java.lang.String"/>
+    <form-property name="rokhdad.daftarOstaniId" type="java.lang.String"/>
+    <form-property name="rokhdad.rokhdadId" type="java.lang.String"/>
+    <form-property name="nameSanad" type="java.lang.String"/>
+</form-bean>

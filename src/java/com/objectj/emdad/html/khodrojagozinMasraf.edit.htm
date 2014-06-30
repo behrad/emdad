@@ -1,0 +1,78 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatekhodrojagozinMasraf" onsubmit="return validateKhodrojagozinMasrafForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">امداد:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="emdadId" size="19" maxlength="19" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">خودرو جایگزین:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="khodrojagozinId" size="19" maxlength="19" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاریخ تحویل دادن به مشتری:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tarikhTahvilBeMoshtari" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاریخ تحویل  گر�?تن از مشتری:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="tarikhTahvilAzMoshtari" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.khodrojagozinMasrafForm);
+	setEntity("KhodrojagozinMasraf");
+    if (document.khodrojagozinMasrafForm.action_type.value=="create") 
+	{
+        document.khodrojagozinMasrafForm.action="/emdad/c/validatekhodrojagozinMasraf.run";
+    } 
+	
+	else 
+	{
+        document.khodrojagozinMasrafForm.action="/emdad/u/validatekhodrojagozinMasraf.run";
+    }
+</script>
+<html:javascript formName="khodrojagozinMasrafForm" />

@@ -1,0 +1,15 @@
+<form-bean name="mojoodiMojazForm" dynamic="true" type="com.objectj.emdad.web.action.MojoodiMojazForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="noeEmdadgarId" type="java.lang.String"/>
+    <form-property name="noeEmdadgarOnvan" type="java.lang.String"/>
+    <form-property name="qateId" type="java.lang.String"/>
+    <form-property name="qateName" type="java.lang.String"/>
+    <form-property name="shomarehFanni" type="java.lang.String"/>
+	<form-property name="tedad" type="java.lang.Integer"/>
+</form-bean>

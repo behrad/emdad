@@ -1,0 +1,3 @@
+    private @simpleType@ @attribute@;
+    private String @refEntity@@DisplayAttribute@;
+

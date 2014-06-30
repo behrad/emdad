@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build-application" default="main" basedir=".">
+
+     <target name="main" depends="deploy-ear" />
+     <target name="web-main" depends="web-deploy-ear" />
+     <target name="make-entity" depends="init, make-entity-bean, make-proxy, compile-jsa-model, make-session-ejb, make-jsp" />
+     <target name="make-jsa" depends="init, compile-jsa-model, compile-tool" />
+
+    <property name="version" value="0.14" />
+    <property name="sample_version" value="11" />
+
+    <property file="../jsa.properties" />
+    <property file="build.properties" />
+
+    <property name="base.dir" value="../.." />
+
+    <property name="deploy.dir" value="${jboss.home}/server/default/deploy" />
+    <property name="arch.dir" value="${base.dir}/arch" />
+    <property name="lib.dir" value="${base.dir}/lib" />
+    <property name="logs.dir" value="${base.dir}/logs" />
+    <property name="build.dir" value="${base.dir}/build" />
+    <property name="generated.dir" value="${base.dir}/gen" />
+    <property name="metadata.dir" value="${base.dir}/src/conf/metadata" />
+    <property name="src.dir" value="${base.dir}/src/java" />
+    <property name="web.dir" value="${build.dir}/jboss-deployable/${application}" />
+    <property name="webinf.dir" value="${web.dir}/WEB-INF" />
+    <property name="classes.dir" value="${build.dir}/classes" />
+    <property name="descriptor.dir" value="${build.dir}/xml" />
+    <property name="web-classes.dir" value="${webinf.dir}/classes" />
+    <property name="ejb-gen.dir" value="${generated.dir}/ejb" />
+    <property name="gen-src.dir" value="${ejb-gen.dir}/java" />
+    <property name="entitybean.template.dir" value="${metadata.dir}/j2ee/entity" />
+    <property name="ejbutils.dir" value="${metadata.dir}/j2ee/ejbutils" />
+    <property name="ejbutils.classes.dir" value="${ejbutils.dir}/classes" />
+    <property name="log4j.dir" value="${metadata.dir}/log4j" />
+    <property name="log4j.level" value="DEBUG" />
+    <property name="log4j.file" value="${logs.dir}/${application}.log" />
+    <property name="xdoclet.merge.dir" value="${build.dir}/xdoclet" />
+    <property name="xdoclet.metadata.dir" value="${metadata.dir}/xdoclet" />
+    <property name="struts.metadata.dir" value="${metadata.dir}/struts" />
+    <property name="action.dir" value="${src.dir}/com/objectj/jsa/web/action" />
+    <property name="app.action.dir" value="${src.dir}/com/objectj/${application}/web/action" />
+    <property name="application-resources.dir" value="${html.dir}/messages" />
+    <property name="action.template.dir" value="${struts.metadata.dir}/action" />
+    <property name="deploymentdescriptor.dir" value="${ejb-gen.dir}/xml" />
+
+    <property name="spec.dir" value="${src.dir}/com/objectj/${application}/spec" />
+
+    <path id="project.classpath">
+        <!-- fileset dir="/app/xdoclet/xdoclet-all/xdoclet/target/lib">
+            <include name="*.jar" />
+        </fileset-->
+        <fileset dir="${lib.dir}">
+            <include name="j2ee/lib/*.jar" />
+            <include name="log4j/lib/*.jar" />
+            <include name="commons/lib/*.jar" />
+            <include name="struts/lib/*.jar" />
+            <include name="ant/lib/*.jar" />
+            <include name="xdoclet/lib/*.jar" />
+        </fileset>
+        <path location="${ejbutils.classes.dir}" />
+        <path location="${classes.dir}" />
+    </path>
+
+<!--
+   ========================================================================
+    Initializing, creating folders, etc.
+   ========================================================================
+-->
+    <target name="init">
+        <tstamp />
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${arch.dir}" />
+        <mkdir dir="${logs.dir}" />
+        <mkdir dir="${classes.dir}" />
+        <mkdir dir="${descriptor.dir}" />
+        <mkdir dir="${web-classes.dir}" />
+        <mkdir dir="${generated.dir}" />
+        <mkdir dir="${webinf.dir}" />
+        <mkdir dir="${ejb-gen.dir}" />
+        <mkdir dir="${gen-src.dir}" />
+        <mkdir dir="${deploymentdescriptor.dir}" />
+        <mkdir dir="${application-resources.dir}" />
+
+        <copy tofile="${descriptor.dir}/${application}-application.xml" file="${metadata.dir}/j2ee/xxx-application.xml" />
+        <replace file="${descriptor.dir}/${application}-application.xml" token="xxx" value="${application}" />
+
+        <!-- New Added By Faraz -->
+        <!--copy tofile="${descriptor.dir}/mssql-ds.xml" file="${metadata.dir}/j2ee/mssql-ds.xml" />
+        <copy tofile="${descriptor.dir}/mssql-ds.xml" file="${metadata.dir}/j2ee/mssql-ds.xml" /-->
+	<!-- New Added By Faraz -->
+
+        <!--copy tofile="${descriptor.dir}/${application}-mysql-service.xml" file="${metadata.dir}/j2ee/xxx-mysql-service.xml" />
+             <replace file="${descriptor.dir}/${application}-mysql-service.xml" token="@database.url@" value="${database.url}" />
+             <replace file="${descriptor.dir}/${application}-mysql-service.xml" token="@database.driver@" value="${database.driver}" />
+        <replace file="${descriptor.dir}/${application}-mysql-service.xml" token="$database.name$" value="${database.name}" />
+        <replace file="${descriptor.dir}/${application}-mysql-service.xml" token="$database.user$" value="${database.user}" />
+        <replace file="${descriptor.dir}/${application}-mysql-service.xml" token="$database.password$" value="${database.password}" /-->
+
+        <copy todir="${classes.dir}" file="${log4j.dir}/log4j.properties" />
+        <replace file="${classes.dir}/log4j.properties" token="%LOG_FILE%" value="${log4j.file}" />
+        <replace file="${classes.dir}/log4j.properties" token="%LOG_LEVEL%" value="${log4j.level}" />
+
+        <taskdef
+            name="ejbdoclet"
+            classname="xdoclet.modules.ejb.EjbDocletTask"
+            classpathref="project.classpath"
+        />
+        <taskdef name="webdoclet"
+            classname="xdoclet.modules.web.WebDocletTask"
+            classpathref="project.classpath"
+        />
+
+        <condition property="isHtmlFarsiExist" >
+          <and>
+            <available file="${html.farsi.dir}" />
+          </and>
+        </condition>
+    </target>
+
+<!--
+   ========================================================================
+     cleaning (almost) all (xdoclet) generated classes and java files
+   ========================================================================
+-->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${generated.dir}" />
+        <delete>
+            <fileset dir="${src.dir}" includes="**/*.class" />
+        </delete>
+        <delete dir="${deploy.dir}/${application}.ear" />
+    </target>
+
+
+    <!--
+       ========================================================================
+         comment all System.out for better performance
+       ========================================================================
+    -->
+    <target name="comment.System.out">
+        <replace dir="${src.dir}" token="System.out.print" value="//=-= System.out.print">
+          <include name="**/*.java"/>
+          <include name="**/*.jsp"/>
+        </replace>
+        <!--replace dir="${sonata.home}" token="System.out.println" value="//System.out.println">
+          <include name="**/*.jsp"/>
+        </replace-->
+    </target>
+
+
+    <!--
+       ========================================================================
+       Uncomment all System.out for debug purposes
+       ========================================================================
+    -->
+    <target name="uncomment.System.out">
+        <replace dir="${src.dir}" token="//=-= System.out.print" value="System.out.print">
+          <include name="**/*.java"/>
+          <include name="**/*.jsp"/>
+        </replace>
+        <!--replace dir="${sonata.home}" token="//System.out.print" value="System.out.print">
+          <include name="**/*.jsp"/>
+        </replace-->
+    </target>
+
+<!--
+   ========================================================================
+     Creating valueobjects, models, interface and CMP files using xDoclet
+     ejbdoclet task
+   ========================================================================
+-->
+    <!-- target name="setEjbCodeAvailablity">
+      <condition property="isEjbCodeAvailable">
+        <and>
+          <available file="${src.dir}/com/objectj/${application}/ejb" type="dir" />
+        </and>
+      </condition>
+    </target -->
+
+
+<!--    <target name="ejbdoclet" depends="init, make-entity-bean, make-proxy, compile-jsa-model, make-session-ejb" >-->
+   <target name="ejbdoclet" depends="init" >
+        <ejbdoclet
+            destdir="${gen-src.dir}"
+            excludedtags="@version, @author"
+            ejbspec="2.0">
+
+
+            <!-- packageSubstitution packages="entity" substituteWith="model"/ -->
+
+            <fileset dir="${src.dir}">
+                <include name="**/*EJB.java"/>
+            </fileset>
+
+            <remoteinterface pattern="{0}Remote" />
+            <homeinterface pattern="{0}RemoteHome" />
+            <localinterface />
+            <localhomeinterface />
+            <entitycmp />
+            <session />
+            <valueobject pattern="{0}Model">
+                <!-- packageSubstitution packages="entity" substituteWith="model"/ -->
+            </valueobject>
+            <!--utilobject cacheHomes="yes" includeGUID="true" -->
+            <utilobject cacheHomes="yes" >
+                <!-- packageSubstitution packages="entity" substituteWith="util"/ -->
+            </utilobject>
+
+            <deploymentdescriptor destdir="${deploymentdescriptor.dir}" validatexml="true"/>
+
+            <jboss destdir="${deploymentdescriptor.dir}"
+                version="3.0"
+                typemapping="MS SQLSERVER"
+                datasource="java:/${database.name}DS"
+            />
+
+        </ejbdoclet>
+
+    </target>
+
+<!--
+   ========================================================================
+     Creating struts conf file using xDoclet webdoclet task
+   ========================================================================
+-->
+
+<!--    <target name="webdoclet" depends="make-jsp">-->
+    <target name="webdoclet" depends="init">
+
+        <copy todir="${xdoclet.merge.dir}">
+            <fileset dir="${xdoclet.metadata.dir}" includes="**/*" />
+        </copy>
+        <java classname="com.objectj.jsa.tool.Merger"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${html.dir}"/>
+            <arg value=".form.xml"/>
+            <arg value="${xdoclet.merge.dir}/struts-forms.xml"/>
+        </java>
+
+        <!-- java classname="com.objectj.jsa.tool.Merger"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${html.dir}"/>
+            <arg value="-validation.xml"/>
+            <arg value="${webinf.dir}/validation.xml"/>
+        </java -->
+
+        <echo>
+        webdoclet: reading from merge ${xdoclet.merge.dir}
+        </echo>
+        <webdoclet
+            destdir="${webinf.dir}"
+            mergedir="${xdoclet.merge.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*Action.java" />
+                <include name="**/*Form.java" />
+            </fileset>
+
+            <deploymentdescriptor servletspec="2.3" distributable="false" >
+                <taglib
+                    uri="struts-bean"
+                    location="/WEB-INF/tld/struts-bean.tld"
+                    />
+                <taglib
+                    uri="struts-html"
+                    location="/WEB-INF/tld/struts-html.tld"
+                    />
+                <taglib
+                    uri="struts-logic"
+                    location="/WEB-INF/tld/struts-logic.tld"
+                    />
+                <taglib
+                    uri="struts-nested"
+                    location="/WEB-INF/tld/struts-nested.tld"
+                    />
+                <taglib
+                    uri="struts-tiles"
+                    location="/WEB-INF/tld/struts-tiles.tld"
+                    />
+                <taglib
+                    uri="taglib"
+                    location="/WEB-INF/tld/taglib.tld"
+                    />
+
+            </deploymentdescriptor>
+
+            <strutsconfigxml version="1.1" />
+
+            <jbosswebxml
+                securitydomain="java:/jaas/${application}"
+            />
+
+        </webdoclet>
+    </target>
+
+
+ <!--
+   ========================================================================
+     Generic COmpile task
+   ========================================================================
+-->
+   <target name="compile">
+        <javac deprecation="true" debug="${javac.debug}"
+            srcdir="${src.dir};${gen-src.dir}"
+            destdir="${classes.dir}"
+            includes="com/objectj/**/${module}/**/*.java"
+            classpathref="project.classpath"
+            encoding = "${encoding}"
+        >
+        </javac>
+    </target>
+
+<!--
+   ========================================================================
+     Compiling different module
+   ========================================================================
+-->
+    <target name="compile-core" depends="init">
+        <antcall target="compile">
+            <param name="module" value="core" />
+        </antcall>
+    </target>
+
+    <target name="compile-tool" depends="compile-core">
+        <antcall target="compile">
+            <param name="module" value="tool" />
+        </antcall>
+    </target>
+
+    <target name="compile-ejb" depends="ejbdoclet">
+        <antcall target="compile">
+            <param name="module" value="ejb" />
+        </antcall>
+    </target>
+
+    <target name="compile-jsa-model" depends="compile-core">
+        <antcall target="compile">
+            <param name="module" value="jsa/model" />
+        </antcall>
+    </target>
+
+    <target name="compile-proxy" depends="compile-ejb">
+        <antcall target="compile">
+            <param name="module" value="proxy" />
+        </antcall>
+    </target>
+
+    <target name="compile-web" depends="webdoclet, compile-proxy">
+        <antcall target="compile">
+            <param name="module" value="web" />
+        </antcall>
+    </target>
+
+    <target name="web-compile-web" depends="webdoclet">
+	        <antcall target="compile">
+	            <param name="module" value="web" />
+	        </antcall>
+    </target>
+
+<!--
+   ========================================================================
+     Create ejb jar file
+   ========================================================================
+-->
+    <target name="ejb-jar" depends="compile-proxy">
+        <jar jarfile="${build.dir}/${application}-ejb.jar">
+            <fileset dir="${classes.dir}">
+                <include name="com/objectj/jsa/proxy/**/*" />
+                <include name="com/objectj/jsa/model/**/*" />
+                <include name="${top.path}/ejb/**/*" />
+                <include name="${top.path}/proxy/**/*" />
+            </fileset>
+            <metainf dir="${deploymentdescriptor.dir}" />
+        </jar>
+    </target>
+
+<!--
+   ========================================================================
+     Create war file
+   ========================================================================
+-->
+    <target name="web-war" depends="compile-web, integrate">
+        <copy todir="${web-classes.dir}">
+            <fileset dir="${struts.metadata.dir}" includes="*.properties" />
+            <fileset dir="${application-resources.dir}" includes="*.properties" />
+            <fileset dir="${log4j.dir}" includes="*.properties" />
+        </copy>
+        <replace file="${web-classes.dir}/log4j.properties" token="%LOG_FILE%" value="${log4j.file}" />
+        <replace file="${web-classes.dir}/log4j.properties" token="%LOG_LEVEL%" value="${log4j.level}" />
+
+        <copy todir="${webinf.dir}">
+            <fileset dir="${metadata.dir}/webinf" includes="**/*" />
+        </copy>
+
+        <war
+            destfile="${build.dir}/${application}-web.war"
+            webxml="${webinf.dir}/web.xml">
+
+            <webinf dir="${webinf.dir}">
+                <include name="**/*" />
+                <exclude name="**/*.jar" />
+                <exclude name="**/classes/**" />
+                <exclude name="**/web.xml" />
+            </webinf>
+
+            <lib dir="${lib.dir}/commons/lib" includes="*.jar" />
+            <lib dir="${lib.dir}/struts/lib" includes="*.jar" />
+            <lib dir="${lib.dir}/log4j/lib" includes="*.jar" />
+            <!-- lib dir="${lib.dir}/jdbc/lib" includes="*.jar" / -->
+            <classes dir="${web-classes.dir}" includes="**/*" />
+            <classes dir="${classes.dir}">
+                <include name="com/objectj/jsa/web/**/*" />
+                <include name="com/objectj/jsa/proxy/**/*" />
+                <include name="com/objectj/jsa/model/**/*" />
+                <include name="${top.path}/web/**/*" />
+                <include name="${top.path}/proxy/**/*" />
+                <include name="${top.path}/ejb/**/*" />
+                <exclude name="${top.path}/ejb/*CMP*" />
+            </classes>
+
+            <fileset dir="${src.dir}">
+                <include name="**/*.jsp" />
+                <include name="com/objectj/resources/jsp/help/**/*" />
+                <include name="**/*.css" />
+                <include name="**/*.js" />
+                <include name="**/*.gif" />
+                <include name="**/*.jpg" />
+            </fileset>
+
+        </war>
+
+    </target>
+
+        <target name="web-web-war" depends="web-compile-web, integrate">
+	        <copy todir="${web-classes.dir}">
+	            <fileset dir="${struts.metadata.dir}" includes="*.properties" />
+	            <fileset dir="${application-resources.dir}" includes="*.properties" />
+	            <fileset dir="${log4j.dir}" includes="*.properties" />
+	        </copy>
+	        <replace file="${web-classes.dir}/log4j.properties" token="%LOG_FILE%" value="${log4j.file}" />
+	        <replace file="${web-classes.dir}/log4j.properties" token="%LOG_LEVEL%" value="${log4j.level}" />
+
+	        <copy todir="${webinf.dir}">
+	            <fileset dir="${metadata.dir}/webinf" includes="**/*" />
+	        </copy>
+
+	        <war
+	            destfile="${build.dir}/${application}-web.war"
+	            webxml="${webinf.dir}/web.xml">
+
+	            <webinf dir="${webinf.dir}">
+	                <include name="**/*" />
+	                <exclude name="**/*.jar" />
+	                <exclude name="**/classes/**" />
+	                <exclude name="**/web.xml" />
+	            </webinf>
+
+	            <lib dir="${lib.dir}/commons/lib" includes="*.jar" />
+	            <lib dir="${lib.dir}/struts/lib" includes="*.jar" />
+	            <lib dir="${lib.dir}/log4j/lib" includes="*.jar" />
+	            <!-- lib dir="${lib.dir}/jdbc/lib" includes="*.jar" / -->
+	            <classes dir="${web-classes.dir}" includes="**/*" />
+	            <classes dir="${classes.dir}">
+	                <include name="com/objectj/jsa/web/**/*" />
+	                <include name="com/objectj/jsa/proxy/**/*" />
+	                <include name="com/objectj/jsa/model/**/*" />
+	                <include name="${top.path}/web/**/*" />
+	                <include name="${top.path}/proxy/**/*" />
+	                <include name="${top.path}/ejb/**/*" />
+	                <exclude name="${top.path}/ejb/*CMP*" />
+	            </classes>
+
+	            <fileset dir="${src.dir}">
+	                <include name="**/*.jsp" />
+	                <include name="com/objectj/resources/jsp/help/**/*" />
+	                <include name="**/*.css" />
+	                <include name="**/*.js" />
+	                <include name="**/*.gif" />
+	                <include name="**/*.jpg" />
+	            </fileset>
+
+	        </war>
+
+    </target>
+
+<!--
+   ========================================================================
+     Create extarcted web folder so we bypass war file (not using now)
+   ========================================================================
+-->
+    <target name="web" depends="compile-web">
+        <copy todir="${web-classes.dir}">
+            <fileset dir="${struts.metadata.dir}" includes="*.properties" />
+            <fileset dir="${application-resources.dir}" includes="*.properties" />
+            <fileset dir="${log4j.dir}" includes="*.properties" />
+            <fileset dir="${classes.dir}">
+                <include name="com/objectj/jsa/core/**" />
+                <include name="com/objectj/jsa/proxy/**" />
+                <include name="com/objectj/jsa/ejb/**/*ValueObject" />
+                <include name="com/objectj/jsa/ejb/**/model/**" />
+                <include name="com/objectj/${application}/core/**" />
+                <include name="com/objectj/${application}/proxy/**" />
+                <include name="com/objectj/${application}/ejb/**/*ValueObject" />
+                <include name="com/objectj/${application}/ejb/**/model/**/*" />
+            </fileset>
+         </copy>
+
+        <copy todir="${webinf.dir}">
+            <fileset dir="${metadata.dir}/webinf" includes="**/*" />
+            <fileset dir="${lib.dir}/commons" includes="*.jar" />
+            <fileset dir="${lib.dir}/struts" includes="*.jar" />
+        </copy>
+
+        <!-- copy todir="${web.dir}">
+            <fileset dir="${jsp.dir}/struts" includes="**/*" />
+        </copy -->
+
+    </target>
+
+<!--
+   ========================================================================
+     Create ear file
+   ========================================================================
+-->
+    <target name="ear" depends="ejb-jar,web-war">
+        <ear appxml="${descriptor.dir}/${application}-application.xml" earfile="${build.dir}/${application}.ear">
+            <fileset dir="${build.dir}" includes="*.jar" />
+            <!-- I expand my war manualy afterwards -->
+            <!--fileset dir="${build.dir}" includes="*.war" /-->
+        </ear>
+    </target>
+
+<!--
+       ===================================================================
+         Checks whether JBoss property has been set
+       ===================================================================
+  -->
+	<target name="jboss_check" unless="jboss.home">
+		<fail message="Can not deploy to JBoss as property jboss.home is not set. Set the jboss.home property in the build.properties file, which is in the same dir as the build.xml file. Create build.properties if not there. Take default_build.properties as an example."/>
+	</target>
+<!--
+   ========================================================================
+     Deploying to Jboss
+   ========================================================================
+-->
+    <target name="deploy-ear" depends="jboss_check, ejbutils-jar, ear" if="jboss.home">
+        <copy todir="${deploy.dir}">
+            <fileset dir="${descriptor.dir}" includes="mssql-ds.xml" />
+            <!--fileset dir="${descriptor.dir}" includes="${application}-mysql-service.xml" /-->
+            <!-- Commented by me to have an extracted ear -->
+            <!--fileset dir="${build.dir}" includes="*.ear" /-->            
+            <!--fileset dir="${build.dir}" includes="ejbutils*.jar" /-->
+        </copy>
+        <!-- Commented by me to have an extracted ear -->
+        <unzip src="${build.dir}/${application}.ear" dest="${deploy.dir}/${application}.ear" overwrite="false"/>        
+        <unzip src="${build.dir}/${application}-web.war" dest="${deploy.dir}/${application}.ear/${application}-web.war" overwrite="false"/>
+    </target>
+
+    <target name="web-deploy-ear" depends="web-web-war" if="jboss.home">	        	        	       
+	        <unzip src="${build.dir}/${application}-web.war" dest="${deploy.dir}/${application}.ear/${application}-web.war" overwrite="false"/>
+    		<touch file="${deploy.dir}/${application}.ear/META-INF/application.xml"/>
+    </target>
+
+    <target name="deploy-war" depends="jboss_check, ejbutils-jar, web-war" if="jboss.home">
+        <copy todir="${deploy.dir}">
+            <fileset dir="${build.dir}" includes="*.war" />
+            <fileset dir="${build.dir}" includes="ejbutils*.jar" />
+        </copy>
+    </target>
+
+<!--
+   ========================================================================
+     Generating web-security.xml from security metadata in DB
+   ========================================================================
+-->
+    <target name="make-web-xml" depends="">
+        <echo message="Generating web-security.xml file ...." />
+        <java classname="com.objectj.jsa.tool.WebSecurityMaker"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+                <fileset dir="${lib.dir}/jdbc/lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <sysproperty key="src.dir" value="${src.dir}" />
+            <sysproperty key="database.url" value="${database.url}"/>
+            <sysproperty key="database.driver" value="${database.driver}"/>
+            <sysproperty key="database.name" value="${database.name}"/>
+            <sysproperty key="database.user" value="${database.user}"/>
+            <sysproperty key="database.password" value="${database.password}"/>
+            <arg value="${xdoclet.metadata.dir}"/>
+        </java>
+        <echo message="web-security.xml file generated successfully" />
+    </target>
+
+<!--
+   ========================================================================
+     Converting html to jsp and add struts tags
+   ========================================================================
+-->
+    <target name="make-jsp" depends="convert2ascii, make-html, make-action">
+        <echo message="Generating jsp files from html files ...." />
+        <echo message="${html} ---> ${jsp} ... ${application-resources.dir} ...." />
+        <java classname="com.objectj.jsa.tool.JspMaker"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+            <sysproperty key="file.encoding" value="${encoding}" />
+            <sysproperty key="application-resources.dir" value="${application-resources.dir}" />
+            <arg value="${html.dir}"/>
+            <arg value="${jsp.generation.immune.names}"/>
+        </java>
+        <echo message="JSP files generated" />
+    </target>
+
+<!--
+   ========================================================================
+     Making J2EE entityt beans from the property files
+   ========================================================================
+-->
+    <target name="make-entity-bean" depends="compile-tool">
+        <echo message="Generating entity beans from properties files ...." />
+
+        <java classname="com.objectj.jsa.tool.EntitySpecProcessor" fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${spec.dir}"/>
+        </java>
+
+        <java classname="com.objectj.jsa.tool.EntityBeanMaker"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+            <arg value="${src.dir}"/>
+        </java>
+        <echo message="Entity Bean files generated" />
+    </target>
+
+    <!--
+       ========================================================================
+         Making J2EE entityt beans from the property files
+       ========================================================================
+    -->
+        <target name="make-form-xml" depends="compile-tool">
+            <echo message="Generating form XMLs from properties files ...." />
+            <java classname="com.objectj.jsa.tool.FormXMLMaker"  fork="yes" failonerror="yes">
+                <classpath>
+                    <path refid="project.classpath"/>
+                </classpath>
+                <sysproperty key="author" value="${author}" />
+                <sysproperty key="application" value="${application}" />
+                <sysproperty key="top.path" value="${top.path}" />
+                <sysproperty key="src.dir" value="${src.dir}" />
+                <arg value="${src.dir}"/>
+            </java>
+            <echo message="Form XML files generated" />
+        </target>
+
+    <!--
+       ========================================================================
+         Making J2EE entityt beans from the property files
+       ========================================================================
+    -->
+        <target name="make-html" depends="compile-tool">
+            <echo message="Generating form HTMLs from properties files ...." />
+            <java classname="com.objectj.jsa.tool.HTMLMaker"  fork="yes" failonerror="yes">
+                <classpath>
+                    <path refid="project.classpath"/>
+                </classpath>
+                <sysproperty key="author" value="${author}" />
+                <sysproperty key="application" value="${application}" />
+                <sysproperty key="top.path" value="${top.path}" />
+                <sysproperty key="src.dir" value="${src.dir}" />
+                <arg value="${src.dir}"/>
+            </java>
+            <echo message="Form XML files generated" />
+        </target>
+
+<!--
+   ========================================================================
+     Making J2EE entityt beans from the property files
+   ========================================================================
+-->
+    <target name="make-proxy" depends="compile-tool">
+        <echo message="Generating entity beans from properties files ...." />
+        <java classname="com.objectj.jsa.tool.ProxyMaker2"  fork="yes" failonerror="yes">
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+            <arg value="${src.dir}"/>
+        </java>
+        <echo message="Entity Bean files generated" />
+    </target>
+
+<!--
+   ========================================================================
+     Making SessionEJB Class
+   ========================================================================
+-->
+    <target name="make-session-ejb" depends="compile-tool">
+        <echo message="Generating struts actions from form files ...." />
+        <!-- copy todir="${webinf.dir}" file="${action.dir}/validation.xml" />
+        <copy todir="${webinf.dir}" file="${action.dir}/tiles-defs.xml" / -->
+        <java classname="com.objectj.jsa.tool.SessionEJBMaker" fork="yes" failonerror="yes">
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+            <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${spec.dir}"/>
+        </java>
+        <echo message="EJB Session Files Generated." />
+    </target>
+
+<!--
+   ========================================================================
+     Integrating tiles-def and validate xml files for all entities
+   ========================================================================
+-->
+    <target name="integrate" depends="init">
+        <echo message="Integrating tiles-def.xml and validate.xml ...." />
+        <java classname="com.objectj.jsa.tool.Integrator"  fork="yes" failonerror="yes">
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+             <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${webinf.dir}"/>
+            <arg value="${app.action.dir}"/>
+        </java>
+        <echo message="XML files generated" />
+    </target>
+
+<!--
+   ========================================================================
+     Making Struts Actoin Class from Html
+   ========================================================================
+-->
+    <target name="make-action" depends="compile-tool, make-form-xml, make-html">
+        <echo message="Generating struts actions from form files ...." />
+        <!-- copy todir="${webinf.dir}" file="${action.dir}/validation.xml" />
+        <copy todir="${webinf.dir}" file="${action.dir}/tiles-defs.xml" / -->
+        <java classname="com.objectj.jsa.tool.ActionMaker"  fork="yes" failonerror="yes">
+            <sysproperty key="author" value="${author}" />
+            <sysproperty key="application" value="${application}" />
+            <sysproperty key="top.path" value="${top.path}" />
+            <sysproperty key="src.dir" value="${src.dir}" />
+             <classpath>
+                <path refid="project.classpath"/>
+            </classpath>
+            <arg value="${webinf.dir}"/>
+            <arg value="${spec.dir}"/>
+            <arg value="${jsp.generation.immune.names}"/>
+        </java>
+        <echo message="Action files generated" />
+    </target>
+
+<!--
+   ========================================================================
+     Swaping between tiles & non-tiles
+   ========================================================================
+-->
+    <target name="switch-tiles" depends="" >
+        <antcall target="swap">
+            <param name="X" value="path" />
+        </antcall>
+        <antcall target="swap">
+            <param name="X" value="input" />
+        </antcall>
+        <antcall target="deploy-ear" />
+    </target>
+    <target name="swap" depends="" >
+        <replace dir="${src.dir}" token="${X}=" value="${X}_tmp=">
+          <include name="**/*Action.java"/>
+        </replace>
+        <replace dir="${src.dir}" token="${X}Prime=" value="${X}=">
+          <include name="**/*Action.java"/>
+        </replace>
+        <replace dir="${src.dir}" token="${X}_tmp=" value="${X}Prime=">
+          <include name="**/*Action.java"/>
+        </replace>
+    </target>
+<!--
+   ========================================================================
+     Converting non-unicode to unicode (like Cp1256)
+   ========================================================================
+-->
+    <target name="convert2ascii" depends="" if="isHtmlFarsiExist" >
+        <native2ascii encoding="Cp1256" src="${html.farsi.dir}"
+        dest="${html.dir}"
+        includes="**/*"
+        />
+    </target>
+
+	<!--
+       ===================================================================
+         Create the ejbutil jars: ejbutils-client.jar, ejbutils-deploy.jar and ejbutils-test-deploy.jar
+       ===================================================================
+  -->
+	<target name="uniqueid_check" unless="uniqueid">
+		<fail message="Can not create jars as property uniqueid is not set. Set the uniqueid property in the build.properties file, which is in the same dir as the build.xml file. Create build.properties if not there. Take default_build.properties as an example."/>
+	</target>
+	<target name="ejbutils-jar" depends="uniqueid_check, init" if="uniqueid">
+            <!--filter token="UNIQUEID" value="${uniqueid}"/>
+             <jar jarfile="${build.dir}/ejbutils-client.jar">
+               <fileset dir="${ejbutils.classes.dir}" includes="**/*" />
+            </jar-->
+	</target>
+<!--
+   ========================================================================
+     CVS Tools
+   ========================================================================
+-->
+    <target name="cvs.init">
+      <cvspass cvsroot="${cvsroot}" password="${cvs.password}" />
+    </target>
+
+    <target name="checkout">
+      <cvs cvsRoot="${cvsroot}"
+           package="test"
+           dest="${package.dir}"
+      />
+    </target>
+
+    <target name="update">
+       <cvs cvsRoot="${cvsroot}" dest="${package.dir}" command="update"/>
+            <commandline>
+                <argument value="-m"/>
+                <argument value="diff"/>
+                <argument value="sample/test/Testing CVS.txt"/>
+            </commandline>
+    </target>
+
+    <target name="add">
+       <cvs cvsRoot="${cvsroot}">
+            <commandline>
+                <argument value="add"/>
+                <argument value="test/sample/bb.txt"/>
+            </commandline>
+       </cvs>
+    </target>
+
+    <target name="auto-commit">
+       <cvs cvsRoot="${cvsroot}" >
+            <commandline>
+                <argument value="commit"/>
+                <argument value="-m"/>
+                <argument value="changind in JSA"/>
+            </commandline>
+       </cvs>
+    </target>
+
+    <target name="commit">
+       <cvs cvsRoot="${cvsroot}" command="commit" />
+    </target>
+
+    <target name="getSrc">
+      <get src="https://insecure-bank.org/statement/user=1214"
+        dest="statement.html"
+        username="1214"
+        password="secret"/>
+    </target>
+<!--
+   ========================================================================
+     Archiving source
+   ========================================================================
+-->
+    <target name="zip.core" depends="" >
+       <tstamp />
+       <zip destfile="${arch.dir}/jsa.${version}.core.${DSTAMP}.${TSTAMP}.zip" basedir="${base.dir}">
+            <include name="conf/**" />
+            <include name="src/java/com/objectj/jsa/**/*" />
+            <include name="src/*" />
+            <include name="src/conf/**" />
+            <exclude name="**/.*" />
+            <exclude name="**/*.zip" />
+            <exclude name="**/*.jar" />
+        </zip>
+    </target>
+
+    <target name="zip.application" depends="" >
+       <tstamp />
+       <zip destfile="${arch.dir}/jsp.${version}.${application}.${sample_version}.${DSTAMP}.${TSTAMP}.zip" basedir="${base.dir}">
+            <include name="src/java/**/*" />
+            <exclude name="src/java/com/objectj/jsa/**/*" />
+            <exclude name="**/.*" />
+            <exclude name="**/*.class" />
+            <exclude name="**/*.zip" />
+            <exclude name="**/*.generated" />
+        </zip>
+    </target>
+
+    <target name="zip.lib" depends="" >
+       <tstamp />
+       <zip destfile="${arch.dir}/jsa.lib.zip" basedir="${base.dir}">
+            <include name="lib/**" />
+        </zip>
+    </target>
+
+    <target name="zip.doc" depends="" >
+       <tstamp />
+       <zip destfile="${arch.dir}/jsa.${version}.doc.${DSTAMP}.zip" basedir="${base.dir}">
+            <include name="doc/**" />
+        </zip>
+    </target>
+
+    <target name="zip.base" depends="" >
+       <tstamp />
+       <zip destfile="${arch.dir}/jsa.base.zip" basedir="${base.dir}">
+            <include name="*" />
+            <include name="src/html/css/**" />
+            <include name="src/html/images/**" />
+        </zip>
+    </target>
+
+<!--
+   ========================================================================
+     Only when you want ot replace a string in entire application
+   ========================================================================
+-->
+    <target name="custome.replace" >
+        <replace dir="${srcxx.dir}" token="importxx org.apache.struts.action.Action;" value="importxx org.apache.struts.Globals;">
+          <include name="**/*.java"/>
+        </replace>
+    </target>
+<!--
+   ========================================================================
+     Only for ejbutils
+   ========================================================================
+-->
+    <target name="ejbutils" >
+        <javac deprecation="true" debug="${javac.debug}"
+            srcdir="${src.dir}"
+            destdir="${ejbutils.classes.dir}"
+            includes="org/**/*.java"
+            excludes="**/test/**"
+            classpathref="project.classpath"
+            encoding = "${encoding}"
+        />
+    </target>
+
+</project>

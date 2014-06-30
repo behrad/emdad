@@ -1,0 +1,72 @@
+<html dir="rtl">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+
+<center>
+<table width="80%" id="table1"><tr><td>
+
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+<hr width="60%" color="#6699FF">
+
+<p align="center"><font face="B Homa" style="font-size: 16pt">
+<img border="0" src="pics/search1.jpg" align="right"></font></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"><span lang="fa"><font face="B Homa" size="6" color="#000080">
+جستجو</font></span></p>
+<p align="justify" dir="rtl"><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><span lang="fa"><font color="#0066FF">
+</font></span><font face="B Homa" style="font-size: 16pt"><font color="#0066FF">
+-</font><span lang="fa"><font color="#0066FF"> جستجو 
+<html:link page="rokhdad.edit.help.html">رخداد</html:link> یا <html:link page="emdad.edit.help.html">دستور کار</html:link>:</font>
+</span>در سمت چپ صفحه</font><font face="B Homa"><span style="font-size: 16pt" lang="fa"> 
+منو، اگر روی جستجو کلیک کنید منوئی مطابق این شکل باز میشود که میتوانید با نوشتن 
+کد دستور کار در جعبه دستور کار و یا کد رخداد در جعبه رخداد یک دستور کار یا رخداد</span><span style="font-size: 16pt">
+</span><span lang="fa" style="font-size: 16pt">مورد نظر را جستجو کنید.
+</span></font></p>
+<p align="justify" dir="rtl"><span lang="fa"><font color="#0066FF">&nbsp;&nbsp;&nbsp;
+</font><font face="B Homa"><span style="font-size: 16pt"><font color="#0066FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span></font></span></p>
+<p align="justify" dir="rtl"><span lang="fa">
+<font face="B Homa" style="font-size: 16pt" color="#0066FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font face="B Homa"><span style="font-size: 16pt"><font color="#0066FF">-&nbsp; 
+جستجوی شخص یا ماشین:</font>&nbsp;&nbsp; همچنین اگر بخواهید شخصی یا ماشینی را 
+جستجو کنید میتوانید روی لینک جستجوی مشتری کلیک کنید، پس از این کار صفحهای مانند 
+شکل زیر باز میشود که میتوانید مشخصات را وارد کرده و عملیات جستجو را انجام دهید.</span></font></span></p>
+<p align="justify" dir="rtl">
+<img width="100%" border="0" src="pics/search2.jpg"></p>
+<p align="justify" dir="rtl">&nbsp;</p>
+<p align="justify" dir="rtl"><font face="B Homa" style="font-size: 16pt">
+<font color="#0066FF"><span lang="fa">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp; <span lang="fa">- جستجوی دقیق:</span></font>&nbsp;&nbsp;&nbsp;
+</font><font face="B Homa"><span style="font-size: 16pt" lang="fa">اگر احتیاج به 
+جستجوی دقیقتر دارید میتوانید روی گزینه جستجوی دقیقتر کلیک کرده تا پنجره جستجو به 
+شکل زیر در آید. حال شما میتوانید از روی جزئیات بیشتر و دقیقتر عملیات جستجو را 
+انجام دهید.</span></font></p>
+<p align="justify" dir="rtl">&nbsp;</p>
+<p align="center" dir="rtl">
+<img width="100%" border="0" src="pics/search3.jpg"></p>
+<p align="center" dir="rtl">&nbsp;
+</p>
+<hr width="60%" color="#6699FF">
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+
+	</td></tr>
+
+
+ </table>
+</center>
+
+</body>
+
+</html>

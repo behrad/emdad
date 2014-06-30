@@ -1,0 +1,6 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-top.jsp" flush="true" />
+    <%
+		request.setAttribute("titles", new String[] {"نوع سرويس", "نام خانوادگی", "نام ", "تلفن", "نوع خودرو", "سال ساخت خودرو", "شماره پلاک", "شماره شاسی", });
+		request.setAttribute("fields", new String[] {"noeService", "nameKhanevadegi", "nameMoshtarak", "telMoshtarak", "onvan", "saleSakht", "shomarePelak", "shomareShasi", });
+    %>
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/report-but.jsp" flush="true" />

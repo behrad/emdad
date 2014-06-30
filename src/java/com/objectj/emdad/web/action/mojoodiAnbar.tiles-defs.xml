@@ -1,0 +1,16 @@
+
+  <definition name="emdad.mojoodiAnbar.list" extends="emdad.main">
+      <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1605;&#1608;&#1580;&#1608;&#1583;&#1740; &#1575;&#1606;&#1576;&#1575;&#1585;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/mojoodiAnbar.list.jsp" />
+  </definition>
+
+  <definition name="emdad.mojoodiAnbar.edit" extends="emdad.main">
+      <put name="title"  		value="&#1575;&#1740;&#1580;&#1575;&#1583;/&#1578;&#1594;&#1740;&#1740;&#1585; &#1605;&#1608;&#1580;&#1608;&#1583;&#1740; &#1575;&#1606;&#1576;&#1575;&#1585;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/mojoodiAnbar.edit.jsp" />
+  </definition>
+
+  <definition name="emdad.mojoodiAnbar.read" extends="emdad.main">
+      <put name="title"  		value="&#1580;&#1586;&#1574;&#1740;&#1575;&#1578; &#1605;&#1608;&#1580;&#1608;&#1583;&#1740; &#1575;&#1606;&#1576;&#1575;&#1585;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/mojoodiAnbar.read.jsp" />
+  </definition>
+

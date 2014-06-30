@@ -1,0 +1,16 @@
+    protected Class getValueObjectClass() {
+        return XxxModel.class;
+    }
+
+    protected String[] getSortableColumns() {
+        return new String[]{xsortableAttributesx};
+    }
+
+    protected EntityProxy getProxy() throws ProxyException {
+        try {
+            return XxxSessionUtil.getLocalHome().create();
+        } catch (Exception e) {
+            throw new ProxyException(e);
+        }
+    }
+}

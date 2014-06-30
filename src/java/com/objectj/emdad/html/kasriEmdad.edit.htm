@@ -1,0 +1,98 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatekasriEmdad" onsubmit="return validateKasriEmdadForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">کد کسری:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="kasriId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تاريخ:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tarikh" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">امدادگر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="emdadgarId" size="1">
+								<html:options collection="emdadgarList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تحويل شد؟:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tahvilshod" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تائيدانباردار؟:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="taeedAnbardar" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تائیدامدادگر؟:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="taeedEmdadgar" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.kasriEmdadForm);
+	setEntity("KasriEmdad");
+    if (document.kasriEmdadForm.action_type.value=="create") 
+	{
+        document.kasriEmdadForm.action="/emdad/c/validatekasriEmdad.run";
+    } 
+	
+	else 
+	{
+        document.kasriEmdadForm.action="/emdad/u/validatekasriEmdad.run";
+    }
+</script>
+<html:javascript formName="kasriEmdadForm" />

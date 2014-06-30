@@ -1,0 +1,86 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validateqate" onsubmit="return validateQateForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="qateId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شماره(f)نی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="shomareFanni" size="12" maxlength="12" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نام قطعه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="name" size="40" maxlength="40" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">واحد شمارش:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="vahedShomaresh" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">قیمت-ریال:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="gheimat" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.qateForm);
+	setEntity("Qate");
+    if (document.qateForm.action_type.value=="create") 
+	{
+        document.qateForm.action="/emdad/c/validateqate.run";
+    } 
+	
+	else 
+	{
+        document.qateForm.action="/emdad/u/validateqate.run";
+    }
+</script>
+<html:javascript formName="qateForm" />

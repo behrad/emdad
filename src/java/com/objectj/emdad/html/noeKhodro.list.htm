@@ -1,0 +1,109 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/noeKhodro">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="noeKhodroId" size="5" maxlength="5"  /></td>
+						<td><html:text property="onvan" size="20" maxlength="30" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="guarantee" size="20" maxlength="30"/></td>
+						<td><html:text property="khodroCode" size="3" maxlength="5"/></td>
+						<td>
+							<html:select property="khodrosazId" size="1">
+							<html:options collection="khodroSazList" property="id" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeKhodroId"
+							sortable_Column_Title "شناسه نوع خودرو"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "onvan" 
+							sortable_Column_Title "عنوان"
+							sortable_Column_String
+						</td>
+						
+						<td class = "listRow0Col">
+							sortable_Column_Name "guarantee"
+							sortable_Column_Title "ضمانت"
+							sortable_Column_String
+						</td>
+						
+						<td class = "listRow0Col">
+							sortable_Column_Name "khodroCode"
+							sortable_Column_Title "کد خودروي خودروساز"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "khodrosazName"
+							sortable_Column_Title "خودروساز"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+					
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col">
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td align="center" class = "listRow1Col">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>noeKhodro_noeKhodroId</a ></td>
+							<td class = "listRow1Col">noeKhodro_onvan</td>
+							<td class = "listRow1Col">noeKhodro_guarantee</td>
+							<td class = "listRow1Col">noeKhodro_khodroCode</td>
+							<td class = "listRow1Col">noeKhodro_khodrosazName</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+    setForm(document.noeKhodroForm);
+	setEntity("NoeKhodro");
+</script>

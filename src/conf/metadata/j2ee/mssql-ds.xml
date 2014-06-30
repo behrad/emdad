@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: mssql-ds.xml,v 1.1 2004/07/18 09:40:27 amir Exp $ -->
+
+  <!-- ======================================================================-->
+  <!-- New ConnectionManager setup for Microsoft SQL Server 2000  driver     -->
+  <!-- You may download the latest Microsoft JDBC driver from *Microsoft*    -->
+  <!-- http://msdn.microsoft.com/downloads/default.asp?url=/downloads/sample.asp?url=/MSDN-FILES/027/001/779/msdncompositedoc.xml&frame=true -->
+  <!-- ===================================================================== -->
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>emdadDS</jndi-name>
+    <!--driver-class>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver-class-->
+    <!--driver-class>com.ddtek.jdbc.sqlserver.SQLServerDriver</driver-class-->
+    <driver-class>net.sourceforge.jtds.jdbc.Driver</driver-class>
+
+    <!--connection-url>jdbc:datadirect:sqlserver://222.192.55.220:1433;DatabaseName=emdad</connection-url-->
+    <!--connection-url>jdbc:datadirect:sqlserver://222.192.55.22:1433;DatabaseName=emdad</connection-ur-->
+    <!--connection-url>jdbc:datadirect:sqlserver://192.168.0.65:3019;DatabaseName=emdad</connection-url-->
+    <!--connection-url>jdbc:datadirect:sqlserver://192.168.0.28:1433;DatabaseName=emdad</connection-url-->
+    <!--connection-url>jdbc:jtds:sqlserver://192.168.0.28:1433;DatabaseName=emdad</connection-url-->
+    <connection-url>jdbc:jtds:sqlserver://192.168.0.28:1433/emdad;user=sa;password=anahita</connection-url>
+    <!--connection-url>jdbc:jtds:sqlserver://192.168.0.66:3019/emdad;user=sa;password=anahita</connection-url-->
+    <!--connection-url>jdbc:jtds:sqlserver://222.192.55.22:1433/emdad;user=sa;password=anahita</connection-url-->
+
+    <user-name>sa</user-name>
+    <!--password></password-->
+    <password>anahita</password>
+      <!--pooling parameters-->
+      <min-pool-size>50</min-pool-size>
+      <max-pool-size>400</max-pool-size>
+      <blocking-timeout-millis>10000</blocking-timeout-millis>
+      <idle-timeout-minutes>5</idle-timeout-minutes>
+
+  </local-tx-datasource>
+
+</datasources>

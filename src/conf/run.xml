@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="j2ee" default="start" basedir=".">
+
+    <!-- property name="basedir" value="/java/jboss-3.0.6_tomcat-4.1.18/bin" /-->
+    <property file="../jsa.properties" />
+    <property file="run.properties" />
+    <property name="base.dir" value="../.." />
+    <property name="lib.dir" value="${base.dir}/lib" />
+    <property name="startup.dir" value="${base.dir}/conf/startup" />
+    <property name="build.dir" value="${base.dir}/build" />
+    <property name="java.home" value="${env.JAVA_HOME}" />
+    <property name="mysql.home" value="/Program Files/mysql" />
+    <property name="metadata.dir" value="${base.dir}/src/conf/metadata" />
+    <property name="ejbutils.dir" value="${metadata.dir}/j2ee/ejbutils" />
+    <property name="ejbutils.db.dir" value="${ejbutils.dir}/created-database" />
+    <property name="jdbc.classpath" value="${lib.dir}/jdbc/lib/mysql-connector-java-2.0.14-bin.jar" />
+<!--
+   ========================================================================
+     Start the Servers
+   ========================================================================
+-->
+    <target name="start" depends="init" >
+        <echo message="Start All Servers ...." />
+        <parallel>
+            <antcall target="start.client.after.server" />
+            <antcall target="start.j2ee" />
+            <antcall target="start.hsqldb" />
+        </parallel>
+        <echo message="All Servers Started." />
+    </target>
+<!--
+   ========================================================================
+     Start the server on the linux box
+   ========================================================================
+-->
+    <target name="start.linux" depends="init" >
+        <echo message="Start All Servers (in Linux) ...." />
+        <parallel>
+            <antcall target="start.j2ee" />
+            <antcall target="start.hsqldb" />
+        </parallel>
+        <echo message="All Servers Started." />
+    </target>
+
+<!--
+   ========================================================================
+     Stop the server
+   ========================================================================
+-->
+    <target name="stop" >
+        <echo message="Stop All Servers ...." />
+        <parallel>
+            <antcall target="stop.hsqldb" />
+            <antcall target="stop.j2ee" />
+        </parallel>
+        <echo message="All Servers Stopped" />
+    </target>
+
+<!--
+   ========================================================================
+     Display the browser to be the j2ee Client
+   ========================================================================
+-->
+    <target name="start.client">
+        <echo message="Starting the browser to view j2ee ...." />
+        <!-- exec dir="${application.home}" executable="C:\Program Files\Internet Explorer\IEXPLORE.EXE" -->
+        <exec dir="${base.dir}" executable="EXPLORER.EXE" >
+            <arg line="http://${server.host}:${server.port}/${application}"/>
+        </exec>
+    </target>
+
+<!--
+   ========================================================================
+     View (display) the (j2ee.start) log file
+   ========================================================================
+-->
+    <target name="view.log">
+        <echo message="Viewing start j2ee log file ...." />
+        <exec dir="${application.home}/logs" executable="EXPLORER.EXE" >
+            <arg line="j2ee.start.log"/>
+        </exec>
+   </target>
+
+<!--
+   ========================================================================
+     Reading the main properties from j2ee.properties
+   ========================================================================
+-->
+    <property file="j2ee.properties" />
+
+<!--
+   ========================================================================
+     Setting the classpath
+   ========================================================================
+-->
+    <path id="project.classpath">
+        <!-- pathelement path="${java.home}/lib/jaws.jar" /-->
+        <pathelement path="${java.home}/lib/tools.jar" />
+        <pathelement path="${java.home}/../lib/tools.jar" />
+        <fileset dir="${lib.dir}">
+            <include name="jdbc/lib/*.jar" />
+            <include name="jasper/lib/*.jar" />
+        </fileset>
+    </path>
+
+
+<!--
+   ========================================================================
+     Initializing & setting the configuration files
+   ========================================================================
+-->
+    <target name="init">
+        <tstamp/>
+        <echo message="Setting JAVA_HOME to ${java.home}" />
+        <echo message="Setting application.home to ${application.home}" />
+        <echo message="Setting j2ee.server to ${j2ee.server}" />
+        <echo message="Setting j2ee.port to ${j2ee.port}" />
+
+    </target>
+
+<!--
+   ========================================================================
+     Start & stop Hsqldb server
+   ========================================================================
+-->
+    <target name="start.hsqldb">
+        <echo message="Starting Hsqldb server ...." />
+        <java jar="${application.home}/lib/j2ee.database.jar" fork="yes" failonerror="yes">
+            <arg value="-database"/>
+            <arg value="${application.home}/database/j2ee"/>
+        </java>
+        <echo message="Hsqldb started" />
+    </target>
+
+     <target name="stop.hsqldb">
+        <java jar="${application.home}/lib/j2ee.database.jar" fork="yes" failonerror="yes">
+            <sysproperty key="j2ee.database.schema" value="database/j2ee" />
+            <sysproperty key="j2ee.database.jdbcDriver" value="org.hsqldb.jdbcDriver" />
+            <sysproperty key="j2ee.database.url" value="${j2ee.database.url}" />
+            <sysproperty key="j2ee.database.username" value="${j2ee.database.username}" />
+            <sysproperty key="j2ee.database.password" value="${j2ee.database.password}" />
+            <classpath>
+                <path refid="jsa-classpath"/>
+             </classpath>
+            <arg value="stop"/>
+        </java>
+        <echo message="Hsqldb stopped." />
+    </target>
+
+<!--
+   ========================================================================
+     Initialize Database
+   ========================================================================
+-->
+   <target name="init.database">
+       <antcall target="create.mysql.database" />
+       <antcall target="ejbutils.create-table" />
+    </target>
+<!--
+   ========================================================================
+     Create, Start, Initialize & Stop MySql server
+   ========================================================================
+-->
+   <target name="create.mysql.database">
+        <exec dir="${mysql.home}/bin" executable="${mysql.home}/bin/mysqladmin" >
+            <arg line="create ${database.name}"/>
+        </exec>
+    </target>
+
+    <target name="start.mysql.windows">
+        <exec dir="${mysql.home}/bin" executable="${mysql.home}/bin/mysqld" >
+            <arg line="--standalone --debug"/>
+        </exec>
+    </target>
+
+    <target name="query.mysql.windows">
+        <exec dir="${mysql.home}/bin" executable="${mysql.home}/bin/mysql" />
+    </target>
+
+    <target name="stop.mysql.windows">
+        <exec dir="${mysql.home}/bin" executable="${mysql.home}/bin/mysqladmin" >
+            <arg line="-u root shutdown"/>
+        </exec>
+    </target>
+
+<!--
+       ===================================================================
+         create or remove HIGH_KEY table
+       ===================================================================
+  -->
+
+	<target name="jdbc_check" unless="database.name">
+		<fail message="Can not create table as property database.name (and probably all the other properties needed) is not set. Set the following properties in the build.properties file, which is in the same dir as the build.xml file: database.name, jdbc.classpath, jdbc.url, database.user, database.password. Create build.properties if not there. Take default_build.properties as an example."/>
+	</target>
+	<target name="db-creation-check" >
+           <condition property="already-created">
+              <available file="${ejbutils.db.dir}/.${database.name}" />
+           </condition>
+	</target>
+	<target name="ejbutils.create-table" depends="db-creation-check"  >
+            <sql src="${ejbutils.dir}/ejbutils.sql" driver="com.mysql.jdbc.Driver" classpath="${jdbc.classpath}" url="jdbc:mysql://localhost:3306/${database.name}" userid="${database.user}" password="${database.password}"/>
+            <copy file="${ejbutils.db.dir}/template.txt" toFile="${ejbutils.db.dir}/.${database.name}" />
+	</target>
+	<target name="ejbutils.remove-table" depends="jdbc_check" if="database.name">
+		<sql src="${ejbutils.dir}/ejbutils-remove.sql" driver="com.mysql.jdbc.Driver" classpath="${jdbc.classpath}" url="jdbc:mysql://localhost:3306/${database.name}" userid="${database.user}" password="${database.password}"/>
+	</target>
+<!--
+   ========================================================================
+     Start & stop jboss (j2ee) server + Change the icon color
+   ========================================================================
+-->
+    <target name="start.j2ee">
+        <echo message="Starting j2ee server  on port ${j2ee.port} ...." />
+        <copy failonerror="no" file="${startup.dir}/jsa-y.ico" toFile="${startup.dir}/jsa.ico" overwrite="yes" />
+        <antcall target="start.jboss" />
+        <echo message="j2ee server started. " />
+    </target>
+
+    <target name="stop.j2ee" >
+        <echo message="Sopping j2ee server ...." />
+        <antcall target="stop.jboss" />
+        <copy file="${startup.dir}/jsa-r.ico" toFile="${startup.dir}/jsa.ico" overwrite="yes" />
+        <echo message="j2ee server stopped on port ${j2ee.port}" />
+     </target>
+
+<!--
+   ========================================================================
+     Start & stop jboss (j2ee) server
+   ========================================================================
+-->
+    <!-- target name="start.jboss" >
+        <echo message="Using Java from + ${java.home} " />
+        <copy file="metadata/j2ee/mssql-ds.xml" toFile="${jboss.home}/server/default/deploy/mssql-ds.xml" overwrite="yes" />
+        <java classname="org.jboss.Main"  fork="yes" failonerror="yes">
+            <sysproperty key="com.objectj.jsa.proxy.Proxy" value="${com.objectj.jsa.proxy.Proxy}" />
+            <sysproperty key="server.host" value="${server.host}" />
+            <classpath>
+                <path refid="project.classpath"/>
+                <pathelement path="${jboss.home}/bin/run.jar" />
+            </classpath>
+         </java>
+    </target -->
+
+     <target name="start.jboss" >
+     	    <echo message="Using Java from + ${java.home} " />
+            <!-- copy file="metadata/j2ee/mssql-ds.xml" toFile="${jboss.home}/server/default/deploy/mssql-ds.xml" overwrite="yes" /-->
+            <java jar="${jboss.home}/bin/run.jar"  fork="yes" failonerror="yes">
+            	<sysproperty key="com.objectj.jsa.proxy.Proxy" value="${com.objectj.jsa.proxy.Proxy}" />
+            	<sysproperty key="server.host" value="${server.host}" />
+             </java>
+     </target>
+
+     <target name="stop.jboss" >
+        <java jar="${jboss.home}/bin/shutdown.jar" fork="true"  failonerror="yes">
+         </java>
+     </target>
+
+<!--
+   ========================================================================
+     Pinging (Monitoring) the server to know when it starts listening
+   ========================================================================
+-->
+    <target name="start.ping">
+        <echo message="Pinging j2ee server ...." />
+        <java jar="${build.dir}/ping.server.jar" fork="yes" failonerror="yes">
+            <sysproperty key="server.host" value="${server.host}" />
+            <sysproperty key="server.port" value="${server.port}" />
+            <sysproperty key="web.context" value="${web.context}" />
+            <arg value="3000"/>
+            <arg value="start"/>
+        </java>
+        <echo message="server is responding." />
+    </target>
+
+<!--
+   ========================================================================
+     Bring out the browser soon after listening
+   ========================================================================
+-->
+    <target name="start.client.after.server">
+        <echo message="Checking j2ee server ...." />
+        <antcall target="start.ping" />
+        <copy failonerror="no" file="${startup.dir}/jsa-g.ico" toFile="${startup.dir}/j2ee.ico" overwrite="yes" />
+        <antcall target="start.client" />
+        <echo message="Ready to login to j2ee." />
+    </target>
+
+
+ </project>

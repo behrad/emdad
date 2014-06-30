@@ -1,0 +1,16 @@
+
+  <definition name="emdad.serviceDorei.list" extends="emdad.main">
+      <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1587;&#1585;&#1608;&#1610;&#1587; &#1607;&#1575;&#1740; &#1583;&#1608;&#1585;&#1607; &#1575;&#1740;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/serviceDorei.list.jsp" />
+  </definition>
+
+  <definition name="emdad.serviceDorei.edit" extends="emdad.main">
+      <put name="title"  		value="&#1575;&#1610;&#1580;&#1575;&#1583; &#1608; &#1608;&#1610;&#1585;&#1575;&#1610;&#1588; &#1587;&#1585;&#1608;&#1610;&#1587; &#1583;&#1608;&#1585;&#1607; &#1575;&#1740; &#1580;&#1583;&#1610;&#1583;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/serviceDorei.edit.jsp" />
+  </definition>
+
+  <definition name="emdad.serviceDorei.read" extends="emdad.main">
+      <put name="title"  		value="&#1580;&#1586;&#1610;&#1610;&#1575;&#1578; &#1587;&#1585;&#1608;&#1610;&#1587; &#1583;&#1608;&#1585;&#1607; &#1575;&#1740;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/serviceDorei.read.jsp" />
+  </definition>
+

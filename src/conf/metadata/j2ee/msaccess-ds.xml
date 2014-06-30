@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: msaccess-ds.xml,v 1.1 2004/07/18 09:40:27 amir Exp $ -->
+<!-- ==================================================================== -->
+<!-- This uses the sun jdbc-odbc driver, so don't expect miracles          -->
+<!-- Thanks to Alan Moor, who warns...                                     -->
+<!-- Remember, though, never trust critical data, or data that you can't   -->
+<!-- afford to lose, or data that you need quick access to, or data that   -->
+<!-- needs to be secure, to Microsoft Access.                              -->
+<!-- ===================================================================== -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>emdadDS</jndi-name>
+    <connection-url>jdbc:odbc:emdadDSN</connection-url>
+    <driver-class>sun.jdbc.odbc.JdbcOdbcDriver</driver-class>
+    <user-name>sa</user-name>
+    <password>anahita</password>
+      <min-pool-size>20</min-pool-size>
+      <max-pool-size>100</max-pool-size>
+      <blocking-timeout-millis>10000</blocking-timeout-millis>
+      <idle-timeout-minutes>5</idle-timeout-minutes>
+  </local-tx-datasource>
+
+</datasources>

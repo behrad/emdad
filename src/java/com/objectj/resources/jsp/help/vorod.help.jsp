@@ -1,0 +1,50 @@
+<html dir="rtl">
+
+<head>
+<meta http-equiv="Content-Language" content="fa">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>نحوه ورود به سیستم</title>
+</head>
+
+<body>
+<center>
+<table width=80%><tr><td>
+
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+<hr width="60%" color="#6699FF">
+
+<p align="center"><font face="B Homa" size="6" color="#000080">نحوه ورود به 
+سیستم</font></p>
+<p align="justify"><font face="B Homa">
+<img border="0" src="pics/login.jpg" width="264" height="186" align="left"></font><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+در صفحه ورود به سیستم شکل زیر را میبینید. که شامل دو قسمت<font color="#6699FF"> 
+شناسه</font> و<font color="#6699FF"> گذر واژه</font> میباشد. شما پس از ورود 
+شناسه کاربری خود در قسمت <font color="#6699FF">شناسه</font> و رمز عبور در
+<font color="#6699FF">گذرواژه</font> باید روی دکمه <font color="#6699FF">ورود</font> 
+کلیک&nbsp; کنید، تا وارد سیستم شوید.</font></p>
+<p align="justify">&nbsp;</p>
+
+<hr color="#6699FF" size="4" style="border: 3px outset #3399FF">
+<p align="justify">&nbsp;</td></tr>
+
+<tr><td>
+
+<p align="center"><font face="B Homa" size="6" color="#000080">نحوه خروج از 
+سیستم</font></p>
+<p align="center"><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+در قسمت بالای تمام صفحات شکل زیر را میبینید.&nbsp; که شامل مشخصات کاربر شما و 
+چند لینک است. با کلیک روی<font color="#6699FF"> صفحه اصلی</font> به صفحه 
+اصلی(اول) باز میگردید و<span lang="en-us"> </span>میتوانید با کلیک روی<font color="#6699FF"> 
+خروج</font> از سیستم خارج میشوید.</font></p>
+<p align="center"><font face="B Homa" style="font-size: 16pt">&nbsp;<img border="0" src="pics/top.jpg"></font></p>
+<hr width="60%" color="#6699FF">
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+
+<p>&nbsp;</td></tr> </table></center>
+</body>
+
+</html>

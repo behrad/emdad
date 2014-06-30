@@ -1,0 +1,41 @@
+<html dir="rtl">
+
+<head>
+<meta http-equiv="Content-Language" content="fa">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>دسترسی به قسمتهای سیستم</title>
+</head>
+
+<body>
+
+<center>
+<table width=80% id="table1"><tr><td>
+
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+<hr width="60%" color="#6699FF">
+
+<p align="center"><font face="B Homa" size="6" color="#000080">دسترسی به قسمتهای 
+سیستم</font></p>
+<p align="justify" dir="rtl"><font face="B Homa">
+<img border="0" src="pics/left.JPG" width="142" height="200" align="right"></font><font face="B Homa" style="font-size: 16pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+پس از ورود به سیستم در سمت چپ صفحه متناسب با کاربر خود تعدادی از گزینه های این 
+شکل که اجازه دسترسی به آنها را دارید را<span lang="en-us"> </span>به شکل درخت 
+میبینید، که هر کدام از این گزینه ها خود شامل چندین گزینه میباشند که شما نیز 
+متناسب با کاربر خود تعدادی از گزینه های این شکل را میبینید. و از طریق این گزینه 
+ها میتوانید دسترسی به قسمتهای مجاز سیستم داشته باشید.</font></p>
+<hr width="60%" color="#6699FF">
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+
+	</td></tr>
+
+
+ </table>
+</center>
+
+</body>
+
+</html>

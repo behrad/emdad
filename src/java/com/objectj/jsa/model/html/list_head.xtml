@@ -1,0 +1,36 @@
+﻿<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/xxx">
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+    <!------------------------------------------------>
+
+	<table width="100%" dir="rtl" align="center" class="generalText" border="0" cellpadding="3" cellspacing="0">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<logic:equal name="entity_access" property="deleteAccess" value="true" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%" colspan="2"></td>
+				</logic:equal>							
+
+				<logic:equal name="entity_access" property="updateAccess" value="false" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<logic:equal name="entity_access" property="deleteAccess" value="false" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+

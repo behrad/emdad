@@ -1,0 +1,65 @@
+
+  <definition name="emdad.moshtarak.list" extends="emdad.main">
+      <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1605;&#1588;&#1578;&#1585;&#1705;&#1610;&#1606;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.list.jsp" />
+  </definition>
+
+  <definition name="emdad.moshtarak.edit" extends="emdad.main">
+      <put name="title"  		value="&#1578;&#1594;&#1610;&#1610;&#1585; / &#1575;&#1590;&#1575;&#1601;&#1607; &#1705;&#1585;&#1583;&#1606; &#1605;&#1588;&#1578;&#1585;&#1705;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.edit.jsp" />
+  </definition>
+
+  <definition name="emdad.moshtarak.read" extends="emdad.main">
+      <put name="title"  		value="&#1580;&#1586;&#1574;&#1610;&#1575;&#1578; &#1575;&#1591;&#1604;&#1575;&#1593;&#1575;&#1578; &#1605;&#1588;&#1578;&#1585;&#1705;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.read.jsp" />
+  </definition>
+
+<definition name="emdad.moshtarak.importinfo" extends="emdad.main">
+    <put name="title"  		value="&#1606;&#1578;&#1610;&#1580;&#1607; &#1575;&#1606;&#1578;&#1602;&#1575;&#1604; &#1601;&#1575;&#1610;&#1604; &#1605;&#1588;&#1578;&#1585;&#1705;&#1610;&#1606;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.importinfo.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.requpload" extends="emdad.main">
+    <put name="title"  		value="&#1608;&#1585;&#1608;&#1583; &#1575;&#1591;&#1604;&#1575;&#1593;&#1575;&#1578; &#1605;&#1588;&#1578;&#1585;&#1705;&#1610;&#1606; &#1575;&#1586; &#1591;&#1585;&#1610;&#1602; &#1582;&#1608;&#1583;&#1585;&#1608;&#1587;&#1575;&#1586;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.requpload.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.uploaded" extends="emdad.main">
+    <put name="title"  		value="&#1575;&#1606;&#1578;&#1602;&#1575;&#1604; &#1601;&#1575;&#1610;&#1604;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.uploaded.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.expired" extends="emdad.main">
+    <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1575;&#1588;&#1578;&#1585;&#1575;&#1705;&#1607;&#1575;&#1610; &#1583;&#1585; &#1581;&#1575;&#1604; &#1575;&#1606;&#1602;&#1590;&#1575;&#1569;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.expired.jsp" />
+</definition>
+
+<definition name="emdad.gheirMoshtarak.edit" extends="emdad.main">
+    <put name="title"  		value="&#1578;&#1594;&#1610;&#1610;&#1585; / &#1575;&#1590;&#1575;&#1601;&#1607; &#1705;&#1585;&#1583;&#1606; &#1594;&#1610;&#1585; &#1605;&#1588;&#1578;&#1585;&#1705;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/gheirMoshtarak.edit.jsp" />
+</definition>
+
+<definition name="emdad.gheirMoshtarak.read" extends="emdad.main">
+    <put name="title"  		value="&#1580;&#1586;&#1574;&#1610;&#1575;&#1578; &#1575;&#1591;&#1604;&#1575;&#1593;&#1575;&#1578; &#1594;&#1610;&#1585; &#1605;&#1588;&#1578;&#1585;&#1705;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/gheirMoshtarak.read.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.find" extends="emdad.main">
+    <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1594;&#1610;&#1585; &#1605;&#1588;&#1578;&#1585;&#1705;&#1610;&#1606;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtary.find.jsp" />
+</definition>
+
+<definition name="emdad.gheirMoshtarak.list" extends="emdad.main">
+    <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1594;&#1610;&#1585; &#1605;&#1588;&#1578;&#1585;&#1705;&#1610;&#1606;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/gheirMoshtarak.list.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.reqPeygiri" extends="emdad.main">
+    <put name="title"  		value="&#1662;&#1740;&#1711;&#1740;&#1585;&#1740; &#1585;&#1582;&#1583;&#1575;&#1583;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.reqPeygiri.jsp" />
+</definition>
+
+<definition name="emdad.moshtarak.infoPeygiri" extends="emdad.main">
+    <put name="title"  		value="&#1606;&#1578;&#1740;&#1580;&#1607; &#1662;&#1740;&#1711;&#1740;&#1585;&#1740; &#1585;&#1582;&#1583;&#1575;&#1583;" />
+    <put name="body"   		value="/com/objectj/emdad/jsp/moshtarak.infoPeygiri.jsp" />
+</definition>

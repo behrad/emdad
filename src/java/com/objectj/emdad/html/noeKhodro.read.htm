@@ -1,0 +1,75 @@
+<form method="post" action="/r/noeKhodro">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+
+					<!---------------------------------------->
+
+					<tr class="readRow0">
+						<td class="readLabel">شناسه نوع خودرو:</td>
+						<td width="5%"></td>
+						<td class="readData">noeKhodro_noeKhodroId</td>
+					</tr>
+
+					<!---------------------------------------->
+
+					<tr class="readRow1">
+						<td class="readLabel">عنوان:</td>
+						<td></td>
+						<td class="readData">noeKhodro_onvan</td>
+					</tr>
+
+					<!---------------------------------------->
+
+					<tr class="readRow0">
+						<td class="readLabel">ضمانت:</td>
+						<td></td>
+						<td class="readData">noeKhodro_guarantee</td>
+					</tr>
+
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">کد خودروي خودروساز:</td>
+						<td width="5%"></td>
+						<td class="readData">noeKhodro_khodroCode</td>
+					</tr>
+						
+					<!---------------------------------------->
+
+					<tr class="readRow1">
+						<td class="readLabel">خودروساز:</td>
+						<td></td>
+						<td class="readData">noeKhodro_khodrosazName</td>
+					</tr>
+
+					<!---------------------------------------->
+
+					<tr>
+						<td height="70" colspan="3" align="center"> <input name="submit" type="submit" value="      بازگشت      " />
+						</td>
+					</tr>
+
+					<!---------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.NoeKhodroForm);
+	setEntity("NoeKhodro");
+</script>

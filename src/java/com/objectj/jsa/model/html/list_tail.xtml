@@ -1,0 +1,17 @@
+﻿            </tr>
+            <%i++;%>
+        </logic:iterate>
+    </table>
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+    <!------------------------------------------------>
+
+</html:form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.xxxForm);
+	setEntity("Xxx");
+</script>

@@ -1,0 +1,25 @@
+<form-bean name="darkhastTagheerForm" dynamic="true" type="com.objectj.emdad.web.action.DarkhastTagheerForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="mobile" type="java.lang.String"/>
+	<form-property name="name" type="java.lang.String"/>
+	<form-property name="nameKhanevadegi" type="java.lang.String"/>
+	<form-property name="tel" type="java.lang.String"/>
+	<form-property name="tarikhTavalod" type="java.lang.String"/>
+	<form-property name="noeService" type="java.lang.Integer"/>
+    <form-property name="shomarePelak" type="java.lang.String"/>
+    <form-property name="shomarePelak2" type="java.lang.String"/>
+	<form-property name="email" type="java.lang.String"/>
+	<form-property name="ijadKonandeh" type="java.lang.String"/>
+	<form-property name="eshterakId" type="java.lang.String"/>
+	<form-property name="address" type="java.lang.String"/>
+	<form-property name="postCode" type="java.lang.String"/>
+	<form-property name="shahrId" type="java.lang.String"/>
+    <form-property name="moshtarakId" type="java.lang.String"/>
+    <form-property name="rangeKhodroId" type="java.lang.String"/>
+ </form-bean>

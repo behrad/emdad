@@ -1,0 +1,167 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/moshtarak">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="eshterakId" size="7" maxlength="10" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="noeEshterak" size="1" maxlength="2"/></td>
+						<td><html:text property="noeService" size="1" maxlength="2"/></td>
+						<td><html:text property="vazeat" size="1" maxlength="2"/></td>
+						<td><html:text property="nameKhanevadegi" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="name" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+						<td>
+							<html:select property="noeKhodroId" size="1">
+								<html:options collection="noeKhodroList"property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+						<td><html:text property="shomarePelak" size="14" maxlength="20" onkeypress="return submitenter(this,event)"/></td>
+						<td><html:text property="tarikhShoro" size="7" maxlength="10"/></td>
+						<td><html:text property="tarikhEngheza" size="7" maxlength="10"/></td>
+						<td><html:text property="guarantee" size="1" maxlength="2"/></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "eshterakId"
+							sortable_Column_Title "شماره اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeEshterak"
+							sortable_Column_Title "نوع اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeService"
+							sortable_Column_Title "نوع سرويس"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "vazeat"
+							sortable_Column_Title "وضعيت اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "nameKhanevadegi"
+							sortable_Column_Title "نام خانوادگي"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "name"
+							sortable_Column_Title "نام"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "noeKhodroOnvan"
+							sortable_Column_Title "نوع خودرو"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shomarePelak"
+							sortable_Column_Title "شماره پلاک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "tarikhShoro"
+							sortable_Column_Title "تاريخ شروع اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "tarikhEngheza"
+							sortable_Column_Title "تاريخ انقضاي اشتراک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "guarantee"
+							sortable_Column_Title "ضمانت"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>moshtarak_eshterakId</a ></td>
+
+							<td class = "listRow1Col">moshtarak_noeEshterak</td>
+
+							<td class = "listRow1Col">moshtarak_noeService</td>
+
+							<td class = "listRow1Col">moshtarak_vazeat</td>
+
+							<td class = "listRow1Col">moshtarak_nameKhanevadegi</td>
+
+							<td class = "listRow1Col">moshtarak_name</td>
+
+							<td class = "listRow1Col">moshtarak_noeKhodro_onvan</td>
+
+							<td class = "listRow1Col">moshtarak_shomarePelak</td>
+
+							<td class = "listRow1Col">moshtarak_tarikhShoro</td>
+
+							<td class = "listRow1Col">moshtarak_tarikhEngheza</td>
+
+							<td class = "listRow1Col">moshtarak_guarantee</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.moshtarakForm);
+	setEntity("Moshtarak");
+</script>

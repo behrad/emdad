@@ -1,0 +1,32 @@
+<formset>
+    <form name="serviceDoreiForm">
+        <field property="namayandegiId" depends="required">
+            <arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1606;&#1605;&#1575;&#1610;&#1606;&#1583;&#1711;&#1610;" resource="false"/>
+        </field>
+
+        <field property="tarikh" depends="required,date">
+            <arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582;" resource="false"/>
+            <var>
+                <var-name>datePatternStrict</var-name>
+                <var-value>yyyy/MM/dd</var-value>
+            </var>
+        </field>
+
+        <field property="eshterakId" depends="required">
+            <arg0 key="&#1605;&#1588;&#1578;&#1585;&#1610;" resource="false"/>
+        </field>
+
+        <field property="kilometerKarkard" depends="required">
+            <arg0 key="&#1705;&#1610;&#1604;&#1608;&#1605;&#1578;&#1585; &#1705;&#1575;&#1585;&#1705;&#1585;&#1583;" resource="false"/>
+        </field>
+
+        <field property="noeServiceDorei" depends="required">
+            <arg0 key="&#1606;&#1608;&#1593; &#1587;&#1585;&#1608;&#1610;&#1587; &#1583;&#1608;&#1585;&#1607; &#1575;&#1610;" resource="false"/>
+        </field>
+
+        <field property="hazineh" depends="required">
+            <arg0 key="&#1607;&#1586;&#1610;&#1606;&#1607;" resource="false"/>
+        </field>
+
+    </form>
+</formset>

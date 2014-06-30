@@ -1,0 +1,180 @@
+<form method="post" action="/r/namayandegi">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">کد نمايندگي:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_namayandegiId</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نام نمايندگي:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_name</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نام شهر:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_shahrName</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">&#1578;&#1604;&#1601;&#1606;:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_namayandegiTel</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">موبايل:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_namayandegiMobile</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">&#1601;&#1575;&#1705;&#1587;:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_namayandegiFax</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">آدرس:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_namayandegiAddress</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">امدادگر:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_emdadgar</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">نوع خودرو امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_noeKhodroOnvan</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تاريخ تحويل خودرو:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_tarikhTahvil</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">&#1587;&#1575;&#1576;&#1602;&#1607; &#1601;&#1593;&#1575;&#1604;&#1610;&#1578;:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_sabegheFaaliat</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">&#1587;&#1575;&#1576;&#1602;&#1607; &#1601;&#1593;&#1575;&#1604;&#1610;&#1578; &#1606;&#1608;&#1585;&#1608;&#1586;&#1610;:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_sabegheNoroozi</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تاريخ عقد قرارداد:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_tarikhGharardad</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">شماره قرارداد:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_shomarehGharardad</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">محدوده تحت پوشش:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_tahtePooshesh</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نظريه ايساکو:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_nazarIsaco</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">&#1608;&#1590;&#1593;&#1610;&#1578; &#1601;&#1593;&#1604;&#1610; &#1602;&#1585;&#1575;&#1585;&#1583;&#1575;&#1583;:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_vazGharardad</td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">اولويت:</td>
+						<td width="5%"></td>
+						<td class="readData">namayandegi_olaviat</td>
+					</tr>
+					
+					<!---------------------------------------->
+	
+					<tr> 
+						<td height="70" colspan="3" align="center"> <input name="submit" type="submit" value="      بازگشت      " /> 
+						</td>
+					</tr>
+
+					<!---------------------------------------->
+
+				</table>					
+			</td>
+		</tr>
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.namayandegiForm);
+	setEntity("Namayandegi");
+</script>
+		

@@ -1,0 +1,23 @@
+<form-bean name="tamdidEshterakForm" dynamic="true" type="com.objectj.emdad.web.action.TamdidEshterakForm">
+    <form-property name="action_type" type="java.lang.String"/>
+    <form-property name="selectedItems" type="java.lang.String[]"/>
+    <form-property name="id" type="java.lang.String"/>
+    <form-property name="curpage" type="java.lang.String"/>
+    <form-property name="sorttype" type="java.lang.String"/>
+    <form-property name="order" type="java.lang.String"/>
+
+    <form-property name="tarikhAkharinTamdid" type="java.lang.String"/>
+    <form-property name="eshterakId" type="java.lang.String"/>
+    <form-property name="name" type="java.lang.String"/>
+    <form-property name="nameKhanevadegi" type="java.lang.String"/>
+    <form-property name="isLast" type="java.lang.Integer"/>
+    <form-property name="hazinehPardakhtShodeh" type="java.lang.Integer"/>
+    <form-property name="takhfif" type="java.lang.Integer"/>
+    <form-property name="naghd" type="java.lang.Integer"/>
+    <form-property name="taahodi" type="java.lang.Integer"/>
+    <form-property name="aghsat" type="java.lang.Integer"/>
+    <form-property name="cheque" type="java.lang.String"/>
+    <form-property name="noeService" type="java.lang.Integer"/>
+    <form-property name="bazaryabId" type="java.lang.String"/>
+
+</form-bean>

@@ -1,0 +1,190 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validaterokhdad" onsubmit="return validateRokhdadForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="rokhdadId" size="19" maxlength="19" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">ثبت کننده رخداد:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="sabtKonandeh" size="40" maxlength="40" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">آخرين تغيير دهنده:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="akharinTaghyirDahandeh" size="40" maxlength="40" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">ايراد خودرو طبق نظر امداد خودرو:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="irad" size="60" maxlength="60" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">زمان ثبت رخداد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamaneVaghei" size="20" maxlength="20" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تل(f)ن ثابت امدادخواه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tel" size="50" maxlength="50" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تل(f)ن همراه :</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mobile" size="50" maxlength="50" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">آدرس:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="address" size="80" maxlength="80" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">کد منطقه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mantaghe" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">ثابت يا سيار بودن امدادخواه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="sabetSayar" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">مشمول خدمات ويژه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="khadamateVijeh" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">اقدام شده:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="eghdamShodeh" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">مشترک:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="moshtarakId" size="1">
+								<html:options collection="moshtarakList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نمايندگي:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="namayandegiId" size="1">
+								<html:options collection="namayandegiList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">د(f)تر استاني:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="daftarOstaniId" size="1">
+								<html:options collection="daftarOstaniList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">شهر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="shahrId" size="1">
+								<html:options collection="shahrList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.rokhdadForm);
+	setEntity("Rokhdad");
+    if (document.rokhdadForm.action_type.value=="create") 
+	{
+        document.rokhdadForm.action="/emdad/c/validaterokhdad.run";
+    } 
+	
+	else 
+	{
+        document.rokhdadForm.action="/emdad/u/validaterokhdad.run";
+    }
+</script>
+<html:javascript formName="rokhdadForm" />

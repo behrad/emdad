@@ -1,0 +1,30 @@
+﻿
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.xxxForm);
+	setEntity("Xxx");
+    if (document.xxxForm.action_type.value=="create") 
+	{
+        document.xxxForm.action="/emdad/c/validatexxx.run";
+    } 
+	
+	else 
+	{
+        document.xxxForm.action="/emdad/u/validatexxx.run";
+    }
+</script>
+<html:javascript formName="xxxForm" />

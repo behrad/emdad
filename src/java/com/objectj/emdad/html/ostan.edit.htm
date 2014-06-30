@@ -1,0 +1,54 @@
+<form method="post" action="/c/validateostan" onsubmit="return validateOstanForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه استان:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="ostanId" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام استان:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="name" size="30" maxlength="30" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.ostanForm);
+	setEntity("Ostan");
+    if (document.ostanForm.action_type.value=="create") 
+	{
+        document.ostanForm.action="/emdad/c/validateostan.run";
+    } 
+	
+	else 
+	{
+        document.ostanForm.action="/emdad/u/validateostan.run";
+    }
+</script>
+<html:javascript formName="ostanForm" />

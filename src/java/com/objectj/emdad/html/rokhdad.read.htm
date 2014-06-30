@@ -1,0 +1,160 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/rokhdad">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شناسه:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_rokhdadId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">ثبت کننده رخداد:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_sabtKonandeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">آخرين تغيير دهنده:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_akharinTaghyirDahandeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">ايراد خودرو طبق نظر امداد خودرو:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_irad  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">زمان ثبت رخداد:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_zamaneVaghei  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تل(f)ن ثابت امدادخواه:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_tel  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تل(f)ن همراه :</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_mobile  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">آدرس:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_address  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">کد منطقه:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_mantaghe  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">ثابت يا سيار بودن امدادخواه:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_sabetSayar  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">مشمول خدمات ويژه:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_khadamateVijeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">اقدام شده:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_eghdamShodeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">مشترک:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_moshtarakName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">نمايندگي:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_namayandegiName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">د(f)تر استاني:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_daftarOstaniName  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">شهر:</td>
+						<td width="5%"></td>
+						<td class="readData">rokhdad_shahrShahrName  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.rokhdadForm);
+	setEntity("Rokhdad");
+</script>
+		

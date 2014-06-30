@@ -1,0 +1,94 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatenaghshe" onsubmit="return validateNaghsheForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">سطح:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="mapLevel" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">ازطول جغرا�?يائی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="azTooleGoegraphy" size="4" maxlength="4" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاطول جغرا�?يائی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="taTooleGoegraphy" size="4" maxlength="4" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">ازعرض جغرا�?يائی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="azArzeGoegraphy" size="4" maxlength="4" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تاعرض جغرا�?يائی:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="taArzeGoegraphy" size="4" maxlength="4" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">منطقه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="mantagheId" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.naghsheForm);
+	setEntity("Naghshe");
+    if (document.naghsheForm.action_type.value=="create") 
+	{
+        document.naghsheForm.action="/emdad/c/validatenaghshe.run";
+    } 
+	
+	else 
+	{
+        document.naghsheForm.action="/emdad/u/validatenaghshe.run";
+    }
+</script>
+<html:javascript formName="naghsheForm" />

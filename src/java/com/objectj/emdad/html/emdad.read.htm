@@ -1,0 +1,168 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/emdad">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">شتاسه امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_emdadId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">رخداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_rokhdadIrad  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">وضعيت خدمت:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_vazeatKhedmatId  </td>
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">زمان اعزام:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamanEzam  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">زمان شروع به کار امدادگر:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamanShoro  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">زمان پايان کار:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamnaPayan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">اعزامگر:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_shakhsShoghl  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">امدادگر مربوطه:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_shakhsShoghl  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">دليل طول کشيدن امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_dalilToolKeshidanEmdadOnvan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">زمان واقعی اعزام امدادگر:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamanVagheiEzam  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">زمان واقعی شروع به کار امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamanVagheiShoro  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">زمان واقعی پايان کار امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_zamanVagheiPayan  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">آخرين تغيير دهنده اين امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_akharinTagheerDahandeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">کيلومتر کارکرد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_kilometerKarkard  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">اصله امدادخواه از نمايندگی(f):</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_faseleAzNamayandegi  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">مبلغ پرداخت شده:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_mablaghPardakhtShodeh  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">حدود هزيته کل امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">emdad_hododeHazinehKol  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.emdadForm);
+	setEntity("Emdad");
+</script>
+		

@@ -1,0 +1,5 @@
+	<definition name="emdad.admin.home" extends="emdad.main">
+		<put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/usr/admin/home.jsp" />
+	</definition>
+

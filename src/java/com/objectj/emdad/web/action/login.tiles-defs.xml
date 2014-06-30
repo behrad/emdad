@@ -1,0 +1,5 @@
+	<definition name="emdad.security.login" extends="emdad.main">
+		<put name="title"  		value="&#1589;&#1601;&#1581;&#1607; &#1608;&#1585;&#1608;&#1583; &#1576;&#1607; &#1587;&#1610;&#1587;&#1578;&#1605;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/login.jsp" />
+	</definition>
+

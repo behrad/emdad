@@ -1,0 +1,451 @@
+﻿<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<LINK href="/emdad/com/objectj/resources/jsp/tiles/emdad/css/emdad.css" type="text/css" rel="STYLESHEET">
+
+<script src="/emdad/com/objectj/resources/jsp/tiles/emdad/css/list.js"> </script>
+<script src="/emdad/com/objectj/resources/jsp/tiles/emdad/css/edit.js"> </script>
+<title> فهرست رخدادها</title>
+
+
+<!--jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" /-->
+<%@ page import ="java.lang.*,com.objectj.emdad.ejb.util.EntityList,com.objectj.emdad.ejb.EntityAccess" %>
+
+<html:base/>
+
+
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/fast-combo.jsp" flush="true" />
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<script>
+document.onkeydown = function(){
+
+if(window.event && window.event.keyCode == 116) 
+        { // Capture and remap F5
+		window.event.keyCode = 0;
+		rokhdadForm.hdnPage.click();
+		return false;
+  	}
+}
+
+var needRefresh = true;
+top.window.moveTo(0,0);
+top.window.resizeTo(screen.width, screen.height * 0.9);
+
+function pageKeyPress() {
+  if (window.event.keyCode == 13) {
+    changePage(document.all.pageInput.value);
+    window.event.keyCode == 0;
+  }
+}
+
+function createEmdad(s1, s2, s3) {
+	args = "width=850, height=500 , resizable=yes, scrollbars=yes, status=0";
+	windowTitle = "Create";
+	win3 = window.open("/emdad/com/objectj/emdad/jsp/general.frame.jsp?url=/emdad/c/emdad.run?rokhdadId="+s1+"&rokhdadRokhdadId="+s2+"&rokhdadMoshtarakId="+s3, windowTitle,args);
+//	win3.creator=document.rokhdadForm.hdnPage;
+	win3.creator=window;
+	win3.focus();
+//	win3.creator=top;
+	clearRefresh();
+}
+
+function doRefresh() {
+	//alert("aaa");
+	document.rokhdadForm.hdnPage.creator = top.creator;
+	//alert(document.rokhdadForm.hdnPage.creator);
+	setTimeout("refresh()", 1800000);
+}
+
+function refresh() {
+	if (needRefresh==true) {
+		document.rokhdadForm.hdnPage.click();
+		//document.location.href = "/emdad/s/rokhdad.run?action_type=< bean : write name="rokhdadForm" property="action_type" />&order=< bean : write name="rokhdadForm" property="order" />&sorttype=< bean : write name="rokhdadForm" property="sorttype" />&curpage=< bean : write name="rokhdadForm" property="curpage" />";
+	} else {
+		needRefresh = true;
+		setTimeout("refresh()", 1800000);
+	}
+}
+function myRefresh(){
+	document.rokhdadForm.hdnPage.click();
+} 
+function myParentRefresh(error){
+	if(error!="")
+		top.creator.execScript(error);
+	top.creator.execScript("document.emdadForm.hdnPage.click()");
+	top.creator.focus();
+} 
+</script>
+
+<body onload="doRefresh()" dir="rtl">
+
+<html:form method="post" action="/s/rokhdad">
+
+<center>
+<span class="tilesHeader">
+<logic:equal name="noeRokhdad" value="adi" >
+فهرست رخدادهاي امدادي اقدام نشده
+</logic:equal>
+<logic:notEqual name="noeRokhdad" value="adi" >
+	<logic:equal name="noeRokhdad" value="vije" >
+	فهرست رخدادهاي تعميري اقدام نشده
+	</logic:equal>
+	<logic:notEqual name="noeRokhdad" value="vije" >
+	فهرست رخدادهاي اقدام نشده
+	</logic:notEqual>
+</logic:notEqual>
+</span>
+</center>
+
+	<!--filter tab -->
+<!--table border="0" cellpadding="2" class="listTable" cellspacing="0">
+	<tr>
+		<td height="20" background="images/caption.jpg" class="textBw" align="right">&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</table-->
+<!--filter buttons and status -->
+<table dir="rtl" width="100%" border="0" cellpadding="2" class="listTable" cellspacing="0">
+	<tr>
+		<td valign="middle" align="right" width="100">
+			<a href="javascript:filter_s()"><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/filter-apply.jpg" alt="نمايش با فيلتر" width="20" height="20" border="0"></a>
+			<a href="javascript:clearfilter_s()"><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/filter-remove.jpg" alt="نمايش کامل" width="20" height="20" border="0"></a>
+			<a href="javascript:popUpFilter_s('Filter', 700, 500);"><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/filter-form.jpg" alt="فيلتر پيشرفته" width="20" height="20" border="0"></a>
+	            <logic:equal name="entity_access" property="printAccess" value="true">
+				    <a href="javascript:report()"><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/list-excel.gif" alt="صفحه گسترده" width="20" height="20" border="0"></a>&nbsp;
+	            </logic:equal>
+		</td>
+		<td class="text8" valign="middle" align="right" width="100">
+			&nbsp;
+			<logic:equal name="cur_records" property="isFilter" value="true" >
+				[نمايش با فيلتر  ]
+			</logic:equal>
+			<logic:equal name="cur_records" property="isFilter" value="false" >
+				[ ]
+			</logic:equal>
+		</td>
+		<td class="text8" valign="middle" align="right" width="*">
+		[  تعداد یافته ها: <bean:write property="totalRecords" name="cur_records"/>]
+		</td>
+
+	</tr>
+</table>
+
+
+    <!------------------------------------------------>
+
+	<table width="100%" dir="rtl" align="center" class="generalText" border="0" cellpadding="3" cellspacing="0">
+
+	    <!------------------------------------------------>
+
+		<tr>
+		<td colspan="8" class="filterFieldCell">
+		<span class="generalText">
+		آدرس:
+		<html:text property="address" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)" size="30" maxlength="80" styleClass="field"/>
+		</span>
+		<td colspan="8" class="filterFieldCell">
+		<span class="generalText">
+		&nbsp; ايراد:
+		<html:text property="irad" size="31" maxlength="35" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/>
+		</span>
+		</td>
+        </tr>
+
+		<!------------------------------------------------>
+
+		<tr>
+			<logic:equal name="entity_access" property="deleteAccess" value="true" >
+
+				<logic:equal name="entity_access" property="updateAccess" value="false" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<logic:equal name="entity_access" property="deleteAccess" value="false" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<td class="filterFieldCell"><html:text property="rokhdadId" size="5" maxlength="6" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+			<td class="filterFieldCell"><html:text property="moshtarakId" size="8" maxlength="10" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+			<td class="filterFieldCell"><html:text property="zamaneVaghei" size="10" maxlength="10" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+			<td class="filterFieldCell">
+				<html:select property="shahrId" size="1"  style="width:75px;" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return fastCombo(this);" onfocus="emptyFastCombo()">
+					<html:options collection="shahrList" property="eid" labelProperty="name"/>
+				</html:select>
+			</td>
+			
+			<!-- <td class="filterFieldCell"><html:text property="address" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)" size="20" maxlength="80" styleClass="field"/></td> -->
+
+            <td class="filterFieldCell"><html:text property="tel" size="11" maxlength="5" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+            <td class="filterFieldCell"><html:text property="shomarePelak" size="12" maxlength="35" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+			<td class="filterFieldCell">
+				<html:select property="moshtarakYaNa" size="1"  styleClass="generalText" style="width:50px;" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return fastCombo(this)">
+					<html:options collection="moshtarakYaNaList" property="id" labelProperty="name"/>
+				</html:select>
+			</td>
+            <td class="filterFieldCell"><html:text property="tarikhTahvil" size="10" maxlength="10" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+            <td class="filterFieldCell">&nbsp;</td>
+           	<td class="filterFieldCell">&nbsp;</td>
+            <!--<td class="filterFieldCell"><html:text property="irad" size="12" maxlength="35" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td> -->
+            <td class="filterFieldCell"><html:text property="kilometerKarkard" size="3" maxlength="7" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+            <td class="filterFieldCell"><html:text property="sabtKonandeh" size="10" maxlength="10" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+		<td class="filterFieldCell"><html:text property="mantagheh" size="8" maxlength="10" styleClass="field" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return submitenter2(this,event)"/></td>
+
+            <logic:equal name="entity_access" property="allAccess" value="true" >
+				<td class="filterFieldCell">
+					<html:select property="daftarOstaniId" size="1" style="width:45px;" onkeypress="javascript:if (window.event.keyCode == 13) {filter_s();}return fastCombo(this)" onfocus="emptyFastCombo()" styleClass="generalText">
+						<html:options collection="daftarOstaniList" property="eid" labelProperty="name" />
+					</html:select>
+				</td>
+			</logic:equal>
+		</tr>
+
+		<!------------------------------------------------>
+
+		<tr class="listTableHeader">
+
+
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "rokhdadId"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "کد مورد"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "eshterakId"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "مشترک "
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "zamaneVaghei"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "زمان تماس"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "shahrName"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "شهر"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+			<!--
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "address"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "آدرس"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+			-->
+
+		    <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "tel"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "تلفن"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+		    <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "shomarePelak"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "شماره پلاک"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+		    <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "moshtarakYaNa"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "مشترک"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+		    <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "tarikhTahvilHejri"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "تاريخ تحويل"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+            <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "noeKhodroName"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "نوع خودرو"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+            <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "rangOnvan"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "رنگ خودرو"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+			<!-- 
+            <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "irad"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "ایراد"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+			-->
+            <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "kilometerKarkard"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "کارکرد"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+            <td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "sabtKonandeh"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "پذیرشگر"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+
+			<td class = "listRow0Col">
+				<jsp:setProperty name="cur_records" property="columnName" value= "mantagheh"
+				/><jsp:setProperty name="cur_records" property="columnTitle" value= "کد منطقه"
+				/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+			</td>
+
+			<logic:equal name="entity_access" property="allAccess" value="true" >
+				
+				<td class = "listRow0Col">
+					<jsp:setProperty name="cur_records" property="columnName" value= "nameDaftarOstani"
+					/><jsp:setProperty name="cur_records" property="columnTitle" value= "دفتر استاني"
+					/><jsp:getProperty name="cur_records" property="sortableColumnString" />
+				</td>
+			</logic:equal>
+		</tr>
+		
+
+		<!------------------------------------------------>
+
+		<% int i = 0; %>
+		<logic:iterate id="value_object" name="value_object_list" >
+			<tr class="listRow<%=i%2%>">
+
+
+				<td class = "listRow1Col">
+					<logic:equal name="entity_access" property="readAccess" value="true" >
+						<a  href='javascript:createEmdad("<bean:write name="value_object" property="id" />", "<bean:write name="value_object" property="rokhdadId"  />", "<bean:write name="value_object" property="moshtarakId" />");'>
+					</logic:equal>
+					<bean:write property="rokhdadId" name="value_object"/>
+					<logic:equal name="entity_access" property="readAccess" value="true" >
+						</a >
+					</logic:equal>
+				</td>
+
+				<td class = "listRow1Col"><bean:write property="moshtarakEshterakId" name="value_object"/></td>
+
+				<td class = "listRow1Col"><bean:write property="zamaneVagheiHejri" name="value_object"/></td>
+
+				<td class = "listRow1Col"><bean:write property="shahrShahrName" name="value_object"/></td>
+
+				<!-- <td class = "listRow1Col"><bean:write property="address" name="value_object"/></td> -->
+
+                <td class = "listRow1Col"><bean:write property="tel" name="value_object"/></td>
+
+                <td class = "listRow1Col"><bean:write property="shomarePelak" name="value_object"/></td>
+
+                <td class = "listRow1Col"><bean:write property="moshtarakYaNaName" name="value_object"/></td>
+
+                <td class = "listRow1Col"><bean:write property="tarikhTahvilHejri" name="value_object"/></td>
+
+                <td class = "listRow1Col"><bean:write property="noeKhodroName" name="value_object"/></td>
+
+                <td class = "listRow1Col"><bean:write property="rangOnvan" name="value_object"/></td>
+
+                <!-- <td class = "listRow1Col"><bean:write property="irad" name="value_object"/></td> -->
+
+                <td class = "listRow1Col"><bean:write property="kilometerKarkard" name="value_object"/></td>
+                <td class = "listRow1Col"><bean:write property="sabtKonandeh" name="value_object"/></td>
+                <td class = "listRow1Col"><bean:write property="mantagheh" name="value_object"/></td>
+
+				<logic:equal name="entity_access" property="allAccess" value="true" >
+					<td class = "listRow1Col"><bean:write property="daftarOstaniName" name="value_object"/></td>
+				</logic:equal>
+
+            </tr>
+			<tr class="listRow<%=i%2%>">
+				<td colspan="8" class = "listRow1Col"><bean:write property="address" name="value_object"/></td>				
+    			<td colspan="8" class = "listRow1Col"><font color="#000055">ايراد:&nbsp;</font><bean:write property="irad" name="value_object"/></td>
+			</tr>
+            <%i++;%>
+        </logic:iterate>
+
+</table>
+
+<!------------------------------------------------>
+<html:hidden property="action_type"/>
+<html:hidden property="curpage" />
+<html:hidden property="order"/>
+<html:hidden property="sorttype" />
+<html:hidden property="id"/>
+<!------------------------------------------------>
+
+<table width=100%>
+	<tr class="filterFindCell">
+		<td background="/emdad/com/objectj/resources/jsp/tiles/emdad/images/filter-bk.jpg">
+			<table dir="rtl" border="0" cellspacing="0" cellpadding="0" align="center" class="generalText">
+				<tr align="center"  class="filterFindCell">
+
+					<!------------------------------>
+
+
+					<td width="20"><a href='javascript:changePage(1)'><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/first.gif" alt=" " border="0"></a></td>
+
+					<!------------------------------>
+
+					<logic:greaterThan name="cur_records" property="curPage" value="1" >
+						<td width="20"><a href='javascript:changePage(<bean:write property="prevPage" name="cur_records"/>)'><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/previous.gif" alt=" " border="0"></a></td>
+					</logic:greaterThan>
+
+					<!------------------------------>
+
+
+					<td>
+						<a href="javascript:refreshPage()">صفحه</a>
+                        <input name="hdnPage" type="hidden" onclick="refreshPage()">
+						<input id="pageInput" name="tmpPage" value="<bean:write property="curPage" name="cur_records"/>" size="2" maxlength="5" class="field" onKeyPress="pageKeyPress()">
+					</td>
+
+					<!------------------------------>
+
+					<logic:equal name="cur_records" property="hasNextPage" value="true" >
+						<td width="20"><a href='javascript:changePage(<bean:write property="nextPage" name="cur_records"/>)'><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/next.gif" alt=" " border="0"></a></td>
+					</logic:equal>
+
+					<!------------------------------>
+
+					<td width="20" align="right"><a href='javascript:changePage(<bean:write property="totalPages" name="cur_records"/>)'><img src="/emdad/com/objectj/resources/jsp/tiles/emdad/images/last.gif" alt=" " border="0"></a></td>
+
+					<!------------------------------>
+
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>				<!------------------------------------------------>
+
+</html:form>
+</body>
+<!------------------------------------------------>
+
+<script>
+	setForm(document.rokhdadForm);
+	setEntity("Rokhdad");
+	//document.rokhdadForm.address.focus();
+	function changePage(page) {
+		//alert("11");
+		theForm.curpage.value = page;
+		theForm.action_type.value="specific,dummy";
+		//theForm.action="/emdad/s/rokhdad.run?action_type=specific,rokhdademdadlistVijeh";
+		theForm.submit();
+	}
+
+	function sort(type){
+		//theForm.action="/emdad/s/rokhdad.run?action_type=specific,rokhdademdadlistVijeh";
+	    sort2(type);
+	}
+
+</script>
+<html:javascript formName="rokhdadForm" />

@@ -1,0 +1,16 @@
+	<formset>
+		<form name="noeEmdadgarForm">
+			<field property="noeEmdadgarId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607; &#1606;&#1608;&#1593; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="onvan" depends="required">
+				<arg0 key="&#1593;&#1606;&#1608;&#1575;&#1606;" resource="false"/>
+			</field>
+
+		</form>
+	</formset>

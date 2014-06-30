@@ -1,0 +1,70 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validatejozeatKasri" onsubmit="return validateJozeatKasriForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تعداد کسری:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tedadKasri" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تعداد امدادگر:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tedadEmdadgar" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تعدا د انبار:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tedadAnbar" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.jozeatKasriForm);
+	setEntity("JozeatKasri");
+    if (document.jozeatKasriForm.action_type.value=="create") 
+	{
+        document.jozeatKasriForm.action="/emdad/c/validatejozeatKasri.run";
+    } 
+	
+	else 
+	{
+        document.jozeatKasriForm.action="/emdad/u/validatejozeatKasri.run";
+    }
+</script>
+<html:javascript formName="jozeatKasriForm" />

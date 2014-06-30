@@ -1,0 +1,122 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/kasriEmdad">
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+    <!------------------------------------------------>
+
+	<table width="100%" dir="rtl" align="center" class="generalText" border="0" cellpadding="3" cellspacing="0">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<logic:equal name="entity_access" property="deleteAccess" value="true" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%" colspan="2"></td>
+				</logic:equal>							
+
+				<logic:equal name="entity_access" property="updateAccess" value="false" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<logic:equal name="entity_access" property="deleteAccess" value="false" >
+				<logic:equal name="entity_access" property="updateAccess" value="true" >
+					<td class = "filterFieldCell" width="2%"></td>
+				</logic:equal>
+			</logic:equal>
+
+			<td class="filterFieldCell">
+				<html:select property="emdadgarId" size="1">
+					<html:options collection="emdadgarList" property="eid" labelProperty="name"/>
+				</html:select>
+			</td>
+			<td class="filterFieldCell"><html:text property="tahvilshod" size="1" maxlength="2" styleClass="field"/></td>
+			<td class="filterFieldCell"><html:text property="taeedAnbardar" size="1" maxlength="2" styleClass="field"/></td>
+			<td class="filterFieldCell"><html:text property="taeedEmdadgar" size="1" maxlength="2" styleClass="field"/></td>
+		</tr>
+
+	    <!------------------------------------------------>				
+
+		<tr><td colspan="2" height="3"></td></tr>
+
+		<!------------------------------------------------>
+
+		<tr class="listTableHeader">
+			<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+			<check_Update_access><td class = "listRow0Col" width="4%" align="center"><span class="textW">اصلاح</span></td><end_Each_access>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "emdadgarId"
+				sortable_Column_Title "امدادگر"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "tahvilshod"
+				sortable_Column_Title "تحويل شد؟"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "taeedAnbardar"
+				sortable_Column_Title "تائيدانباردار؟"
+				sortable_Column_String
+			</td>
+
+			<td class = "listRow0Col">
+				sortable_Column_Name "taeedEmdadgar"
+				sortable_Column_Title "تائیدامدادگر؟"
+				sortable_Column_String
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+		<% int i = 0; %>
+		<logic:iterate id="value_object" name="value_object_list" >
+			<tr class="listRow<%=i%2%>">
+				<check_Delete_access>
+					<td class = "listRow1Col"> 
+						<input type="checkbox" name="id" value="checkbox">
+					</td>
+				<end_Each_access>
+
+				<check_Update_access>
+					<td class = "listRow1Col" align="center">
+						<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+					</td>
+				<end_Each_access>
+
+				<td class = "listRow1Col">kasriEmdad_emdadgarName</td>
+
+				<td class = "listRow1Col">kasriEmdad_tahvilshod</td>
+
+				<td class = "listRow1Col">kasriEmdad_taeedAnbardar</td>
+
+				<td class = "listRow1Col">kasriEmdad_taeedEmdadgar</td>
+            </tr>
+            <%i++;%>
+        </logic:iterate>
+    </table>
+
+    <!------------------------------------------------>
+    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+    <!------------------------------------------------>
+
+</html:form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.kasriEmdadForm);
+	setEntity("KasriEmdad");
+</script>

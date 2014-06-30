@@ -1,0 +1,37 @@
+<form-bean name="jozeatKhedmatForm" dynamic="true" type="com.objectj.emdad.web.action.JozeatKhedmatForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="noeKhedmat" type="java.lang.Integer"/>
+	<form-property name="khedmatId" type="java.lang.String"/>
+	<form-property name="hazineh" type="java.lang.Integer"/>
+	<form-property name="hazinehDefault" type="java.lang.Integer"/>
+	<form-property name="ojratIdCode" type="java.lang.String"/>
+	<form-property name="qateIdCode" type="java.lang.Integer"/>
+	<form-property name="ojratId" type="java.lang.String"/>
+	<form-property name="qateId" type="java.lang.String"/>	
+	<form-property name="iradIdCode" type="java.lang.String"/>
+	<form-property name="iradId" type="java.lang.String"/>
+	<form-property name="tedadQate" type="java.lang.Integer"/>
+	<form-property name="guarantee" type="java.lang.Integer"/>
+    <form-property name="dastorkar" type="java.lang.Integer"/>
+    <form-property name="taeedHesabdar" type="java.lang.Integer"/>
+    <form-property name="taeedHesabdarName" type="java.lang.String"/>
+    <form-property name="taeedGuarantee" type="java.lang.Integer"/>
+    <form-property name="taeedGuaranteeName" type="java.lang.String"/>
+    <form-property name="taeedNamayandegi" type="java.lang.Integer"/>
+    <form-property name="taeedNamayandegiName" type="java.lang.String"/>
+    <form-property name="ijadKonandeh" type="java.lang.String"/>
+    <form-property name="sharhKhedmat" type="java.lang.String"/>
+    <form-property name="ellateBargashteGuarantee" type="java.lang.String"/>
+
+    <form-property name="noeTasvieh" type="java.lang.String"/>
+    <form-property name="actionName" type="java.lang.String"/>
+    <form-property name="popup" type="java.lang.Boolean"/>
+    <form-property name="manbaeTahiyeh" type="java.lang.Integer"/>
+    <form-property name="nahveyePardakht" type="java.lang.Integer"/>
+</form-bean>

@@ -1,0 +1,54 @@
+<html dir="rtl">
+
+<head>
+<meta http-equiv="Content-Language" content="fa">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ایجاد یا اصلاح اطلاعات</title>
+</head>
+
+<body>
+
+<center>
+<table width="80%" id="table1"><tr>
+	<td width=60%>
+
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+<hr width="60%" color="#6699FF">
+
+	<p align="center"><font face="B Homa" size="6" color="#000080">ایجاد یا 
+	اصلاح اطلاعات</font></p>
+	<p align="justify" dir="rtl"><font face="B Homa">
+	<span style="font-size: 16pt"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>در این صفحه کاربر میتواند یک اطلاع را ایجاد و یا اطلاع ایجاد شده را 
+	اصلاح کند. صفحه اصلاح رخداد را در نظر بگیرید که در شکل زیر آمده، کار بر 
+	میتواند مقادیر قبلی را مشاهده کرده و تغییر دهد. در تمام صفحات ایجاد یا اصلاح 
+	3 دکمه وجود دارد :</span></font></p>
+	<p align="justify" dir="rtl"><font face="B Homa">
+	<span style="font-size: 16pt">&nbsp;1- <font color="#3399FF">ثبت</font>: اطلاعات 
+	درون فرم را ثبت میکند.</span></font></p>
+	<p align="justify" dir="rtl"><font face="B Homa">
+	<span style="font-size: 16pt">&nbsp;2- <font color="#3399FF">حالت اول</font>: 
+	مقادیر درون فرم به حالت اول خود (یعنی قبل از تغییر ) برمیگردند.</span></font></p>
+	<p align="justify" dir="rtl"><font face="B Homa">
+	<span style="font-size: 16pt">&nbsp; 3-<font color="#3399FF">انصراف:</font> 
+	چیزی ثبت نمی شود یعنی کاربر انصراف خود را از اعمال انجام داده اعلام میکند. </span></font></p>
+	<p align="center" dir="rtl">
+	<img width="90%" border="0" src="pics/edit.1.jpg"></p>
+<hr width="60%" color="#6699FF">
+<p align="center"><font face="B Majid Shadow" style="font-size: 16pt"><html:link page="javascript:history.go(-1);">
+صفحه قبل</html:link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<html:link page="javascript:window.close();">خروج</html:link></font></p>
+
+	</td></tr>
+
+
+ </table>
+</center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

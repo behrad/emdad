@@ -1,0 +1,124 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/darkhastEshterak">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="noeService" size="3" maxlength="5"/></td>
+						<td><html:text property="nameKhanevadegi" size="14" maxlength="20"/></td>
+						<td><html:text property="nameMoshtarak" size="14" maxlength="20"/></td>
+						<td><html:text property="telMoshtarak" size="20" maxlength="50"/></td>
+						<td>
+							<html:select property="noeKhodroId" size="1">
+								<html:options collection="noekhodroList"property="id" labelProperty="onvan" />
+							</html:select>
+						</td>
+						<td><html:text property="saleSakht" size="3" maxlength="5"/></td>
+						<td><html:text property="shomarePelak" size="14" maxlength="20"/></td>
+						<td><html:text property="shomareShasi" size="14" maxlength="20"/></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col"> نوع سرويس </td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "nameKhanevadegi"
+							sortable_Column_Title "نام خانوادگی"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "nameMoshtarak"
+							sortable_Column_Title "نام "
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col"> تل�?ن </td>
+
+						<td class = "listRow0Col"> نوع خودرو </td>
+
+						<td class = "listRow0Col"> سال ساخت </td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shomarePelak"
+							sortable_Column_Title "شماره پلاک"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shomareShasi"
+							sortable_Column_Title "شماره شاسی"
+							sortable_Column_String
+						</td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>darkhastEshterak_noeService</a ></td>
+
+							<td class = "listRow1Col">darkhastEshterak_nameKhanevadegi</td>
+
+							<td class = "listRow1Col">darkhastEshterak_nameMoshtarak</td>
+
+							<td class = "listRow1Col">darkhastEshterak_telMoshtarak</td>
+
+							<td class = "listRow1Col">darkhastEshterak_noekhodro_onvan</td>
+
+							<td class = "listRow1Col">darkhastEshterak_saleSakht</td>
+
+							<td class = "listRow1Col">darkhastEshterak_shomarePelak</td>
+
+							<td class = "listRow1Col">darkhastEshterak_shomareShasi</td>
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.darkhastEshterakForm);
+	setEntity("DarkhastEshterak");
+</script>

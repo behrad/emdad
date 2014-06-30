@@ -1,0 +1,20 @@
+<form-bean name="khodrojagozinForm" dynamic="true" type="com.objectj.emdad.web.action.KhodrojagozinForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="khodrojagozinId" type="java.lang.Integer"/>
+	<form-property name="rangeKhodroId" type="java.lang.String"/>
+	<form-property name="noeKhodroId" type="java.lang.String"/>
+	<form-property name="salesakht" type="java.lang.Integer"/>
+	<form-property name="shomarehPelak" type="java.lang.String"/>
+	<form-property name="shomarehMotor" type="java.lang.String"/>
+	<form-property name="shomarehShasi" type="java.lang.String"/>
+	<form-property name="shomarehVIN" type="java.lang.String"/>
+	<form-property name="tozihat" type="java.lang.String"/>
+	<form-property name="faal" type="java.lang.Integer"/>
+	<form-property name="daftarOstaniId" type="java.lang.String"/>
+</form-bean>

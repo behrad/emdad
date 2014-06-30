@@ -1,0 +1,6 @@
+<!-- Define filter mappings for the defined filters -->
+<filter-mapping>
+ <filter-name>Set Character Encoding</filter-name>
+ <servlet-name>action</servlet-name>
+</filter-mapping>
+

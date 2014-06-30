@@ -1,0 +1,13 @@
+<form-bean name="bazaryabForm" dynamic="true" type="com.objectj.emdad.web.action.BazaryabForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="bazaryabName" type="java.lang.String"/>
+	<form-property name="bazaryabKey" type="java.lang.String"/>
+	<form-property name="noeBazaryabId" type="java.lang.String"/>
+	<form-property name="bazaryabId" type="java.lang.Integer"/>
+</form-bean>

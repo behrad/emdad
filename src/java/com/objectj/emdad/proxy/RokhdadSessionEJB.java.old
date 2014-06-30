@@ -1,0 +1,597 @@
+package com.objectj.emdad.proxy;
+
+import com.objectj.jsa.model.ValueObject;
+import com.objectj.jsa.proxy.ProxyException;
+import com.objectj.jsa.proxy.ProxyReferenceException;
+import com.objectj.emdad.ejb.*;
+import com.objectj.emdad.ejb.util.ComboObject;
+import com.objectj.emdad.ejb.util.Util;
+import com.objectj.emdad.ejb.util.HejriUtil;
+import com.objectj.emdad.ejb.util.ComboPool;
+
+import java.sql.ResultSet;
+import java.sql.Connection;
+
+/**
+ * @ejb.bean
+ *    type="Stateless"
+ *    name="RokhdadSession"
+ *    jndi-name="ejb/emdad/RokhdadSession"
+ *    local-jndi-name="ejb/emdad/RokhdadSessionLocal"
+ *    view-type="both"
+ *    cmp-version="2.x"
+ *    local-business-interface="com.objectj.emdad.proxy.RokhdadProxy"
+ * 	  transaction-type="Container"
+ *
+ * @ejb.util
+ *    generate="physical"
+ *
+ */
+
+public abstract class RokhdadSessionEJB extends ProxySessionEJB implements javax.ejb.SessionBean, EntityProxy {
+    protected Class getValueObjectClass() {
+        return RokhdadModel.class;
+    }
+
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void create2(ValueObject valueObject, String moshtarakId, String namayandegiId, String daftarOstaniId, String shahrId) throws ProxyException {
+        try {
+            RokhdadUtil.getLocalHome().create((RokhdadModel) valueObject);
+            updateRela(valueObject.getId(), new String[] {moshtarakId, namayandegiId, daftarOstaniId, shahrId});
+            return ;
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace();
+            throw new ProxyException(exception);
+        }
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public ValueObject create(ValueObject valueObject, String moshtarakId, String namayandegiId, String daftarOstaniId, String shahrId) throws ProxyException {
+        try {
+//            MoshtarakLocal moshtarakObject = MoshtarakUtil.getLocalHome().findByPrimaryKey(moshtarakId);
+//            DaftarOstaniLocal daftarOstaniObject = DaftarOstaniUtil.getLocalHome().findByPrimaryKey(daftarOstaniId);
+//            ShahrLocal shahrObject = ShahrUtil.getLocalHome().findByPrimaryKey(shahrId);
+//            NamayandegiLocal namayandegiObject = null;
+//            if (namayandegiId != null && namayandegiId.length() > 0) {
+//                namayandegiObject = NamayandegiUtil.getLocalHome().findByPrimaryKey(namayandegiId);
+//            }
+            long t1 = (new java.util.Date()).getTime();
+            //MoshtarakLocal moshtarakLocal = MoshtarakUtil.getLocalHome().create((MoshtarakModel) valueObject);
+            ValueObject vo  =  create(valueObject, (com.objectj.emdad.ejb.MoshtarakLocal)null, null, null, null);
+            updateRela(vo.getId(), new String[] {moshtarakId, namayandegiId, daftarOstaniId, shahrId});
+            log.info("-- create time Rokhdad 000="+((new java.util.Date()).getTime()-t1));
+
+            return vo; //create(valueObject, moshtarakObject, namayandegiObject, daftarOstaniObject, shahrObject);
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace();
+            throw new ProxyException(exception);
+        }
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public ValueObject create(ValueObject valueObject, com.objectj.emdad.ejb.MoshtarakLocal moshtarakObject, com.objectj.emdad.ejb.NamayandegiLocal namayandegiObject, com.objectj.emdad.ejb.DaftarOstaniLocal daftarOstaniObject, com.objectj.emdad.ejb.ShahrLocal shahrObject) throws ProxyException {
+        try {
+            RokhdadLocalHome rokhdadLocalHome = RokhdadUtil.getLocalHome();
+            RokhdadLocal rokhdadLocal = rokhdadLocalHome.create((RokhdadModel) valueObject);
+
+//            update(rokhdadLocal,moshtarakObject,namayandegiObject,daftarOstaniObject,shahrObject);
+            return rokhdadLocal.getRokhdadModel();
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace(System.out);
+            throw new ProxyException(exception);
+        }
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void update(ValueObject valueObject, String moshtarakId, String namayandegiId, String daftarOstaniId, String shahrId) throws ProxyException {
+        try {
+
+            RokhdadLocal rokhdadLocal = RokhdadUtil.getLocalHome().findByPrimaryKey(valueObject.getId());
+            rokhdadLocal.setRokhdadModel1((RokhdadModel) valueObject);
+            updateRela(valueObject.getId(), new String[] {moshtarakId, namayandegiId, daftarOstaniId, shahrId});
+            if (true)
+                return;
+
+            MoshtarakLocal moshtarakObject = null;
+            if (moshtarakId != null) {
+                moshtarakObject = MoshtarakUtil.getLocalHome().findByPrimaryKey(moshtarakId);
+            }
+
+            NamayandegiLocal namayandegiObject = null;
+            if (namayandegiId != null && namayandegiId.length() > 0) {
+                namayandegiObject = NamayandegiUtil.getLocalHome().findByPrimaryKey(namayandegiId);
+            }
+
+            DaftarOstaniLocal daftarOstaniObject = null;
+            if (daftarOstaniId != null) {
+                daftarOstaniObject = DaftarOstaniUtil.getLocalHome().findByPrimaryKey(daftarOstaniId);
+            }
+
+            ShahrLocal shahrObject = null;
+            if (shahrId != null) {
+                shahrObject = ShahrUtil.getLocalHome().findByPrimaryKey(shahrId);
+            }
+
+            update(valueObject, moshtarakObject,namayandegiObject,daftarOstaniObject,shahrObject);
+            return;
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace();
+            throw new ProxyException(exception);
+        }
+    }
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void update(ValueObject valueObject, com.objectj.emdad.ejb.MoshtarakLocal moshtarakObject, com.objectj.emdad.ejb.NamayandegiLocal namayandegiObject, com.objectj.emdad.ejb.DaftarOstaniLocal daftarOstaniObject, com.objectj.emdad.ejb.ShahrLocal shahrObject) throws ProxyException {
+        try {
+
+            RokhdadLocal rokhdadLocal = RokhdadUtil.getLocalHome().findByPrimaryKey(valueObject.getId());
+            rokhdadLocal.setRokhdadModel1((RokhdadModel) valueObject);
+            update(rokhdadLocal, moshtarakObject, namayandegiObject, daftarOstaniObject, shahrObject);
+            return;
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace();
+            throw new ProxyException(exception);
+        }
+    }
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void update(com.objectj.emdad.ejb.RokhdadLocal rokhdadLocal, com.objectj.emdad.ejb.MoshtarakLocal moshtarakObject, com.objectj.emdad.ejb.NamayandegiLocal namayandegiObject, com.objectj.emdad.ejb.DaftarOstaniLocal daftarOstaniObject, com.objectj.emdad.ejb.ShahrLocal shahrObject) throws ProxyException {
+        try {
+
+            if (moshtarakObject != null) {
+                rokhdadLocal.setMoshtarak(moshtarakObject);
+            }
+
+            rokhdadLocal.setNamayandegi(namayandegiObject);
+
+            if (daftarOstaniObject != null) {
+                rokhdadLocal.setDaftarOstani(daftarOstaniObject);
+            }
+
+            if (shahrObject != null) {
+                rokhdadLocal.setShahr(shahrObject);
+            }
+            return;
+        } catch (Exception exception) {
+            log.error(exception);
+            exception.printStackTrace();
+            throw new ProxyException(exception);
+        }
+    }
+
+    protected String getUpdateRelaStatement() {
+        if(isDatabaseSQL())
+            return "execute dbo.UpdateRelationRokhdad ?, ?,?, ?,? " ;
+        else
+            return "execute UpdateRelationRokhdad(?, ?,?, ?,?) " ;
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void updateRela(String id, String[] relaIds) throws ProxyException {
+/*        if(!isDatabaseSQL()){
+            if(Util.isEmptyId(relaIds[1]))
+                relaIds[1] = (String) com.objectj.emdad.ejb.util.Util.get("nullKey");
+        }*/
+        super.updateRela(id, relaIds);
+    }
+
+    public ValueObject modelToList(Object o) {
+        RokhdadLocal rokhdadLocal = (RokhdadLocal) o;
+
+        RokhdadList rokhdadList = new RokhdadList();
+        RokhdadModel rokhdadModel = rokhdadLocal.getRokhdadModel();
+
+        rokhdadList.setId(rokhdadModel.getId());
+        rokhdadList.setRokhdadId(rokhdadModel.getRokhdadId());
+        rokhdadList.setSabtKonandeh(rokhdadModel.getSabtKonandeh());
+        rokhdadList.setAkharinTaghyirDahandeh(rokhdadModel.getAkharinTaghyirDahandeh());
+        rokhdadList.setIrad(rokhdadModel.getIrad());
+        rokhdadList.setKilometerKarkard(rokhdadModel.getKilometerKarkard());
+        rokhdadList.setKilometerKarkardGhabli(rokhdadModel.getKilometerKarkardGhabli());
+        rokhdadList.setZamaneVaghei(rokhdadModel.getZamaneVaghei());
+        if (rokhdadModel.getZamaneVaghei() != null)
+            rokhdadList.setZamaneVagheiHejri(HejriUtil.getTimeFromDate(new java.sql.Timestamp(rokhdadModel.getZamaneVaghei().getTime())) + " - " + HejriUtil.chrisToHejri(rokhdadModel.getZamaneVaghei()));
+        else
+            rokhdadList.setZamaneVagheiHejri("");
+
+        rokhdadList.setTarikhFaalShodan(rokhdadModel.getTarikhFaalShodan());
+        if (rokhdadModel.getTarikhFaalShodan() != null)
+            rokhdadList.setTarikhFaalShodanHejri(HejriUtil.chrisToHejri(rokhdadModel.getTarikhFaalShodan()));
+        else
+            rokhdadList.setTarikhFaalShodanHejri("");
+        rokhdadList.setTel(rokhdadModel.getTel());
+        rokhdadList.setMobile(rokhdadModel.getMobile());
+        rokhdadList.setAddress(rokhdadModel.getAddress());
+        rokhdadList.setMantagheh(rokhdadModel.getMantagheh());
+        rokhdadList.setSabetSayar(rokhdadModel.getSabetSayar());
+        rokhdadList.setSabetSayarName(((ComboObject) Util.getFromArrayList("rokhdad.sabetSayar", rokhdadList.getSabetSayar())).getName());
+        rokhdadList.setKhadamateVijeh(rokhdadModel.getKhadamateVijeh());
+        rokhdadList.setEghdamShodeh(rokhdadModel.getEghdamShodeh());
+        rokhdadList.setDastorkarGhabli(rokhdadModel.getDastorkarGhabli());
+        rokhdadList.setNoeDarkhastKonandeh(rokhdadModel.getNoeDarkhastKonandeh());
+        rokhdadList.setNoeDarkhastKonandehName(((ComboObject) Util.getFromArrayList("noeDarkhastKonandeh", rokhdadModel.getNoeDarkhastKonandeh())).getName());
+        rokhdadList.setGuarantee(rokhdadModel.getGuarantee());
+        rokhdadList.setGuaranteeName(((ComboObject) Util.getFromArrayList("yesNo", rokhdadModel.getGuarantee())).getName());
+        rokhdadList.setNoeService(rokhdadModel.getNoeService());
+        rokhdadList.setNoeServiceName(((ComboObject) Util.getFromArrayList("noeService", rokhdadModel.getNoeService())).getName());
+        rokhdadList.setMoshtarakYaNa(rokhdadModel.getMoshtarakYaNa()) ;
+        rokhdadList.setMoshtarakYaNaName(((ComboObject) Util.getFromArrayList("yesNo", rokhdadModel.getMoshtarakYaNa())).getName()) ;
+
+        String[] rls = UserAccessEntity.stringQuerys("select moshtarakId,namayandegiId,daftarostaniId,shahrId from rokhdad where id='"+rokhdadModel.getId()+"'","moshtarakId,namayandegiId,daftarostaniId,shahrId");
+//        MoshtarakLocal moshtarakLocal = rokhdadLocal.getMoshtarak();
+        // check for a valid relationship reference
+        if (Util.isNotEmpty(rls[0])) {
+//            String mm = UserAccessEntity.stringQuerys("select id,name,eshterakId from moshtarak where eshterakId='", "id,name,eshterakId");
+//            MoshtarakModel moshtarakModel = moshtarakLocal.getMoshtarakModel();
+            String[] rls2 = UserAccessEntity.stringQuerys("select name,eshterakId from moshtarak where id='"+rls[0]+"'","name,eshterakId");
+            rokhdadList.setMoshtarakId(rls[0]);
+            rokhdadList.setMoshtarakName(rls2[0]);
+            rokhdadList.setMoshtarakEshterakId(rls2[1]);
+        }
+
+//        NamayandegiLocal namayandegiLocal = rokhdadLocal.getNamayandegi();
+        // check for a valid relationship reference
+        if (Util.isNotEmpty(rls[1])) {
+//            NamayandegiModel namayandegiModel = namayandegiLocal.getNamayandegiModel();
+            rokhdadList.setNamayandegiId(rls[1]);
+            rokhdadList.setNamayandegiName(ComboPool.findInCombo("namayandegi_amelyat", rls[1]));
+        }
+
+//        DaftarOstaniLocal daftarOstaniLocal = rokhdadLocal.getDaftarOstani();
+        // check for a valid relationship reference
+        if (Util.isNotEmpty(rls[2])) {
+//            DaftarOstaniModel daftarOstaniModel = daftarOstaniLocal.getDaftarOstaniModel();
+            rokhdadList.setDaftarOstaniId(rls[2]);
+            rokhdadList.setDaftarOstaniName(ComboPool.findInCombo("daftarOstani", rls[2]));
+        }
+
+//        ShahrLocal shahrLocal = rokhdadLocal.getShahr();
+        // check for a valid relationship reference
+        if (Util.isNotEmpty(rls[3])) {
+//            ShahrModel shahrModel = shahrLocal.getShahrModel();
+            rokhdadList.setShahrId(rls[3]);
+            rokhdadList.setShahrShahrName(ComboPool.findInCombo("shahr", rls[3]));
+        }
+        rokhdadList.setAkharinTaghyirDahandehName(UserAccessEntity.stringQuery("Select name FROM Shakhs WHERE Shakhs.id = '"+rokhdadModel.getAkharinTaghyirDahandeh()+"'" , "name"));
+        rokhdadList.setSabtKonandehName(UserAccessEntity.stringQuery("Select name FROM Shakhs WHERE Shakhs.id = '"+rokhdadModel.getSabtKonandeh()+"'" , "name"));
+
+        return rokhdadList;
+    }
+
+    public ValueObject resultSetToList(ResultSet resultSet) {
+        try {
+
+            RokhdadList rokhdadList = new RokhdadList();
+
+            rokhdadList.setId(resultSet.getString("id"));
+            rokhdadList.setRokhdadId(new Integer(resultSet.getInt("rokhdadId")));
+            rokhdadList.setAddress(resultSet.getString("address"));
+            rokhdadList.setSabetSayar(new Integer(resultSet.getInt("sabetSayar")));
+            rokhdadList.setSabetSayarName(((ComboObject) Util.getFromArrayList("rokhdad.sabetSayar", rokhdadList.getSabetSayar())).getName());
+            rokhdadList.setEghdamShodeh(new Integer(resultSet.getInt("eghdamShodeh")));
+            rokhdadList.setDastorkarGhabli(new Integer(resultSet.getInt("dastorkarGhabli")));
+            rokhdadList.setTarikhFaalShodan(resultSet.getDate("tarikhFaalShodan"));
+            rokhdadList.setIrad(resultSet.getString("irad"));
+            rokhdadList.setSabtKonandeh(resultSet.getString("sabtKonandeh"));
+            rokhdadList.setNoeKhodroName(resultSet.getString("noeKhodroName"));
+            rokhdadList.setRangOnvan(resultSet.getString("rangOnvan"));
+            rokhdadList.setMoshtarakYaNa(new Integer(resultSet.getInt("moshtarakYaNa")));
+            rokhdadList.setMoshtarakYaNaName(((ComboObject) Util.getFromArrayList("yesNo", rokhdadList.getMoshtarakYaNa())).getName());
+            rokhdadList.setTarikhTahvilHejri(HejriUtil.chrisToHejri(resultSet.getDate("tarikhTahvil")));
+            rokhdadList.setKilometerKarkard(new Integer(resultSet.getInt("kilometerKarkard")));
+            rokhdadList.setMantagheh(new Integer(resultSet.getInt("mantagheh")));
+
+            if(Util.isEmpty(resultSet.getString("mobile")))
+                rokhdadList.setTel(resultSet.getString("tel"));
+            else
+                rokhdadList.setTel(resultSet.getString("tel")+","+resultSet.getString("mobile"));
+
+            if (resultSet.getTimestamp("zamaneVaghei") != null)
+                rokhdadList.setZamaneVagheiHejri(HejriUtil.getTimeFromDate(new java.sql.Timestamp(resultSet.getTimestamp("zamaneVaghei").getTime())) + " - " + HejriUtil.chrisToHejri(resultSet.getDate("zamaneVaghei")));
+            else
+                rokhdadList.setZamaneVagheiHejri("");
+            rokhdadList.setKhadamateVijeh(new Integer(resultSet.getInt("khadamateVijeh")));
+            rokhdadList.setNoeDarkhastKonandeh(new Integer(resultSet.getInt("noeDarkhastKonandeh")));
+            rokhdadList.setNoeDarkhastKonandehName(((ComboObject) Util.getFromArrayList("noeDarkhastKonandeh", resultSet.getInt("noeDarkhastKonandeh"))).getName());
+
+            //String moshtarakId = resultSet.getString("moshtarakId");
+            rokhdadList.setMoshtarakEshterakId(resultSet.getString("eshterakId"));
+
+            //String namayandegiId = resultSet.getString("namayandegiId");
+            rokhdadList.setNamayandegiName(resultSet.getString("nameNamayandegi"));
+
+            //String daftarOstaniId = resultSet.getString("daftarOstaniId");
+            rokhdadList.setDaftarOstaniName(resultSet.getString("nameDaftarOstani"));
+
+            //String shahrId = resultSet.getString("shahrId");
+            rokhdadList.setShahrShahrName(resultSet.getString("shahrName"));
+            if (resultSet.getString("shomarePelak") != null)
+                rokhdadList.setShomarePelak(resultSet.getString("shomarePelak"));
+            else
+                rokhdadList.setShomarePelak("");
+
+            return rokhdadList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //	public ValueObject resultSetToList(ResultSet resultSet) {
+    //		try {
+    //
+    //			RokhdadList rokhdadList = new RokhdadList();
+    //
+    //			rokhdadList.setId(resultSet.getString("id"));
+    //			rokhdadList.setRokhdadId(new Integer(resultSet.getInt("rokhdadId")));
+    //			rokhdadList.setSabtKonandeh(resultSet.getString("sabtKonandeh"));
+    //			rokhdadList.setAkharinTaghyirDahandeh(resultSet.getString("akharinTaghyirDahandeh"));
+    //			rokhdadList.setIrad(resultSet.getString("irad"));
+    //			rokhdadList.setZamaneVaghei(resultSet.getDate("zamaneVaghei"));
+    //			rokhdadList.setTarikhFaalShodan(resultSet.getDate("tarikhFaalShodan"));
+    //			rokhdadList.setTel(resultSet.getString("tel"));
+    //			rokhdadList.setMobile(resultSet.getString("mobile"));
+    //			rokhdadList.setAddress(resultSet.getString("address"));
+    //			rokhdadList.setMantagheh(new Integer(resultSet.getInt("mantagheh")));
+    //			rokhdadList.setSabetSayar(new Integer(resultSet.getInt("sabetSayar")));
+    //			rokhdadList.setSabetSayarName(((ComboObject)Util.getFromArrayList("rokhdad.sabetSayar", rokhdadList.getSabetSayar())).getName());
+    //			rokhdadList.setKhadamateVijeh(new Integer(resultSet.getInt("khadamateVijeh")));
+    //			rokhdadList.setEghdamShodeh(new Integer(resultSet.getInt("eghdamShodeh")));
+    //			rokhdadList.setDastorkarGhabli(new Integer(resultSet.getInt("dastorkarGhabli")));
+    //
+    //			String moshtarakId = resultSet.getString("moshtarakId");
+    //			rokhdadList.setMoshtarakId(moshtarakId);
+    //			MoshtarakLocal moshtarakLocal = MoshtarakUtil.getLocalHome().findByPrimaryKey(moshtarakId);
+    //			if (moshtarakLocal != null) {
+    //				MoshtarakModel moshtarakModel = moshtarakLocal.getMoshtarakModel();
+    //				rokhdadList.setMoshtarakName(moshtarakModel.getName());
+    //				rokhdadList.setMoshtarakEshterakId(moshtarakModel.getEshterakId());
+    //			}
+    //
+    //			String namayandegiId = resultSet.getString("namayandegiId");
+    //			if (namayandegiId != null && namayandegiId.length() != 0) {
+    //				rokhdadList.setNamayandegiId(namayandegiId);
+    //				NamayandegiLocal namayandegiLocal = NamayandegiUtil.getLocalHome().findByPrimaryKey(namayandegiId);
+    //				if (namayandegiLocal != null) {
+    //					NamayandegiModel namayandegiModel = namayandegiLocal.getNamayandegiModel();
+    //					rokhdadList.setNamayandegiName(namayandegiModel.getName());
+    //				}
+    //			}
+    //
+    //			String daftarOstaniId = resultSet.getString("daftarOstaniId");
+    //			rokhdadList.setDaftarOstaniId(daftarOstaniId);
+    //			DaftarOstaniLocal daftarOstaniLocal = DaftarOstaniUtil.getLocalHome().findByPrimaryKey(daftarOstaniId);
+    //			if (daftarOstaniLocal != null) {
+    //				DaftarOstaniModel daftarOstaniModel = daftarOstaniLocal.getDaftarOstaniModel();
+    //				rokhdadList.setDaftarOstaniName(daftarOstaniModel.getName());
+    //			}
+    //
+    //			String shahrId = resultSet.getString("shahrId");
+    //			rokhdadList.setShahrId(shahrId);
+    //			ShahrLocal shahrLocal = ShahrUtil.getLocalHome().findByPrimaryKey(shahrId);
+    //			if (shahrLocal != null) {
+    //				ShahrModel shahrModel = shahrLocal.getShahrModel();
+    //				rokhdadList.setShahrShahrName(shahrModel.getShahrName());
+    //			}
+    //
+    //			return rokhdadList;
+    //		} catch (Exception e) {
+    //			e.printStackTrace();
+    //		}
+    //		return null;
+    //	}
+
+    public ValueObject resultSetToBean(ResultSet resultSet) {
+        try {
+            RokhdadModel rokhdadModel = new RokhdadModel();
+            rokhdadModel.setId(resultSet.getString("id"));
+            rokhdadModel.setEghdamShodeh(new Integer(resultSet.getInt("eghdamShodeh")));
+            return rokhdadModel;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public ValueObject create() throws ProxyException {
+        return super.create();
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public ValueObject create(ValueObject valueObject) throws ProxyException {
+        return super.create(valueObject);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public ValueObject read(String id) throws ProxyException {
+        return super.read(id);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult read(String[] ids) throws ProxyException {
+        return super.read(ids);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult read(ValueObject valueObject) throws ProxyException {
+        return super.read(valueObject);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult readByEntityId(Integer entityId) throws ProxyException {
+        return super.readByEntityId(entityId);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult readCombo(String table, String field, String filter) throws ProxyException {
+        return super.readCombo(table, field, filter);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult readCombo(String table, String field) throws ProxyException {
+        return super.readCombo(table, field);
+    }
+
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult readModel(QueryObject queryObject) throws ProxyException {
+        return super.readModel(queryObject);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void remove(String id) throws ProxyException, ProxyReferenceException {
+        super.remove(id);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void remove(String[] ids) throws ProxyException, ProxyReferenceException {
+        super.remove(ids);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void remove(ValueObject valueObject) throws ProxyException, ProxyReferenceException {
+        super.remove(valueObject);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public QueryResult readList(QueryObject queryObject) throws ProxyException {
+
+        setAsView(queryObject, "rokhdad", "rokhdadList");
+//        queryObject.setTables("rokhdadList");
+//        queryObject.setJoined(false);
+//        queryObject.setOrderTable("");
+//        queryObject.setView(true);
+
+        if (queryObject.getWhere() != null && queryObject.getWhere().length() != 0)
+            queryObject.setWhere(queryObject.getWhere()
+                    .replaceAll("rokhdad\\p{Punct}", "rokhdadList.")
+                    .replaceAll("shahr\\p{Punct}", "rokhdadList.")
+                    .replaceAll("daftarOstani\\p{Punct}", "rokhdadList.")
+                    .replaceAll("moshtarak\\p{Punct}", "rokhdadList.")
+                    .replaceAll("namayandegi\\p{Punct}", "rokhdadList."));
+
+
+        return super.readList(queryObject);
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Supports"
+     */
+    public ResultSet report(QueryObject queryObject, Connection connection) throws ProxyException {
+
+        setAsView(queryObject, "rokhdad", "rokhdadList");
+//        queryObject.setTables("rokhdadList");
+//        queryObject.setJoined(false);
+//        queryObject.setOrderTable("");
+//        queryObject.setView(true);
+
+        if (queryObject.getWhere() != null && queryObject.getWhere().length() != 0)
+            queryObject.setWhere(queryObject.getWhere()
+                    .replaceAll("rokhdad\\p{Punct}", "rokhdadList.")
+                    .replaceAll("shahr\\p{Punct}", "rokhdadList.")
+                    .replaceAll("daftarOstani\\p{Punct}", "rokhdadList.")
+                    .replaceAll("moshtarak\\p{Punct}", "rokhdadList.")
+                    .replaceAll("namayandegi\\p{Punct}", "rokhdadList."));
+
+        return super.report(queryObject, connection);
+
+
+    }
+
+    /**
+     * @ejb.interface-method
+     * @ejb.transaction
+     * 	 type = "Required"
+     */
+    public void update(ValueObject valueObject) throws ProxyException {
+        super.update(valueObject);
+    }
+
+}

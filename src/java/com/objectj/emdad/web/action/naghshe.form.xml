@@ -1,0 +1,24 @@
+<form-bean name="naghsheForm" dynamic="true" type="com.objectj.emdad.web.action.NaghsheForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+
+	<form-property name="mapLevel" type="java.lang.Integer"/>
+    <form-property name="azTool" type="java.lang.String"/>
+    <form-property name="taTool" type="java.lang.String"/>
+    <form-property name="azArz" type="java.lang.String"/>
+    <form-property name="taArz" type="java.lang.String"/>
+	<form-property name="azTooleGoegraphy" type="java.lang.Integer"/>
+	<form-property name="taTooleGoegraphy" type="java.lang.Integer"/>
+	<form-property name="azArzeGoegraphy" type="java.lang.Integer"/>
+	<form-property name="taArzeGoegraphy" type="java.lang.Integer"/>
+	<form-property name="mantagheId" type="java.lang.Integer"/>
+    <form-property name="fileName" type="java.lang.String"/>
+    <!--form-property name="ostanName" type="java.lang.String"/>
+    <form-property name="shahrName" type="java.lang.String"/>
+    <form-property name="namayandegiName" type="java.lang.String"/>
+    <form-property name="emdadgarName" type="java.lang.String"/-->
+</form-bean>

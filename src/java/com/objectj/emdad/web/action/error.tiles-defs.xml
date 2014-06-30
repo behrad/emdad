@@ -1,0 +1,5 @@
+	<definition name="emdad.security.error" extends="emdad.main">
+		<put name="title"  		value="&#1583;&#1587;&#1578;&#1585;&#1587;&#1610; &#1594;&#1610;&#1585; &#1605;&#1580;&#1575;&#1586;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/error.jsp" />
+	</definition>
+

@@ -1,0 +1,146 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validateemdadgar" onsubmit="return validateEmdadgarForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="emdadgarId" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">نام:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="name" size="40" maxlength="40" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">تل(f)ن:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="tel" size="50" maxlength="50" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">تل(f)ن همراه:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mobile" size="50" maxlength="50" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">آدرس:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="address" size="80" maxlength="80" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">سطح مهارت (f)ني:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="satheMaharat" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">سق(f) موجودي:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="saghfeMojoodi" size="9" maxlength="9" styleClass="field"/><span class="fieldDescription">&nbsp;ريال</span></td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">وضعيت:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="vazeat" size="2" maxlength="2" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نوع امدادگر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="noeEmdadgarId" size="1">
+								<html:options collection="noeEmdadgarList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">د(f)تر استاني:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="daftarOstaniId" size="1">
+								<html:options collection="daftarOstaniList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">نمايندگي:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="namayandegiId" size="1">
+								<html:options collection="namayandegiList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.emdadgarForm);
+	setEntity("Emdadgar");
+    if (document.emdadgarForm.action_type.value=="create") 
+	{
+        document.emdadgarForm.action="/emdad/c/validateemdadgar.run";
+    } 
+	
+	else 
+	{
+        document.emdadgarForm.action="/emdad/u/validateemdadgar.run";
+    }
+</script>
+<html:javascript formName="emdadgarForm" />

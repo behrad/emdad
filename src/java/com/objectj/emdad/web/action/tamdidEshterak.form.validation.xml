@@ -1,0 +1,29 @@
+	<formset>
+        <form name="tamdidEshterakForm">
+            <field property="tarikhAkharinTamdid" depends="date, required">
+                <arg0 key="&#1578;&#1575;&#1585;&#1610;&#1582; &#1570;&#1582;&#1585;&#1610;&#1606; &#1578;&#1605;&#1583;&#1610;&#1583;" resource="false"/>
+                <var>
+                    <var-name>datePatternStrict</var-name>
+                    <var-value>yyyy/MM/dd</var-value>
+                </var>
+            </field>
+            <field property="eshterakId" depends="required">
+                <arg0 key="&#1705;&#1583; &#1575;&#1588;&#1578;&#1585;&#1575;&#1705;" resource="false"/>
+            </field>
+            <field property="hazinehPardakhtShodeh" depends="required">
+                <arg0 key="&#1607;&#1586;&#1740;&#1606;&#1607; &#1662;&#1585;&#1583;&#1575;&#1582;&#1578; &#1588;&#1583;&#1607;" resource="false"/>
+            </field>
+            <field property="takhfif" depends="required,">
+                <arg0 key="&#1578;&#1582;&#1601;&#1740;&#1601;" resource="false"/>
+            </field>
+            <field property="naghd" depends="required">
+                <arg0 key="&#1606;&#1602;&#1583;" resource="false"/>
+            </field>
+            <field property="taahodi" depends="required">
+                <arg0 key="&#1578;&#1593;&#1607;&#1583;&#1740;" resource="false"/>
+            </field>
+            <field property="aghsat" depends="required">
+                <arg0 key="&#1580;&#1605;&#1593; &#1575;&#1602;&#1587;&#1575;&#1591;" resource="false"/>
+            </field>
+        </form>
+    </formset>

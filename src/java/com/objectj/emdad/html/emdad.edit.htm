@@ -1,0 +1,202 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/c/validateemdad" onsubmit="return validateEmdadForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شتاسه امداد:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="emdadId" size="10" maxlength="10" onkeypress="return submitenter(this,event)" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">رخداد:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="rokhdadId" size="1">
+								<html:options collection="rokhdadList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">وضعيت خدمت:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="vazeatKhedmat" size="1">
+								<html:options collection="vazeatKhedmatList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">زمان اعزام:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="zamanEzam" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">زمان شروع به کار امدادگر:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamanShoro" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">زمان پايان کار:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamnaPayan" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">اعزامگر:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="ezamgarId" size="1">
+								<html:options collection="shakhsList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">امدادگر مربوطه:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="emdadgarId" size="1">
+								<html:options collection="shakhsList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">دليل طول کشيدن امداد:</td>
+						<td class="editStar"> </td>
+						<td>
+							<html:select property="dalileToolKeshidaneEmdad" size="1">
+								<html:options collection="dalileToolKeshidaneEmdadList" property="eid" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">زمان واقعی اعزام امدادگر:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamanVagheiEzam" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">زمان واقعی شروع به کار امداد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamanVagheiShoro" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">زمان واقعی پايان کار امداد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="zamanVagheiPayan" size="10" maxlength="10" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">آخرين تغيير دهنده اين امداد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="akharinTagheerDahandeh" size="40" maxlength="40" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">کيلومتر کارکرد:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="kilometerKarkard" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">اصله امدادخواه از نمايندگی(f):</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="faseleAzNamayandegi" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">مبلغ پرداخت شده:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="mablaghPardakhtShodeh" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">حدود هزيته کل امداد:</td>
+						<td class="editStar"> </td>
+						<td> <input type="text" name="hododeHazinehKol" size="5" maxlength="5" styleClass="field"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.emdadForm);
+	setEntity("Emdad");
+    if (document.emdadForm.action_type.value=="create") 
+	{
+        document.emdadForm.action="/emdad/c/validateemdad.run";
+    } 
+	
+	else 
+	{
+        document.emdadForm.action="/emdad/u/validateemdad.run";
+    }
+</script>
+<html:javascript formName="emdadForm" />

@@ -1,0 +1,5 @@
+	<definition name="emdad.security.logout" extends="emdad.main">
+		<put name="title"  		value="&#1582;&#1575;&#1585;&#1580;" />
+		<put name="body"   		value="/com/objectj/emdad/jsp/logout.jsp" />
+	</definition>
+

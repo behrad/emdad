@@ -1,0 +1,128 @@
+gunzip lnx_920_disk1.cpio.gz
+cpio -idmv < lnx_920_disk1.cpio
+
+or
+
+  zcat lnx_920_disk1.cpio.gz | cpio -idmv
+  zcat lnx_920_disk2.cpio.gz | cpio -idmv
+  zcat lnx_920_disk3.cpio.gz | cpio -idmv
+
+/usr/X11R6/bin/Xvfb :1 -screen 0 1x1x8 > /dev/null 2>&1 &
+su - oracle
+export DISPLAY=:1.0
+
+dbca -silent -responseFile /packages/Disk1/response/dbca.rsp
+./runInstaller -silent -responseFile /packages/Disk1/response/standard.rsp
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+update emdad set emdad.noeemdadgarid=t.noeemdadgarid from (select noeemdadgarid,id from emdadgar)t
+ where emdad.emdadgarid=t.id
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE SPFILE='/opt/oracle/product/9.2.0/dbs/spfilecompiere.ora'
+FROM  PFILE='/opt/oracle/admin/compiere/pfile/initcompiere.ora';
+
+CREATE DATABASE compiere  controlfile reuse
+  LOGFILE group 1 ('/opt/oracle/product/9.2.0/oradata/compiere/redolog1a.dbf' ) SIZE 10M,
+          group 2 ('/opt/oracle/product/9.2.0/oradata/compiere/redolog2a.dbf' ) SIZE 10M,
+          group 3 ('/opt/oracle/product/9.2.0/oradata/compiere/redolog3a.dbf' ) SIZE 10M
+  DATAFILE '/opt/oracle/product/9.2.0/oradata/compiere/system.dbf' SIZE 200M
+  CHARACTER SET WE8ISO8859P1
+  national character set utf8
+  EXTENT MANAGEMENT LOCAL
+  undo tablespace ts_undo
+    datafile '/opt/oracle/product/9.2.0/oradata/compiere/undo.dbf'
+    size 50M
+  default temporary tablespace ts_temp
+    tempfile '/opt/oracle/product/9.2.0/oradata/compiere/temp01.dbf'
+    size 50M autoextend on next 50M maxsize 300M;
+
+mkdir -p /opt/oracle/product/9.2.0
+chown -R oracle.dba /opt/oracle
+
+rpm -q glibc
+
+ cannot identify/lock data file 1 - see DBWR trace file
+error while loading shared libraries: libstdc++-libc6.1-1.so.2: can not open shared object file oracle
+version GLIBC_2.0 not defined in file libc.so.6 with link time reference
+
+CREATE USER compiere IDENTIFIED BY compiere
+    DEFAULT TABLESPACE USERS
+    TEMPORARY TABLESPACE TEMP
+    PROFILE DEFAULT
+    ACCOUNT UNLOCK;
+
+ imp compiere/compiere file=Compiere.dmp full=Y
+
+Creates a Gziped tarball with two directories. 
+Example: 
+tar czpf /path/to/new_tar_file.tar.gz /path/to/ad_in_archive/other/path/to/add/to/archive 
+
+Extracts a Gzip compressed tarball with permissions in tact. Note the 'z' inside the arguments. 
+Example: 
+tar zxpf gzipped_tar_file.tar.gz 
+
+killall -9 java
+cd /usr/java/jboss-3.2.3/server/all/log
+tail -f -n 200 
+
+cp -rd source destination
+rm -rf dir
+tar -xvf nexus.ear nexus.ear.tar
+tar -cvf  nexus.ear.tar nexus.ear
+tar zxvf nexus.tgz
+
+tar -xvf vista.war vista.war.tar
+tar -cvf vista.war.tar vista.war
+
+service jboss start
+service jboss stop
+ps -aux | grep java
+ps -elf | grep java
+
+tar -cvzf /usr/java/vista.war.tar vista.war
+
+sftp root@81.12.106.70
+lcd /usr/java/wars
+get nexus.ear.tar
+
+keytool -genkey -dname "cn=ObjectJ, ou=eLearning, o=ObjectJ.com, c=US" -genkey -alias jsw -keypass javaneh -keystore C:\${license.dir}/objectj.keystore -validity 180
+
+
+Port: C:\jboss-3.2.2\server\default\deploy\jbossweb-tomcat41.sar\META-INF
+
+
+Once j_security_check authenticates a user, it creates an HttpSession object and stores an authentication object in the session (from my debugger: weblogic.security.acl.internal.AuthenticatedUser). This object contains user specific information, like name, ssl certificate (if certificat authentication was used), and time stamp. The user is sent back a cookie with the session id (if cookie's are supported). Subsequent access by the same user will send the cookie as part of the request. The session id will be extracted from the cookie and used to lookup the user's session. If the session contains an authentication object, then the user's auth information will be attached to the thread. 
+
+SUN Login info:
+	user id:  nvafaian
+	passwd:  remote
+
+  deploy/, file:///C:/java/wars/
+  deploy/, file:///home/emdad/uploads/deploy2
+
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
+/etc/init.d/iptables save
+/etc/init.d/iptables start
+
+nmap -sU localhost
+
+netconfig
+service network restart
+
+http://80.75.5.131:80/emdad
+
+ssh admin@db.ut.ac.ir
+ssh root@172.16.1.21
+mysqldump -unexuser -plexus nexus > db.dump
+set foreign_key_checks=0;
+source c:\mysql\bin\db.dump
+GRANT ALL PRIVILEGES ON *.* TO nexuser@localhost IDENTIFIED BY ‘lexus' WITH GRANT OPTION;
+export PATH=/usr/java/j2sdk1.4.2_03/bin:$PATH
+
+alter table SessionLesson modify code integer;
+alter table Session modify priority integer;
+alter table ECourseChapter modify code integer;
+update Session set priority=100-priority;
+update SessionLesson set code=100-code;
+update ECourseChapter set code=100-code;

@@ -1,0 +1,66 @@
+<form method="post" action="/c/validatenoeBazaryab" onsubmit="return validateNoeBazaryabForm(this)">
+	<table width="100%" dir=rtl class="generalText">
+
+		<!----------------------------------------->
+
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="2" cellspacing="0" class="editTable">
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">شناسه نوع بازاریاب:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="noeBazaryabId" size="5" maxlength="5"  /> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow1">
+						<td class="editLabel">عنوان:</td>
+						<td class="editStar">*</td>
+						<td> <input type="text" name="onvan" size="30" maxlength="30" onkeypress="return submitenter(this,event)"/> </td>
+					</tr>
+
+					<!----------------------------------------->
+
+					<tr class="editRow0">
+						<td class="editLabel">جدول مرجع:</td>
+						<td class="editStar">*</td>
+						<td>
+							<html:select property="entity" size="1">
+								<html:options collection="entityList" property="id" labelProperty="name" />
+							</html:select>
+						</td>
+					</tr>
+
+					<!----------------------------------------->
+				    <jsp:include page="/com/objectj/resources/jsp/tiles/emdad/edit-but.jsp" flush="true" />						
+					<!----------------------------------------->
+
+				</table>
+			</td>
+		</tr>
+	
+		<!----------------------------------------->
+
+  </table>
+</form>
+
+<!----------------------------------------->
+
+<script type="text/javascript" language="Javascript1.1">
+	setForm(document.noeBazaryabForm);
+	setEntity("NoeBazaryab");
+    if (document.noeBazaryabForm.action_type.value=="create") 
+	{
+        document.noeBazaryabForm.action="/emdad/c/validatenoeBazaryab.run";
+    } 
+	
+	else 
+	{
+        document.noeBazaryabForm.action="/emdad/u/validatenoeBazaryab.run";
+    }
+</script>
+<html:javascript formName="noeBazaryabForm" />

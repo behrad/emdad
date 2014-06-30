@@ -1,0 +1,16 @@
+
+    /*============================================================*/
+    public @simpleType@ get@Attribute@() {
+        return @attribute@;
+    }
+    public void set@Attribute@(@simpleType@ @attribute@) {
+        this.@attribute@ = @attribute@;
+    }
+
+    /*============================================================*/
+    public String get@RefEntity@@DisplayAttribute@() {
+        return @refEntity@@DisplayAttribute@;
+    }
+    public void set@RefEntity@@DisplayAttribute@(String @refEntity@@DisplayAttribute@) {
+        this.@refEntity@@DisplayAttribute@ = @refEntity@@DisplayAttribute@;
+    }

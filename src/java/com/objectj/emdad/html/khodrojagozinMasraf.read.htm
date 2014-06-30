@@ -1,0 +1,64 @@
+<%@ taglib uri="/WEB-INF/tld/struts-html.tld"  prefix="html" %>
+<%@ taglib uri="/WEB-INF/tld/struts-bean.tld"  prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tld/struts-tiles.tld" prefix="tiles" %>
+<%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested" %>
+
+<html:base/>
+
+<form method="post" action="/r/khodrojagozinMasraf">
+	<table width="100%" align="center" dir=rtl class="generalText">
+
+		<!---------------------------------------->
+
+		<tr>
+			<td align="center"> 
+				<table border="0" cellpadding="4" cellspacing="0" class="readTable">
+	
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">امداد:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozinMasraf_emdadId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">خودرو جایگزین:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozinMasraf_khodrojagozinId  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow0"> 
+						<td class="readLabel">تاریخ تحویل دادن به مشتری:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozinMasraf_tarikhTahvilBeMoshtari  </td>						
+					</tr>
+						
+					<!---------------------------------------->
+	
+					<tr class="readRow1"> 
+						<td class="readLabel">تاریخ تحویل  گر�?تن از مشتری:</td>
+						<td width="5%"></td>
+						<td class="readData">khodrojagozinMasraf_tarikhTahvilAzMoshtari  </td>						
+					</tr>
+					
+
+		<!---------------------------------------->
+		<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/read-but.jsp" flush="true" />
+		<!---------------------------------------->
+
+	</table>
+</form>
+
+<!---------------------------------------->
+
+<script>
+	setForm(document.khodrojagozinMasrafForm);
+	setEntity("KhodrojagozinMasraf");
+</script>
+		

@@ -1,0 +1,59 @@
+	<formset>
+		<form name="qateForm">
+			<field property="qateId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607;" resource="false"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="shomareFanni" depends="required">
+				<arg0 key="&#1588;&#1605;&#1575;&#1585;&#1607; &#1601;&#1606;&#1740;" resource="false"/>
+			</field>
+
+			<field property="name" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1602;&#1591;&#1593;&#1607;" resource="false"/>
+			</field>
+
+			<field property="vahedShomaresh" depends="required,intrange">
+				<arg0 key="&#1608;&#1575;&#1581;&#1583; &#1588;&#1605;&#1575;&#1585;&#1588;" resource="false"/>
+                <arg1 name="intrange" key="${var:min}" resource="false"/>
+                <arg2 name="intrange" key="${var:max}" resource="false"/>
+                   <var>
+                     <var-name>min</var-name>
+                     <var-value>1</var-value>
+                   </var>
+                    <var>
+                      <var-name>max</var-name>
+                      <var-value>10</var-value>
+                    </var>
+                <msg name="intrange" key="pleae.enter.values"/>
+			</field>
+
+			<field property="gheimat" depends="required, mask">
+				<arg0 key="&#1602;&#1740;&#1605;&#1578;" resource="false"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+            <field property="satheMaharat" depends="required,mask">
+				<arg0 key="&#1587;&#1591;&#1581; &#1605;&#1607;&#1575;&#1585;&#1578; &#1601;&#1606;&#1740; &#1605;&#1608;&#1585;&#1583; &#1606;&#1740;&#1575;&#1586;" resource="false"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="saghfeTedadi" depends="required, mask">
+				<arg0 key="saghfeTedadi" resource="false"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+		</form>
+	</formset>

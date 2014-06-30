@@ -1,0 +1,21 @@
+<form-bean name="noeKhodroForm" dynamic="true" type="com.objectj.emdad.web.action.NoeKhodroForm">
+	<form-property name="action_type" type="java.lang.String"/>
+	<form-property name="selectedItems" type="java.lang.String[]"/>
+	<form-property name="id" type="java.lang.String"/>
+	<form-property name="curpage" type="java.lang.String"/>
+	<form-property name="sorttype" type="java.lang.String"/>
+	<form-property name="order" type="java.lang.String"/>
+	
+    <form-property name="guarantee" type="java.lang.Integer"/>
+    <form-property name="guaranteeDistance" type="java.lang.Integer"/>
+	<form-property name="khodrosazId" type="java.lang.String"/>
+	<form-property name="onvan" type="java.lang.String"/>
+    <form-property name="khodroCode" type="java.lang.String"/>
+    <form-property name="noeKhodroCode" type="java.lang.String"/>
+	<form-property name="noeKhodroId" type="java.lang.Integer"/>
+    <form-property name="vijeh" type="java.lang.Integer"/>
+    <form-property name="hazinehSaat" type="java.lang.Integer"/>
+    <form-property name="hazinehEshterakAdi" type="java.lang.Integer"/>
+    <form-property name="hazinehEshterakVijeh" type="java.lang.Integer"/>
+    <form-property name="noeService" type="java.lang.Integer"/>
+</form-bean>

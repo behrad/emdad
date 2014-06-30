@@ -1,0 +1,34 @@
+    <global-forwards>
+        <forward name="subactionSecurityError" path="/com/objectj/resources/jsp/tiles/emdad/access-error.jsp" redirect="true"/>
+        <forward name="superuserHome" path="emdad.superuser.home"  redirect="true"/>
+        <forward name="emdadgarHome"  path="emdad.emdadgar.home"  redirect="true"/>
+        <forward name="ezamgarAdiHome"  path="emdad.ezamgarAdi.home"  redirect="true"/>
+        <forward name="ezamgarVijeHome"  path="emdad.ezamgarVije.home"  redirect="true"/>
+        <forward name="barnamerizOPHome"  path="emdad.barnamerizOP.home"  redirect="true"/>
+        <forward name="moshtariHome"  path="emdad.moshtari.home"  redirect="true"/>
+        <forward name="eshterakHome"  path="emdad.eshterak.home"  redirect="true"/>
+        <forward name="adminHome"     path="emdad.admin.home"  redirect="true"/>
+        <forward name="doAdminHome"   path="emdad.doAdmin.home"  redirect="true"/>
+        <forward name="omoorNamayandegiHome"   path="emdad.omoorNamayandegi.home"  redirect="true"/>
+        <forward name="operatorHome"   path="emdad.operator.home"  redirect="true"/>
+        <forward name="namayandegiHome"   path="emdad.namayandegi.home"  redirect="true"/>
+        <forward name="maliOpHome"   path="emdad.maliOp.home"  redirect="true"/>
+        <forward name="anbarHome"   path="emdad.anbar.home"  redirect="true"/>
+        <forward name="mohandesiHome"   path="emdad.mohandesi.home"  redirect="true"/>
+        <forward name="amaliyatOpHome"   path="emdad.amaliyatOp.home"  redirect="true"/>
+        <forward name="amaliyatMgrHome"   path="emdad.amaliyatMgr.home"  redirect="true"/>
+        <forward name="khadamatVijeHome"   path="emdad.khadamatVije.home"  redirect="true"/>
+        <forward name="daftarOstaniHome"   path="emdad.daftarOstani.home"  redirect="true"/>
+        <forward name="foroushHome"   path="emdad.foroush.home"  redirect="true"/>
+        <forward name="tarhoBarnameHome"   path="emdad.tarhoBarname.home"  redirect="true"/>
+        <forward name="sarparastEmdadgarHome"   path="emdad.sarparastEmdadgar.home"  redirect="true"/>
+        <forward name="guaranteeHome"   path="emdad.guarantee.home"  redirect="true"/>
+        <forward name="barnamerizSefareshatHome"   path="emdad.barnamerizSefareshat.home"  redirect="true"/>
+        <forward name="showNotFound"   path="/com/objectj/emdad/jsp/show.notFound.jsp"  redirect="true"/>
+        <forward name="accessDenied"   path="/com/objectj/emdad/jsp/access.denied.jsp"  redirect="true"/>
+        <forward name="defaultHome"   path="/com/objectj/emdad/jsp/usr/default.home.jsp"  redirect="true"/>
+        <forward name="gozareshgarHome"   path="emdad.gozareshgar.home"  redirect="true"/>
+        <forward name="closeAndRefresh"   path="/com/objectj/emdad/jsp/closeAndRefresh.jsp" />
+        <forward name="alertInfo"   path="/com/objectj/resources/jsp/tiles/emdad/general.info.jsp"/>
+        <forward name="redirectJsp"   path="/com/objectj/emdad/jsp/redirect.jsp"  redirect="true"/>
+    </global-forwards>

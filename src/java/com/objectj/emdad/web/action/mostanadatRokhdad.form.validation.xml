@@ -1,0 +1,32 @@
+	<formset>
+		<form name="mostanadatRokhdadForm">
+			<field property="mostanadatRokhdadId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607; &#1605;&#1583;&#1585;&#1705;" resource="false"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+           <field property="rokhdadRokhdadId" depends="required">
+				<arg0 key="&#1588;&#1585;&#1581; &#1587;&#1606;&#1583;" resource="false"/>
+			</field>
+
+			<field property="tarikhSanad" depends="date">
+                <arg0 key="&#1578;&#1575;&#1585;&#1740;&#1582; &#1587;&#1606;&#1583;" resource="false"/>
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>yyyy/MM/dd</var-value>
+				</var>
+			</field>
+
+			<field property="sharh" depends="required">
+				<arg0 key="&#1588;&#1585;&#1581; &#1587;&#1606;&#1583;" resource="false"/>
+			</field>
+            <field property="nameSanad" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1587;&#1606;&#1583;" resource="false"/>
+			</field>
+
+
+
+		</form>
+	</formset>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: oracle-ds.xml,v 1.1 2004/07/18 09:40:27 amir Exp $ -->
+<!-- ==================================================================== -->
+<!--  Datasource config for Oracle originally from Steven Coy             -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>emdadDS</jndi-name>
+    <!--connection-url>jdbc:oracle:thin:@222.192.55.22:1521:ORACLEDB</connection-url>
+    <password>remote</password-->
+
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+
+    <connection-url>jdbc:oracle:thin:@222.192.55.220:1521:EMDADORA</connection-url>
+    <password>123</password>
+
+    <user-name>emdad</user-name>
+    <min-pool-size>10</min-pool-size>
+    <max-pool-size>100</max-pool-size>
+  </local-tx-datasource>
+
+</datasources>

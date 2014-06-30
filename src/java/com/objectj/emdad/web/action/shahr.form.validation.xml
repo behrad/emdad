@@ -1,0 +1,20 @@
+	<formset>
+		<form name="shahrForm">
+			<field property="shahrId" depends="required,mask">
+				<arg0 key="&#1588;&#1606;&#1575;&#1587;&#1607; &#1588;&#1607;&#1585;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+			<field property="shahrName" depends="required">
+				<arg0 key="&#1606;&#1575;&#1605; &#1588;&#1607;&#1585;" resource="false"/>
+			</field>
+
+            <field property="ostanId" depends="required">
+                <arg0 key="&#1606;&#1575;&#1605; &#1575;&#1587;&#1578;&#1575;&#1606;" resource="false"/>
+            </field>
+
+		</form>
+	</formset>

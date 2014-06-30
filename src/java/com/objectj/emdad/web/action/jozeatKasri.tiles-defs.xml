@@ -1,0 +1,16 @@
+
+  <definition name="emdad.jozeatKasri.list" extends="emdad.main">
+      <put name="title"  		value="&#1601;&#1607;&#1585;&#1587;&#1578; &#1580;&#1586;&#1574;&#1610;&#1575;&#1578; &#1705;&#1587;&#1585;&#1610; &#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;&#1575;&#1606;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/jozeatKasri.list.jsp" />
+  </definition>
+
+  <definition name="emdad.jozeatKasri.edit" extends="emdad.main">
+      <put name="title"  		value="&#1575;&#1610;&#1580;&#1575;&#1583; / &#1578;&#1594;&#1610;&#1610;&#1585; &#1580;&#1586;&#1574;&#1610;&#1575;&#1578; &#1705;&#1587;&#1585;&#1610;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/jozeatKasri.edit.jsp" />
+  </definition>
+
+  <definition name="emdad.jozeatKasri.read" extends="emdad.main">
+      <put name="title"  		value="&#1606;&#1605;&#1575;&#1610;&#1588; &#1580;&#1586;&#1574;&#1610;&#1575;&#1578; &#1705;&#1587;&#1585;&#1610;" />
+      <put name="body"   		value="/com/objectj/emdad/jsp/jozeatKasri.read.jsp" />
+  </definition>
+

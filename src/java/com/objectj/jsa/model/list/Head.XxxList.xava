@@ -1,0 +1,5 @@
+package com.objectj.emdad.ejb;
+
+
+public class XxxList extends com.objectj.emdad.ejb.XxxModel{
+

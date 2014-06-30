@@ -1,0 +1,116 @@
+<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-top.jsp" flush="true" />
+<form method="post" action="/r/namayandegi">
+	<table dir=rtl align="center" class="generalText">
+
+		<!------------------------------------------------>
+
+		<tr>
+			<td align=left>
+			
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-filter.jsp" flush="true" />
+				<!------------------------------------------------>
+
+						<td><html:text property="namayandegiId" size="3" maxlength="5"/></td>
+						<td><html:text property="name" size="30" maxlength="35" onkeypress="return submitenter(this,event)"/></td>
+						<td>
+							<html:select property="shahrId" size="1">
+							<html:options collection="shahrList" property="id" labelProperty="shahrName" />
+							</html:select>
+						</td>
+						<td><html:text property="namayandegiTel" size="20" maxlength="14"/></td>
+						<td><html:text property="namayandegiMobile" size="20" maxlength="15"/></td>
+						<td><html:text property="shomarehGharardad" size="10" maxlength="15"/></td>
+					</tr>
+
+					<!------------------------------------------------>
+
+					<tr class="listTableHeader">
+						<check_Delete_access><td class = "listRow0Col" width="2%">&nbsp;</td><end_Each_access>
+						<check_Update_access><td class = "listRow0Col" width="4%">اصلاح</td><end_Each_access>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "namayandegiId"
+							sortable_Column_Title "&#1705;&#1583; &#1606;&#1605;&#1575;&#1610;&#1606;&#1583;&#1711;&#1610;"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "name"
+							sortable_Column_Title "&#1606;&#1575;&#1605; &#1606;&#1605;&#1575;&#1610;&#1606;&#1583;&#1711;&#1610;"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shahrId"
+							sortable_Column_Title "&#1606;&#1575;&#1605; &#1588;&#1607;&#1585;"
+							sortable_Column_String
+						</td>
+
+						<td class = "listRow0Col"> &#1578;&#1604;&#1601;&#1606; </td>
+
+						<td class = "listRow0Col"> &#1605;&#1608;&#1576;&#1575;&#1610;&#1604; </td>
+
+						<td class = "listRow0Col">
+							sortable_Column_Name "shomarehGharardad"
+							sortable_Column_Title "&#1588;&#1605;&#1575;&#1585;&#1607; &#1602;&#1585;&#1575;&#1585;&#1583;&#1575;&#1583;"
+							sortable_Column_String
+						</td>
+
+					</tr>
+
+					<!------------------------------------------------>
+
+					<% int i = 0; %>
+					<logic:iterate id="value_object" name="value_object_list" >
+						<tr  class="listRow<%=i%2%>">
+							<check_Delete_access>
+								<td class = "listRow1Col"> 
+									<input type="checkbox" name="id" value="checkbox">
+								</td>
+							<end_Each_access>
+
+							<check_Update_access>
+								<td  class = "listRow1Col" align="center">
+									<a  href='javascript:edit("entity_id");'><img src="images/pencil.gif" border="0"></a >
+								</td>
+							<end_Each_access>
+
+							<td class = "listRow1Col"><a  href='javascript:read("entity_id");'>namayandegi_namayandegiId</a ></td>
+
+							<td class = "listRow1Col">namayandegi_name</td>
+
+							<td class = "listRow1Col">namayandegi_shahrName</td>
+
+							<td class = "listRow1Col">namayandegi_namayandegiTel</td>
+
+							<td class = "listRow1Col">namayandegi_namayandegiMobile</td>
+
+							<td class = "listRow1Col">namayandegi_shomarehGharardad</td>
+
+						</tr>
+						<%i++;%>
+					</logic:iterate>
+
+					<!------------------------------------------------>
+
+				</table>
+
+				<!------------------------------------------------>
+				<jsp:include page="/com/objectj/resources/jsp/tiles/emdad/list-but.jsp" flush="true" />
+				<!------------------------------------------------>
+
+			</td>
+		</tr>
+
+		<!------------------------------------------------>
+
+	</table>
+</form>
+
+<!------------------------------------------------>
+
+<script>
+	setForm(document.namayandegiForm);
+	setEntity("Namayandegi");
+</script>

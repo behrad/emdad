@@ -1,0 +1,17 @@
+<form-bean name="qateForm" dynamic="true" type="com.objectj.emdad.web.action.QateForm">
+    <form-property name="action_type" type="java.lang.String"/>
+    <form-property name="selectedItems" type="java.lang.String[]"/>
+    <form-property name="id" type="java.lang.String"/>
+    <form-property name="curpage" type="java.lang.String"/>
+    <form-property name="sorttype" type="java.lang.String"/>
+    <form-property name="order" type="java.lang.String"/>
+    <form-property name="noeKhodroId" type="java.lang.String"/>
+    <form-property name="shomareFanni" type="java.lang.String"/>
+    <form-property name="name" type="java.lang.String"/>
+    <form-property name="qateId" type="java.lang.Integer"/>
+    <form-property name="vahedShomaresh" type="java.lang.Integer"/>
+    <form-property name="vahedShomareshName" type="java.lang.String"/>
+    <form-property name="gheimat" type="java.lang.Integer"/>
+    <form-property name="satheMaharat" type="java.lang.Integer"/>
+    <form-property name="saghfeTedadi" type="java.lang.Integer"/>
+</form-bean>

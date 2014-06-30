@@ -1,0 +1,52 @@
+/*
+ * PseudoProxy.java
+ *
+ * Created on March 9, 2003, 2:32 PM
+ */
+
+package com.objectj.$app$.proxy;
+
+import com.objectj.$app$.ejb.$module$.model.XxxModel;
+import com.objectj.jsa.model.ValueObject;
+import com.objectj.jsa.proxy.BaseProxy;
+import com.objectj.jsa.proxy.ProxyException;
+import java.util.Collection;
+import org.apache.log4j.Logger;
+
+
+
+/**
+ *
+ * @author  hossein
+ */
+public class PseudoProxy extends BaseProxy {
+    
+    protected static Logger log = Logger.getLogger(PseudoProxy.class.getName());
+    
+    public Collection readAll(Class modelClass) throws ProxyException {
+        return null;
+    }
+    public ValueObject create(Class modelClass) throws ProxyException {
+            if(XxxModel.class.equals(modelClass)) {
+            XxxModel xxxModel = new XxxModel();
+            log.debug("Supposedly creating new XxxModel in database and generate and id for it");
+            xxxModel.setId("ID-generated-by-PseudoProxy");
+            return xxxModel;
+        }
+        return null;
+    }
+    
+    public void update(ValueObject valueObject) throws ProxyException {
+        try {
+            if(valueObject instanceof XxxModel) {
+                XxxModel xxxModel = (XxxModel)valueObject;
+                log.info("Supposedly Updating " + xxxModel.toString() + " to database");
+                xxxModel.setId("ID-generated-by-PseudoProxy");
+            }
+        } catch(Exception exception) {
+            log.error(exception);
+            throw new ProxyException(exception);
+        }
+    }
+    
+}

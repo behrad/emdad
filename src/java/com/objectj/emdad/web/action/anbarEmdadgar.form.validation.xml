@@ -1,0 +1,20 @@
+	<formset>
+		<form name="anbarEmdadgarForm">
+			<field property="emdadgarId" depends="required">
+				<arg0 key="&#1575;&#1605;&#1583;&#1575;&#1583;&#1711;&#1585;" resource="false"/>
+			</field>
+
+			<field property="qateIdCode" depends="required">
+				<arg0 key="&#1602;&#1591;&#1593;&#1607;" resource="false"/>
+			</field>
+
+			<field property="mojoodi" depends="required,mask">
+				<arg0 key="&#1605;&#1608;&#1580;&#1608;&#1583;&#1610;" resource="false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+
+		</form>
+	</formset>
